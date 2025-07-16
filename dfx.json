@@ -1,0 +1,37 @@
+{
+  "canisters": {
+    "Thynkora-AI-backend": {
+      "main": "src/Thynkora-AI-backend/main.mo",
+      "type": "motoko"
+    },
+    "Thynkora-AI-frontend": {
+      "dependencies": [
+        "Thynkora-AI-backend"
+      ],
+      "source": [
+        "src/Thynkora-AI-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "Thynkora-AI-frontend"
+    },
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
