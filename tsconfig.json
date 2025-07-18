@@ -9,7 +9,7 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "lib": ["DOM", "ESNext"],
-    "types": ["node", "vite/client"]
+    "types": ["node", "react", "react-dom"]
   },
   "include": ["src", "src/declarations"]
 }
