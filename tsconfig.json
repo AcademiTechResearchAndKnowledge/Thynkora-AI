@@ -9,7 +9,15 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "lib": ["DOM", "ESNext"],
-    "types": ["node", "react", "react-dom"]
+    "types": ["node", "react", "react-dom"],
+    "baseUrl": ".",                         
+    "paths": {
+      "@components/*": ["components/*"]     
+    }
   },
-  "include": ["src", "src/declarations"]
+  "include": [
+    "src",
+    "components",                          r
+    "src/declarations"
+  ]
 }
