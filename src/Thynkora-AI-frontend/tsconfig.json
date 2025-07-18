@@ -10,14 +10,10 @@
     "forceConsistentCasingInFileNames": true,
     "lib": ["DOM", "ESNext"],
     "types": ["node", "react", "react-dom"],
-    "baseUrl": ".",                         
+    "baseUrl": ".",                              // base is the frontend root
     "paths": {
-      "@components/*": ["src/Thynkora-AI-frontend/components/*"]     
+      "@components/*": ["components/*"]          // alias points to components/
     }
   },
-  "include": [
-    "src",
-    "components",                          
-    "src/declarations"
-  ]
+  "include": ["src", "components", "src/declarations"]
 }
