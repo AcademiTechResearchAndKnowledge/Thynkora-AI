@@ -16,9 +16,9 @@ const App: React.FC = () => {
     console.log("App loaded");
   }, []);
 
-  // ✅ Mock Login Function for Testing
+  //  Mock Login Function for Testing
   const mockLogin = async () => {
-    console.log("✅ MOCK LOGIN ENABLED");
+    console.log(" MOCK LOGIN ENABLED");
     setIsAuthenticated(true);
 
     // Optional: Fake actor/profile data
@@ -38,8 +38,8 @@ const App: React.FC = () => {
     return (
       <div className="app">
         <h1>Thynkora-AI (Mock Mode)</h1>
-        <button onClick={mockLogin}>🚀 Mock Login</button>
-        <p>Open browser console – you should see: <code>✅ MOCK LOGIN ENABLED</code></p>
+        <button onClick={mockLogin}>Mock Login</button>
+        <p>Open browser console – you should see: <code> MOCK LOGIN ENABLED</code></p>
       </div>
     );
   }
