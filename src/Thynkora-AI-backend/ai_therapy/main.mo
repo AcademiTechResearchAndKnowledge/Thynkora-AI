@@ -7,7 +7,6 @@ import _ "mo:base/Debug";
 import Int "mo:base/Int";
 import Char "mo:base/Char";
 
-
 actor AITherapy {
     
     type Message = {
@@ -61,9 +60,10 @@ actor AITherapy {
         #ok(sessionId)
     };
     
-    public shared(msg) func sendMessage(sessionId: Text, content: Text) : async Result.Result<Message, Text> {
+    public shared(msg) func sendMessage(_sessionId: Text, _content: Text) : async Result.Result<Message, Text> {
         let userId = msg.caller;
-        
+        let content = _content;
+
         // Create user message
         messageCounter += 1;
         let userMessage: Message = {
@@ -93,16 +93,15 @@ actor AITherapy {
             supportActions = aiResponse.supportActions;
         };
         
-        // Update session (simplified for demo)
-        // In production, you'd update the specific session
-        
+        // TODO: Update session with messages (omitted for now)
+
         #ok(aiMessage)
     };
     
-    private func analyzeRiskLevel(content: Text) : async Nat {
+    private func analyzeRiskLevel(_content: Text) : async Nat {
         // Simple keyword-based risk analysis
         let riskKeywords = ["suicide", "kill myself", "end it all", "hopeless", "can't go on"];
-        let lowerContent = Text.map(content, func(c: Char) : Char {
+        let lowerContent = Text.map(_content, func(c: Char) : Char {
             if (c >= 'A' and c <= 'Z') {
                 Char.fromNat32(Char.toNat32(c) + 32)
             } else { c }
@@ -118,10 +117,10 @@ actor AITherapy {
         risk
     };
     
-    private func generateAIResponse(content: Text, riskLevel: Nat) : async {content: Text; supportActions: [Text]} {
-        // In production, this would make HTTP outcalls to OpenAI
-        // For demo purposes, we'll use rule-based responses
-        
+    private func generateAIResponse(content: Text, riskLevel: Nat) : async {
+        content: Text;
+        supportActions: [Text];
+    } {
         if (riskLevel >= 7) {
             {
                 content = "I'm really concerned about what you're going through. You're not alone, and there are people who want to help. Would you like me to connect you with a crisis counselor?";
@@ -141,9 +140,8 @@ actor AITherapy {
     };
     
     // Emergency response trigger
-    public shared(msg) func triggerEmergencyResponse(sessionId: Text) : async Result.Result<Text, Text> {
-        let userId = msg.caller;
-        // This would integrate with emergency response canister
+    public shared(msg) func triggerEmergencyResponse(_sessionId: Text) : async Result.Result<Text, Text> {
+        let _userId = msg.caller;
         #ok("Emergency response initiated")
     };
-}
+};
