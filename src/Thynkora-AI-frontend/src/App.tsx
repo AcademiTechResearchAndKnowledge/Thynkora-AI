@@ -141,7 +141,12 @@ const App: React.FC = () => {
           />
         )}
         {activeTab === 'dao' && (
-          <DAODashboard />
+          <DAODashboard
+  onLogin={handleLogin}
+  userActor={userActor}
+  userProfile={userProfile}
+/>
+
         )}
         {activeTab === 'emergency' && (
           <EmergencySupport 
