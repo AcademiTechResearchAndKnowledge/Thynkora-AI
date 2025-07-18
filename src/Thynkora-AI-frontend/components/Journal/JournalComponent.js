@@ -1,7 +1,6 @@
 import React from 'react';
-const JournalComponent = ({ onLogin }) => {
+const Journal = ({ userActor, userProfile }) => {
     return (React.createElement("div", null,
-        React.createElement("h2", null, "Journal Test"),
-        React.createElement("button", { onClick: onLogin }, "Login")));
+        React.createElement("h2", null, "Journal")));
 };
-export default JournalComponent;
+export default Journal;

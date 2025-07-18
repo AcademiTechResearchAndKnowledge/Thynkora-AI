@@ -1,7 +1,6 @@
 import React from 'react';
-const EmergencySupport = ({ onLogin }) => {
+const EmergencySupport = ({ userProfile }) => {
     return (React.createElement("div", null,
-        React.createElement("h2", null, "Emergency Support Test"),
-        React.createElement("button", { onClick: onLogin }, "Login")));
+        React.createElement("h2", null, "Emergency Support")));
 };
 export default EmergencySupport;

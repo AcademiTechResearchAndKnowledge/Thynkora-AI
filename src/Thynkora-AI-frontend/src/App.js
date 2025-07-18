@@ -31,9 +31,8 @@ const App = () => {
     const setupActors = async (client) => {
         const identity = client.getIdentity();
         const agent = new HttpAgent({ identity });
-        // In production, use mainnet
-        if (process.env.NODE_ENV === 'production') {
-            await agent.fetchRootKey();
+        if (process.env.NODE_ENV !== 'production') {
+            await agent.fetchRootKey(); // Only in development
         }
         const userActor = Actor.createActor(userManagementIdl, {
             agent,
@@ -45,7 +44,6 @@ const App = () => {
         });
         setUserActor(userActor);
         setAiActor(aiActor);
-        // Load user profile
         try {
             const profile = await userActor.getProfile();
             setUserProfile(profile);
@@ -89,7 +87,7 @@ const App = () => {
         React.createElement("main", { className: "app-main" },
             activeTab === 'therapy' && (React.createElement(TherapyChat, { aiActor: aiActor, userProfile: userProfile })),
             activeTab === 'journal' && (React.createElement(Journal, { userActor: userActor, userProfile: userProfile })),
-            activeTab === 'dao' && (React.createElement(DAODashboard, null)),
+            activeTab === 'dao' && (React.createElement(DAODashboard, { onLogin: handleLogin, userActor: userActor, userProfile: userProfile })),
             activeTab === 'emergency' && (React.createElement(EmergencySupport, { userProfile: userProfile })))));
 };
 export default App;
