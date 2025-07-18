@@ -4,7 +4,7 @@ import React from 'react';
 const DAODashboard = ({ onLogin }: { onLogin: () => void }) => {
   return (
     <div>
-      <h2>Please log in</h2>
+      <h2>DAODashboard Test</h2>
       <button onClick={onLogin}>Login</button>
     </div>
   );
