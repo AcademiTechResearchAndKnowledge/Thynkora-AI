@@ -1,86 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { AuthClient } from '@dfinity/auth-client';
-import { Actor, HttpAgent } from '@dfinity/agent';
-import { idlFactory as userManagementIdl } from './declarations/user_management';
-import { idlFactory as aiTherapyIdl } from './declarations/ai_therapy';
-
-import AuthComponent from '@components/Auth/AuthComponent';
 import TherapyChat from '@components/AITherapy/TherapyChat';
 import Journal from '@components/Journal/JournalComponent';
 import DAODashboard from '@components/DAO/DAODashboard';
 import EmergencySupport from '@components/Emergency/EmergencySupport';
 
-
+import './App.css'; // Optional: comment out if you don't have this file
 
 const App: React.FC = () => {
-  const [authClient, setAuthClient] = useState<AuthClient | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userProfile, setUserProfile] = useState<any>(null);
   const [userActor, setUserActor] = useState<any>(null);
   const [aiActor, setAiActor] = useState<any>(null);
   const [activeTab, setActiveTab] = useState('therapy');
-  const [userProfile, setUserProfile] = useState<any>(null);
 
   useEffect(() => {
-    initAuth();
+    console.log("App loaded");
   }, []);
 
-  const initAuth = async () => {
-    const client = await AuthClient.create();
-    setAuthClient(client);
+  // ✅ Mock Login Function for Testing
+  const mockLogin = async () => {
+    console.log("✅ MOCK LOGIN ENABLED");
+    setIsAuthenticated(true);
 
-    const isAuthenticated = await client.isAuthenticated();
-    setIsAuthenticated(isAuthenticated);
-
-    if (isAuthenticated) {
-      await setupActors(client);
-    }
+    // Optional: Fake actor/profile data
+    setUserProfile({ name: "Test User", email: "test@example.com" });
+    setUserActor({}); 
+    setAiActor({});
   };
 
-  const setupActors = async (client: AuthClient) => {
-    const identity = client.getIdentity();
-    const agent = new HttpAgent({ identity });
-
-    if (process.env.NODE_ENV !== 'production') {
-      await agent.fetchRootKey(); // Only in development
-    }
-
-    const userActor = Actor.createActor(userManagementIdl, {
-      agent,
-      canisterId: process.env.REACT_APP_USER_MANAGEMENT_CANISTER_ID!,
-    });
-
-    const aiActor = Actor.createActor(aiTherapyIdl, {
-      agent,
-      canisterId: process.env.REACT_APP_AI_THERAPY_CANISTER_ID!,
-    });
-
-    setUserActor(userActor);
-    setAiActor(aiActor);
-
-    try {
-      const profile = await userActor.getProfile();
-      setUserProfile(profile);
-    } catch (error) {
-      console.log('No profile found, user needs to create one');
-    }
-  };
-
-  const handleLogin = async () => {
-    if (!authClient) return;
-
-    await authClient.login({
-      identityProvider: 'https://identity.ic0.app',
-      onSuccess: async () => {
-        setIsAuthenticated(true);
-        await setupActors(authClient);
-      },
-    });
-  };
-
-  const handleLogout = async () => {
-    if (!authClient) return;
-
-    await authClient.logout();
+  const handleLogout = () => {
     setIsAuthenticated(false);
     setUserActor(null);
     setAiActor(null);
@@ -88,7 +36,13 @@ const App: React.FC = () => {
   };
 
   if (!isAuthenticated) {
-    return <AuthComponent onLogin={handleLogin} />;
+    return (
+      <div className="app">
+        <h1>Thynkora-AI (Mock Mode)</h1>
+        <button onClick={mockLogin}>🚀 Mock Login</button>
+        <p>Open browser console – you should see: <code>✅ MOCK LOGIN ENABLED</code></p>
+      </div>
+    );
   }
 
   return (
@@ -133,7 +87,7 @@ const App: React.FC = () => {
         )}
         {activeTab === 'dao' && (
           <DAODashboard
-            onLogin={handleLogin}
+            onLogin={mockLogin}
             userActor={userActor}
             userProfile={userProfile}
           />
