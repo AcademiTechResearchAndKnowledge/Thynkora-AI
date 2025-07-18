@@ -1,13 +1,22 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { AuthClient } from '@dfinity/auth-client';
 import { Actor, HttpAgent } from '@dfinity/agent';
 import { idlFactory as userManagementIdl } from './declarations/user_management';
 import { idlFactory as aiTherapyIdl } from './declarations/ai_therapy';
+=======
+        ////skip auth for test\\\\
+
+
+
+import React, { useState } from 'react';
+>>>>>>> b36e538a0e9ac75eeb1fba44bf94dc28331a499f
 import AuthComponent from '@components/Auth/AuthComponent';
 import TherapyChat from '@components/AITherapy/TherapyChat';
 import Journal from '@components/Journal/JournalComponent';
 import DAODashboard from '@components/DAO/DAODashboard';
 import EmergencySupport from '@components/Emergency/EmergencySupport';
+<<<<<<< HEAD
 const App = () => {
     const [authClient, setAuthClient] = useState(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -89,4 +98,39 @@ const App = () => {
             activeTab === 'dao' && (React.createElement(DAODashboard, { onLogin: handleLogin, userActor: userActor, userProfile: userProfile })),
             activeTab === 'emergency' && (React.createElement(EmergencySupport, { userProfile: userProfile })))));
 };
+=======
+
+function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userProfile, setUserProfile] = useState<any>(null);
+  const [aiActor, setAiActor] = useState<any>(null);
+  const [userActor, setUserActor] = useState<any>(null);
+
+  const setupActors = async () => {
+    // replace with actual actor setup logic
+    setAiActor({ mock: true });
+    setUserActor({ mock: true });
+    setUserProfile({ username: 'Tester' });
+  };
+
+  const handleLogin = async () => {
+    setIsAuthenticated(true);
+    await setupActors();
+  };
+
+  if (!isAuthenticated) {
+    return <AuthComponent onLogin={handleLogin} />;
+  }
+
+  return (
+    <div>
+      <TherapyChat aiActor={aiActor} userProfile={userProfile} />
+      <Journal userActor={userActor} userProfile={userProfile} />
+      <DAODashboard onLogin={handleLogin} />
+      <EmergencySupport userProfile={userProfile} />
+    </div>
+  );
+}
+
+>>>>>>> b36e538a0e9ac75eeb1fba44bf94dc28331a499f
 export default App;
