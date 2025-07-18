@@ -1,37 +1,34 @@
 {
   "canisters": {
-    "Thynkora-AI-backend": {
-      "main": "src/Thynkora-AI-backend/main.mo",
-      "type": "motoko"
-    },
     "Thynkora-AI-frontend": {
-      "dependencies": [
-        "Thynkora-AI-backend"
-      ],
-      "source": [
-        "src/Thynkora-AI-frontend/dist"
-      ],
       "type": "assets",
-      "workspace": "Thynkora-AI-frontend"
+      "source": ["src/Thynkora-AI-frontend/dist"]
     },
-    "internet_identity": {
-      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
-      "frontend": {},
-      "remote": {
-        "id": {
-          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
-        }
-      },
-      "type": "custom",
-      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    "user_management": {
+      "type": "motoko",
+      "main": "src/Thynkora-Ai-backend/user_management/main.mo"
+    },
+    "ai_therapy": {
+      "type": "motoko",
+      "main": "src/Thynkora-Ai-backend/ai_therapy/main.mo"
+    },
+    "journal_storage": {
+      "type": "motoko",
+      "main": "src/Thynkora-Ai-backend/journal_storage/main.mo"
+    },
+    "dao_governance": {
+      "type": "motoko",
+      "main": "src/Thynkora-Ai-backend/dao_governance/main.mo"
+    },
+    "emergency_response": {
+      "type": "motoko",
+      "main": "src/Thynkora-Ai-backend/emergency_response/main.mo"
     }
   },
-  "defaults": {
-    "build": {
-      "args": "",
-      "packtool": ""
+  "networks": {
+    "ic": {
+      "providers": ["https://ic0.app"],
+      "type": "persistent"
     }
-  },
-  "output_env_file": ".env",
-  "version": 1
+  }
 }
