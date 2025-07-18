@@ -3,7 +3,7 @@ import Text "mo:base/Text";
 import Time "mo:base/Time";
 import Result "mo:base/Result";
 import Buffer "mo:base/Buffer";
-import Debug "mo:base/Debug";
+import _ "mo:base/Debug";
 import Int "mo:base/Int";
 import Char "mo:base/Char";
 
