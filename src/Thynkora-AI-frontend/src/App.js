@@ -1,78 +1,40 @@
 import React, { useState, useEffect } from 'react';
-import { AuthClient } from '@dfinity/auth-client';
-import { Actor, HttpAgent } from '@dfinity/agent';
-import { idlFactory as userManagementIdl } from './declarations/user_management';
-import { idlFactory as aiTherapyIdl } from './declarations/ai_therapy';
-import AuthComponent from '@components/Auth/AuthComponent';
 import TherapyChat from '@components/AITherapy/TherapyChat';
 import Journal from '@components/Journal/JournalComponent';
 import DAODashboard from '@components/DAO/DAODashboard';
 import EmergencySupport from '@components/Emergency/EmergencySupport';
+import './App.css'; // Optional: comment out if you don't have this file
 const App = () => {
-    const [authClient, setAuthClient] = useState(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [userProfile, setUserProfile] = useState(null);
     const [userActor, setUserActor] = useState(null);
     const [aiActor, setAiActor] = useState(null);
     const [activeTab, setActiveTab] = useState('therapy');
-    const [userProfile, setUserProfile] = useState(null);
     useEffect(() => {
-        initAuth();
+        console.log("App loaded");
     }, []);
-    const initAuth = async () => {
-        const client = await AuthClient.create();
-        setAuthClient(client);
-        const isAuthenticated = await client.isAuthenticated();
-        setIsAuthenticated(isAuthenticated);
-        if (isAuthenticated) {
-            await setupActors(client);
-        }
+    // ✅ Mock Login Function for Testing
+    const mockLogin = async () => {
+        console.log("✅ MOCK LOGIN ENABLED");
+        setIsAuthenticated(true);
+        // Optional: Fake actor/profile data
+        setUserProfile({ name: "Test User", email: "test@example.com" });
+        setUserActor({});
+        setAiActor({});
     };
-    const setupActors = async (client) => {
-        const identity = client.getIdentity();
-        const agent = new HttpAgent({ identity });
-        if (process.env.NODE_ENV !== 'production') {
-            await agent.fetchRootKey(); // Only in development
-        }
-        const userActor = Actor.createActor(userManagementIdl, {
-            agent,
-            canisterId: process.env.REACT_APP_USER_MANAGEMENT_CANISTER_ID,
-        });
-        const aiActor = Actor.createActor(aiTherapyIdl, {
-            agent,
-            canisterId: process.env.REACT_APP_AI_THERAPY_CANISTER_ID,
-        });
-        setUserActor(userActor);
-        setAiActor(aiActor);
-        try {
-            const profile = await userActor.getProfile();
-            setUserProfile(profile);
-        }
-        catch (error) {
-            console.log('No profile found, user needs to create one');
-        }
-    };
-    const handleLogin = async () => {
-        if (!authClient)
-            return;
-        await authClient.login({
-            identityProvider: 'https://identity.ic0.app',
-            onSuccess: async () => {
-                setIsAuthenticated(true);
-                await setupActors(authClient);
-            },
-        });
-    };
-    const handleLogout = async () => {
-        if (!authClient)
-            return;
-        await authClient.logout();
+    const handleLogout = () => {
         setIsAuthenticated(false);
         setUserActor(null);
         setAiActor(null);
         setUserProfile(null);
     };
     if (!isAuthenticated) {
-        return React.createElement(AuthComponent, { onLogin: handleLogin });
+        return (React.createElement("div", { className: "app" },
+            React.createElement("h1", null, "Thynkora-AI (Mock Mode)"),
+            React.createElement("button", { onClick: mockLogin }, "\uD83D\uDE80 Mock Login"),
+            React.createElement("p", null,
+                "Open browser console \u2013 you should see: ",
+                React.createElement("code", null, "\u2705 MOCK LOGIN ENABLED"))));
     }
     return (React.createElement("div", { className: "app" },
         React.createElement("header", { className: "app-header" },
@@ -86,7 +48,7 @@ const App = () => {
         React.createElement("main", { className: "app-main" },
             activeTab === 'therapy' && (React.createElement(TherapyChat, { aiActor: aiActor, userProfile: userProfile })),
             activeTab === 'journal' && (React.createElement(Journal, { userActor: userActor, userProfile: userProfile })),
-            activeTab === 'dao' && (React.createElement(DAODashboard, { onLogin: handleLogin, userActor: userActor, userProfile: userProfile })),
+            activeTab === 'dao' && (React.createElement(DAODashboard, { onLogin: mockLogin, userActor: userActor, userProfile: userProfile })),
             activeTab === 'emergency' && (React.createElement(EmergencySupport, { userProfile: userProfile })))));
 };
 export default App;

@@ -4,7 +4,6 @@ import Journal from '@components/Journal/JournalComponent';
 import DAODashboard from '@components/DAO/DAODashboard';
 import EmergencySupport from '@components/Emergency/EmergencySupport';
 
-import './App.css'; // Optional: comment out if you don't have this file
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
