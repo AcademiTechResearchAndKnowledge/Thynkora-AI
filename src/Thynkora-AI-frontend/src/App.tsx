@@ -5,7 +5,7 @@ import { idlFactory as userManagementIdl } from './declarations/user_management'
 import { idlFactory as aiTherapyIdl } from './declarations/ai_therapy';
 import AuthComponent from 'src/Thynkora-AI-frontend/components/Auth/AuthComponent';
 import TherapyChat from 'src/Thynkora-AI-frontend/components/AITherapy/TherapyChat';
-import Journal from 'src/Thynkora-AI-frontend/components/Journal/Journal';
+import Journal from 'src/Thynkora-AI-frontend/components/Journal/JournalComponent';
 import DAODashboard from 'src/Thynkora-AI-frontend/components/DAO/DAODashboard';
 import EmergencySupport from 'src/Thynkora-AI-frontend/components/Emergency/EmergencySupport';
 import './App.css';
