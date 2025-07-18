@@ -3,12 +3,13 @@ import { AuthClient } from '@dfinity/auth-client';
 import { Actor, HttpAgent } from '@dfinity/agent';
 import { idlFactory as userManagementIdl } from './declarations/user_management';
 import { idlFactory as aiTherapyIdl } from './declarations/ai_therapy';
-import AuthComponent from './components/Auth/AuthComponent';
-import TherapyChat from './components/AITherapy/TherapyChat';
-import Journal from './components/Journal/JournalComponent';
-import DAODashboard from './components/DAO/DAODashboard';
-import EmergencySupport from './components/Emergency/EmergencySupport';
+import AuthComponent from '@components/Auth/AuthComponent';
+import TherapyChat from '@components/AITherapy/TherapyChat';
+import Journal from '@components/Journal/JournalComponent';
+import DAODashboard from '@components/DAO/DAODashboard';
+import EmergencySupport from '@components/Emergency/EmergencySupport';
 import './App.css';
+
 const App = () => {
     const [authClient, setAuthClient] = useState(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
