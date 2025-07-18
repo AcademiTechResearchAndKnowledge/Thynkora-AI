@@ -9,8 +9,6 @@ import Journal from 'src/Thynkora-AI-frontend/components/Journal/JournalComponen
 import DAODashboard from 'src/Thynkora-AI-frontend/components/DAO/DAODashboard';
 import EmergencySupport from 'src/Thynkora-AI-frontend/components/Emergency/EmergencySupport';
 import './App.css';
-
-
 const App = () => {
     const [authClient, setAuthClient] = useState(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
