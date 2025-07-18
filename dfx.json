@@ -6,23 +6,23 @@
     },
     "user_management": {
       "type": "motoko",
-      "main": "src/Thynkora-Ai-backend/user_management/main.mo"
+      "main": "src/Thynkora-AI-backend/user_management/main.mo"
     },
     "ai_therapy": {
       "type": "motoko",
-      "main": "src/Thynkora-Ai-backend/ai_therapy/main.mo"
+      "main": "src/Thynkora-AI-backend/ai_therapy/main.mo"
     },
     "journal_storage": {
       "type": "motoko",
-      "main": "src/Thynkora-Ai-backend/journal_storage/main.mo"
+      "main": "src/Thynkora-AI-backend/journal_storage/main.mo"
     },
     "dao_governance": {
       "type": "motoko",
-      "main": "src/Thynkora-Ai-backend/dao_governance/main.mo"
+      "main": "src/Thynkora-AI-backend/dao_governance/main.mo"
     },
     "emergency_response": {
       "type": "motoko",
-      "main": "src/Thynkora-Ai-backend/emergency_response/main.mo"
+      "main": "src/Thynkora-AI-backend/emergency_response/main.mo"
     }
   },
   "networks": {
