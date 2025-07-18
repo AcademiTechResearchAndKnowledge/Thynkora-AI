@@ -9,7 +9,6 @@ import Journal from '@components/Journal/JournalComponent';
 import DAODashboard from '@components/DAO/DAODashboard';
 import EmergencySupport from '@components/Emergency/EmergencySupport';
 import './App.css';
-
 const App = () => {
     const [authClient, setAuthClient] = useState(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
