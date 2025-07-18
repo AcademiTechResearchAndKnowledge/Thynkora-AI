@@ -3,6 +3,7 @@ import { AuthClient } from '@dfinity/auth-client';
 import { Actor, HttpAgent } from '@dfinity/agent';
 import { idlFactory as userManagementIdl } from './declarations/user_management';
 import { idlFactory as aiTherapyIdl } from './declarations/ai_therapy';
+
 import AuthComponent from '@components/Auth/AuthComponent';
 import TherapyChat from '@components/AITherapy/TherapyChat';
 import Journal from '@components/Journal/JournalComponent';
@@ -10,8 +11,6 @@ import DAODashboard from '@components/DAO/DAODashboard';
 import EmergencySupport from '@components/Emergency/EmergencySupport';
 
 import './App.css';
-
-
 
 const App: React.FC = () => {
   const [authClient, setAuthClient] = useState<AuthClient | null>(null);
@@ -28,10 +27,10 @@ const App: React.FC = () => {
   const initAuth = async () => {
     const client = await AuthClient.create();
     setAuthClient(client);
-    
+
     const isAuthenticated = await client.isAuthenticated();
     setIsAuthenticated(isAuthenticated);
-    
+
     if (isAuthenticated) {
       await setupActors(client);
     }
@@ -40,10 +39,9 @@ const App: React.FC = () => {
   const setupActors = async (client: AuthClient) => {
     const identity = client.getIdentity();
     const agent = new HttpAgent({ identity });
-    
-    // In production, use mainnet
-    if (process.env.NODE_ENV === 'production') {
-      await agent.fetchRootKey();
+
+    if (process.env.NODE_ENV !== 'production') {
+      await agent.fetchRootKey(); // Only in development
     }
 
     const userActor = Actor.createActor(userManagementIdl, {
@@ -58,8 +56,7 @@ const App: React.FC = () => {
 
     setUserActor(userActor);
     setAiActor(aiActor);
-    
-    // Load user profile
+
     try {
       const profile = await userActor.getProfile();
       setUserProfile(profile);
@@ -70,7 +67,7 @@ const App: React.FC = () => {
 
   const handleLogin = async () => {
     if (!authClient) return;
-    
+
     await authClient.login({
       identityProvider: 'https://identity.ic0.app',
       onSuccess: async () => {
@@ -82,7 +79,7 @@ const App: React.FC = () => {
 
   const handleLogout = async () => {
     if (!authClient) return;
-    
+
     await authClient.logout();
     setIsAuthenticated(false);
     setUserActor(null);
@@ -129,29 +126,20 @@ const App: React.FC = () => {
 
       <main className="app-main">
         {activeTab === 'therapy' && (
-          <TherapyChat 
-            aiActor={aiActor} 
-            userProfile={userProfile}
-          />
+          <TherapyChat aiActor={aiActor} userProfile={userProfile} />
         )}
         {activeTab === 'journal' && (
-          <Journal 
+          <Journal userActor={userActor} userProfile={userProfile} />
+        )}
+        {activeTab === 'dao' && (
+          <DAODashboard
+            onLogin={handleLogin}
             userActor={userActor}
             userProfile={userProfile}
           />
         )}
-        {activeTab === 'dao' && (
-          <DAODashboard
-  onLogin={handleLogin}
-  userActor={userActor}
-  userProfile={userProfile}
-/>
-
-        )}
         {activeTab === 'emergency' && (
-          <EmergencySupport 
-            userProfile={userProfile}
-          />
+          <EmergencySupport userProfile={userProfile} />
         )}
       </main>
     </div>
