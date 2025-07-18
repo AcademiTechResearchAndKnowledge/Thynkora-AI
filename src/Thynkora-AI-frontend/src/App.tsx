@@ -10,7 +10,7 @@ import Journal from '@components/Journal/JournalComponent';
 import DAODashboard from '@components/DAO/DAODashboard';
 import EmergencySupport from '@components/Emergency/EmergencySupport';
 
-import './App.css';
+
 
 const App: React.FC = () => {
   const [authClient, setAuthClient] = useState<AuthClient | null>(null);
