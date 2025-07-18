@@ -1,14 +1,17 @@
-
-
 import React from 'react';
 
-const JournalComponent = ({ onLogin }: { onLogin: () => void }) => {
+type JournalProps = {
+  userActor: any;
+  userProfile: any;
+};
+
+const Journal: React.FC<JournalProps> = ({ userActor, userProfile }) => {
   return (
     <div>
-      <h2>Journal Test</h2>
-      <button onClick={onLogin}>Login</button>
+      <h2>Journal</h2>
+      {/* Use userActor and userProfile here */}
     </div>
   );
 };
 
-export default JournalComponent;
+export default Journal;
