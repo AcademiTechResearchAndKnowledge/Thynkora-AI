@@ -12,7 +12,7 @@
     "types": ["node", "react", "react-dom"],
     "baseUrl": ".",                         
     "paths": {
-      "@components/*": ["components/*"]     
+      "@components/*": ["src/Thynkora-AI-frontend/components/*"]     
     }
   },
   "include": [
