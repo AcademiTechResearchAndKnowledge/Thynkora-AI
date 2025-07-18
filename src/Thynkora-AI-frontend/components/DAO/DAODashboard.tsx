@@ -1,11 +1,27 @@
-
 import React from 'react';
 
-const DAODashboard = ({ onLogin }: { onLogin: () => void }) => {
+type DAODashboardProps = {
+  onLogin: () => void;
+  userActor: any;
+  userProfile: any;
+};
+
+const DAODashboard: React.FC<DAODashboardProps> = ({ onLogin, userActor, userProfile }) => {
   return (
     <div>
-      <h2>DAODashboard Test</h2>
-      <button onClick={onLogin}>Login</button>
+      <h2>DAO Dashboard</h2>
+      {userProfile ? (
+        <p>Welcome, {userProfile.name || 'Anonymous'}!</p>
+      ) : (
+        <p>User profile not loaded.</p>
+      )}
+      
+      {/* Example usage of userActor */}
+      <button onClick={() => onLogin()}>
+        Re-authenticate
+      </button>
+
+      {/* Add your DAO interaction UI here */}
     </div>
   );
 };
