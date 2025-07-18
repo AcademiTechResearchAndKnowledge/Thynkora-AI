@@ -1,0 +1,25 @@
+type Result_1 = 
+ variant {
+   err: text;
+   ok: Message;
+ };
+type Result = 
+ variant {
+   err: text;
+   ok: text;
+ };
+type Message = 
+ record {
+   content: text;
+   id: nat;
+   isUser: bool;
+   riskLevel: opt nat;
+   supportActions: vec text;
+   timestamp: int;
+   userId: principal;
+ };
+service : {
+  sendMessage: (_sessionId: text, _content: text) -> (Result_1);
+  startSession: () -> (Result);
+  triggerEmergencyResponse: (_sessionId: text) -> (Result);
+}

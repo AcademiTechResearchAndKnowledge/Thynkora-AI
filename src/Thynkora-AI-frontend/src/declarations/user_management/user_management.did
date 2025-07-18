@@ -1,0 +1,22 @@
+type UserId = principal;
+type Result = 
+ variant {
+   err: text;
+   ok: Profile;
+ };
+type Profile = 
+ record {
+   createdAt: int;
+   emergencyContact: opt text;
+   id: UserId;
+   isAnonymous: bool;
+   language: text;
+   timezone: text;
+ };
+service : {
+  createProfile: (language: text, timezone: text, emergencyContact:
+   opt text) -> (Result);
+  getProfile: () -> (opt Profile) query;
+  updateProfile: (language: opt text, timezone: opt text, emergencyContact:
+   opt text) -> (Result);
+}
