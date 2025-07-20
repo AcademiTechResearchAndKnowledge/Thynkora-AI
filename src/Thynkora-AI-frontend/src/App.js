@@ -12,9 +12,9 @@ const App = () => {
     useEffect(() => {
         console.log("App loaded");
     }, []);
-    // ✅ Mock Login Function for Testing
+    //  Mock Login Function for Testing
     const mockLogin = async () => {
-        console.log("✅ MOCK LOGIN ENABLED");
+        console.log(" MOCK LOGIN ENABLED");
         setIsAuthenticated(true);
         // Optional: Fake actor/profile data
         setUserProfile({ name: "Test User", email: "test@example.com" });
