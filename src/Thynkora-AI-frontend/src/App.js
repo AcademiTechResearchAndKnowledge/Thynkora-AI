@@ -12,9 +12,9 @@ const App = () => {
     useEffect(() => {
         console.log("App loaded");
     }, []);
-    // ✅ Mock Login Function for Testing
+    //  Mock Login Function for Testing
     const mockLogin = async () => {
-        console.log("✅ MOCK LOGIN ENABLED");
+        console.log(" MOCK LOGIN ENABLED");
         setIsAuthenticated(true);
         // Optional: Fake actor/profile data
         setUserProfile({ name: "Test User", email: "test@example.com" });
@@ -30,10 +30,10 @@ const App = () => {
     if (!isAuthenticated) {
         return (React.createElement("div", { className: "app" },
             React.createElement("h1", null, "Thynkora-AI (Mock Mode)"),
-            React.createElement("button", { onClick: mockLogin }, "\uD83D\uDE80 Mock Login"),
+            React.createElement("button", { onClick: mockLogin }, "Mock Login"),
             React.createElement("p", null,
                 "Open browser console \u2013 you should see: ",
-                React.createElement("code", null, "\u2705 MOCK LOGIN ENABLED"))));
+                React.createElement("code", null, " MOCK LOGIN ENABLED"))));
     }
     return (React.createElement("div", { className: "app" },
         React.createElement("header", { className: "app-header" },
