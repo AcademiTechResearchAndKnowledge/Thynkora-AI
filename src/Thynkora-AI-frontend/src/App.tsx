@@ -51,50 +51,55 @@ const App: React.FC = () => {
   // LANDING PAGE
   // ----------------------------
   if (showLanding) {
-  return (
-    <div
-      className="landing-wrapper"
-      style={{
-        position: 'relative',
-        width: '100%',
-        minHeight: '100vh',
-        overflowY: 'auto',
-        backgroundImage: `url(${landingBg})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center top',
-      }}
-    >
+    return (
       <div
+        className="landing-wrapper"
         style={{
           position: 'relative',
-          paddingTop: '20vh',
-          paddingBottom: '10vh',
-          textAlign: 'center',
-          color: '#fff',
+          width: '100%',
+          minHeight: '200vh', // Make the section taller than the screen
+          overflowY: 'auto',
+          backgroundImage: `url(${landingBg})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'top center',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
-        <h1>Welcome to Thynkora-AI</h1>
-        <p>Your AI-powered mental wellness assistant</p>
-        <button
-          onClick={() => setShowLanding(false)}
+        <div
           style={{
-            padding: '1rem 2rem',
-            fontSize: '1.2rem',
-            marginTop: '2rem',
-            backgroundColor: '#ffffffdd',
-            border: 'none',
+            padding: '4rem 1rem',
+            backgroundColor: 'rgba(0, 0, 0, 0.4)',
             borderRadius: '8px',
-            cursor: 'pointer',
-            color: '#000',
+            color: '#fff',
+            textAlign: 'center',
           }}
         >
-          Enter
-        </button>
+          <h1>Welcome to Thynkora-AI</h1>
+          <p>Your AI-powered mental wellness assistant</p>
+          <button
+            onClick={() => setShowLanding(false)}
+            style={{
+              padding: '1rem 2rem',
+              fontSize: '1.2rem',
+              marginTop: '2rem',
+              backgroundColor: '#ffffffdd',
+              border: 'none',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              color: '#000',
+            }}
+          >
+            Enter
+          </button>
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
+
 
 
   // ----------------------------
