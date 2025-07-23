@@ -4,7 +4,7 @@ import Journal from '@components/Journal/JournalComponent';
 import DAODashboard from '@components/DAO/DAODashboard';
 import EmergencySupport from '@components/Emergency/EmergencySupport';
 
-// Load landing image via Vite (from src/pages)
+// Background images (Vite-compatible)
 const landingBg = new URL('../pages/landing-bg.jpg', import.meta.url).href;
 //const therapyBg = new URL('../pages/therapy-bg.jpg', import.meta.url).href;
 //const journalBg = new URL('../pages/journal-bg.jpg', import.meta.url).href;
@@ -20,11 +20,10 @@ const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState('therapy');
 
   const backgroundMap: Record<string, string> = {
-
     // therapy: therapyBg,
-    //journal: journalBg,
-    //dao: daoBg,
-    //emergency: emergencyBg,
+    // journal: journalBg,
+    // dao: daoBg,
+    // emergency: emergencyBg,
   };
 
   useEffect(() => {
@@ -55,13 +54,13 @@ const App: React.FC = () => {
           backgroundSize: 'cover',
           backgroundPosition: 'top',
           backgroundRepeat: 'no-repeat',
-          minHeight: '100vh',
+          minHeight: '100%',
           width: '100%',
-          overflow: 'auto',
+          overflow: 'visible',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: 'center',
+          justifyContent: 'flex-start',
           textAlign: 'center',
           color: '#fff',
           padding: '2rem',
@@ -69,12 +68,13 @@ const App: React.FC = () => {
       >
         <h1>Welcome to Thynkora-AI</h1>
         <p>Your AI-powered mental wellness assistant</p>
+
         <button
           onClick={() => setShowLanding(false)}
           style={{
             padding: '1rem 2rem',
             fontSize: '1.2rem',
-            marginTop: '1rem',
+            marginTop: '2rem',
             backgroundColor: '#ffffffdd',
             border: 'none',
             borderRadius: '8px',

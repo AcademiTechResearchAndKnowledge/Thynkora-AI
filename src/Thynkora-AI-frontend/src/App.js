@@ -3,7 +3,7 @@ import TherapyChat from '@components/AITherapy/TherapyChat';
 import Journal from '@components/Journal/JournalComponent';
 import DAODashboard from '@components/DAO/DAODashboard';
 import EmergencySupport from '@components/Emergency/EmergencySupport';
-// Background images (Vite-compatible)
+// Load landing image via Vite (from src/pages)
 const landingBg = new URL('../pages/landing-bg.jpg', import.meta.url).href;
 //const therapyBg = new URL('../pages/therapy-bg.jpg', import.meta.url).href;
 //const journalBg = new URL('../pages/journal-bg.jpg', import.meta.url).href;
