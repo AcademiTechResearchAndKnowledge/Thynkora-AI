@@ -45,34 +45,41 @@ const App = () => {
     if (showLanding) {
         return (React.createElement("div", { className: "landing-wrapper", style: {
                 width: '100%',
-                minHeight: '230vh',
+                minHeight: '100vh',
                 overflow: 'auto',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                paddingTop: '5vh',
-                paddingBottom: '10vh',
-                backgroundColor: '#f0f0f0', // optional: set a light background if you like
+                justifyContent: 'center',
+                backgroundColor: '#f0f0f0', // optional light background
+                padding: '2rem',
             } },
+            React.createElement("img", { src: landingBg, alt: "Landing", style: {
+                    maxWidth: '100%',
+                    height: 'auto',
+                    borderRadius: '16px',
+                    marginBottom: '2rem',
+                } }),
             React.createElement("div", { style: {
-                    backgroundColor: 'rgba(0, 0, 0, 0)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
                     padding: '2rem',
                     borderRadius: '12px',
                     color: '#000',
                     textAlign: 'center',
                     maxWidth: '90%',
+                    boxShadow: '0 0 16px rgba(0,0,0,0.1)',
                 } },
                 React.createElement("h1", null, "Welcome to Thynkora-AI!!"),
                 React.createElement("p", null, "Your AI-powered mental wellness assistant"),
                 React.createElement("button", { onClick: () => setShowLanding(false), style: {
-                        padding: '2rem 12rem',
-                        fontSize: '1.2rem',
-                        marginTop: '60vh',
-                        backgroundColor: '#ffffff02',
+                        padding: '1rem 3rem',
+                        fontSize: '1.1rem',
+                        marginTop: '2rem',
+                        backgroundColor: '#333',
+                        color: '#fff',
                         border: 'none',
                         borderRadius: '8px',
                         cursor: 'pointer',
-                        color: '#000',
                     } }, "Enter"))));
     }
     // ----------------------------
