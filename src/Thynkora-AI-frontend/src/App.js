@@ -45,13 +45,19 @@ const App = () => {
     if (showLanding) {
         return (React.createElement("div", { className: "landing-wrapper", style: {
                 width: '100%',
+                height: 'auto',
                 overflow: 'auto',
                 display: 'flex',
                 justifyContent: 'center',
+                alignItems: 'flex-start',
+                padding: 0,
+                margin: 0,
             } },
             React.createElement("img", { src: landingBg, alt: "Landing Page", style: {
-                    maxWidth: '100%',
-                    height: 'auto',
+                    width: 'auto', // Don't stretch to 100% of screen
+                    height: 'auto', // Natural height
+                    maxWidth: '100%', // Prevent overflow horizontally
+                    maxHeight: 'none', // Let the image go beyond screen height
                     display: 'block',
                 } })));
     }
