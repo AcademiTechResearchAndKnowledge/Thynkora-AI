@@ -48,45 +48,53 @@ const App: React.FC = () => {
   if (showLanding) {
     return (
       <div
-        className="landing-page"
+        className="landing-wrapper"
         style={{
-          backgroundImage: `url(${landingBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'top',
-          backgroundRepeat: 'no-repeat',
-          minHeight: '100%',
           width: '100%',
-          overflow: 'visible',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'flex-start',
-          textAlign: 'center',
-          color: '#fff',
-          padding: '2rem',
+          height: '100%',
+          overflowY: 'auto',
         }}
       >
-        <h1>Welcome to Thynkora-AI</h1>
-        <p>Your AI-powered mental wellness assistant</p>
-
-        <button
-          onClick={() => setShowLanding(false)}
+        <img
+          src={landingBg}
+          alt="Landing"
           style={{
-            padding: '1rem 2rem',
-            fontSize: '1.2rem',
-            marginTop: '2rem',
-            backgroundColor: '#ffffffdd',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            color: '#000',
+            display: 'block',
+            width: '100%',
+            height: 'auto',
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            top: '2rem',
+            width: '100%',
+            textAlign: 'center',
+            color: '#fff',
           }}
         >
-          Enter
-        </button>
+          <h1>Welcome to Thynkora-AI</h1>
+          <p>Your AI-powered mental wellness assistant</p>
+          <button
+            onClick={() => setShowLanding(false)}
+            style={{
+              padding: '1rem 2rem',
+              fontSize: '1.2rem',
+              marginTop: '1rem',
+              backgroundColor: '#ffffffdd',
+              border: 'none',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              color: '#000',
+            }}
+          >
+            Enter
+          </button>
+        </div>
       </div>
     );
   }
+
 
   if (!isAuthenticated) {
     return (
