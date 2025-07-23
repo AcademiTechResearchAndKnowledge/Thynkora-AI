@@ -56,7 +56,7 @@ const App: React.FC = () => {
         className="landing-wrapper"
         style={{
           width: '100%',
-          minHeight: '200vh',
+          minHeight: '300vh',
           overflow: 'auto',
           backgroundImage: `url(${landingBg})`,
           backgroundSize: '100% auto', // or '100% auto' if needed
