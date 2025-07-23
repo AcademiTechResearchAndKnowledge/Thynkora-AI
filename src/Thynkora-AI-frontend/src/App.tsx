@@ -72,7 +72,7 @@ const App: React.FC = () => {
             justifyContent: 'flex-start',
             alignItems: 'center',
             paddingTop: '2rem',
-            backgroundColor: 'rgba(0, 0, 0, 0.4)',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
             color: '#fff',
           }}
         >
