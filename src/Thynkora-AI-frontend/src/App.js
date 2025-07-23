@@ -210,27 +210,6 @@ const App = () => {
                     borderRadius: '8px',
                     cursor: 'pointer',
                     zIndex: 10,
-                } }),
-            React.createElement("button", { onClick: () => {
-                    setShowLanding(false),
-                        setAboutUsPage(false),
-                        setShowp1(false),
-                        setPTSPage(false),
-                        setCustomerSupportPage(false),
-                        setArticlesPage(true);
-                }, style: {
-                    position: 'absolute',
-                    bottom: '107.5rem',
-                    left: '50%',
-                    transform: 'translateX(-125%)',
-                    padding: '1rem 2.5rem',
-                    fontSize: '1.2rem',
-                    backgroundColor: 'rgba(0, 0, 0, 0)',
-                    color: '#000',
-                    border: 'none',
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                    zIndex: 10,
                 } })));
     }
     // ----------------------------
@@ -248,12 +227,33 @@ const App = () => {
                 padding: 0,
                 margin: 0,
             } },
-            React.createElement("img", { src: PTSPage, alt: "page 1", style: {
+            React.createElement("img", { src: PTSPage, alt: "PTSPage", style: {
                     width: 'auto',
                     height: 'auto',
                     maxWidth: 'none',
                     maxHeight: 'none',
                     display: 'block',
+                } }),
+            React.createElement("button", { onClick: () => {
+                    setShowLanding(false),
+                        setAboutUsPage(false),
+                        setShowp1(false),
+                        setPTSPage(false),
+                        setCustomerSupportPage(false),
+                        setArticlesPage(true);
+                }, style: {
+                    position: 'absolute',
+                    bottom: '1rem',
+                    left: '50%',
+                    transform: 'translateX(-100%)',
+                    padding: '1rem 2.5rem',
+                    fontSize: '1.2rem',
+                    backgroundColor: 'rgba(0, 0, 0, 100)',
+                    color: '#000',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    zIndex: 10,
                 } }),
             React.createElement("button", { onClick: () => setShowLanding(true), style: {
                     position: 'absolute',

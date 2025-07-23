@@ -358,12 +358,12 @@ const App: React.FC = () => {
 
           style={{
             position: 'absolute',
-            bottom: '1rem',
+            bottom: '44.8rem',
             left: '50%',
-            transform: 'translateX(-100%)',
+            transform: 'translateX(-135%)',
             padding: '1rem 2.5rem',
             fontSize: '1.2rem',
-            backgroundColor: 'rgba(0, 0, 0, 100)',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
             color: '#000',
             border: 'none',
             borderRadius: '8px',
