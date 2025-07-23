@@ -119,13 +119,13 @@ const App: React.FC = () => {
         <button
           onClick={() => {
             setShowLanding(false),
-              setAboutUsPage(false),
-              setShowp1(false),
-              setPTSPage(false),
-              setCustomerSupportPage(false),
-              setArticlesPage(true)
-          }}
-
+            setAboutUsPage(false),
+            setShowp1(false),
+            setPTSPage(false),
+            setCustomerSupportPage(false),
+            setArticlesPage(true)
+          }} 
+          
           style={{
             position: 'absolute',
             bottom: '107.5rem',
@@ -147,12 +147,12 @@ const App: React.FC = () => {
         <button
           onClick={() => {
             setShowLanding(false),
-              setAboutUsPage(false),
-              setShowp1(false),
-              setPTSPage(true),
-              setCustomerSupportPage(false),
-              setArticlesPage(false)
-          }}
+            setAboutUsPage(false),
+            setShowp1(false),
+            setPTSPage(true),
+            setCustomerSupportPage(false),
+            setArticlesPage(false)
+          }}  
           style={{
             position: 'absolute',
             bottom: '107.5rem',
@@ -288,6 +288,26 @@ const App: React.FC = () => {
         />
 
 
+      
+        <button
+          onClick={() => setShowLanding(true)} // Home Button
+          style={{
+            position: 'absolute',
+            bottom: '44.5rem',
+            left: '50%',
+            transform: 'translateX(-380%)',
+            padding: '1.5rem 5rem',
+            fontSize: '1.2rem',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            color: '#000',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            zIndex: 10,
+          }}
+        >
+        </button>
+
         {/*    ARTICLES BUTTON     */}
         <button
           onClick={() => {
@@ -305,24 +325,6 @@ const App: React.FC = () => {
             left: '50%',
             transform: 'translateX(-125%)',
             padding: '1rem 2.5rem',
-            fontSize: '1.2rem',
-            backgroundColor: 'rgba(0, 0, 0, 0)',
-            color: '#000',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            zIndex: 10,
-          }}
-        >
-        </button>
-        <button
-          onClick={() => setShowLanding(true)} // Home Button
-          style={{
-            position: 'absolute',
-            bottom: '44.5rem',
-            left: '50%',
-            transform: 'translateX(-380%)',
-            padding: '1.5rem 5rem',
             fontSize: '1.2rem',
             backgroundColor: 'rgba(0, 0, 0, 0)',
             color: '#000',
