@@ -56,8 +56,8 @@ const App: React.FC = () => {
         className="landing-wrapper"
         style={{
           position: 'relative',
-          width: '100%',
-          minHeight: '300vh', // Make the section taller than the screen
+          width: '200%',
+          minHeight: '200vh', // Make the section taller than the screen
           overflowY: 'auto',
           backgroundImage: `url(${landingBg})`,
           backgroundSize: 'cover',
