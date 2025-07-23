@@ -87,7 +87,7 @@ const App: React.FC = () => {
               padding: '2rem 12rem',
               fontSize: '1.2rem',
               marginTop: '60vh', 
-              backgroundColor: '#ffffff',
+              backgroundColor: '#ffffff02',
               border: 'none',
               borderRadius: '8px',
               cursor: 'pointer',
