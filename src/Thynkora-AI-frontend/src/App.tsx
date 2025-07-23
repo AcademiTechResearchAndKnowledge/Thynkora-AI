@@ -56,38 +56,33 @@ const App: React.FC = () => {
       className="landing-wrapper"
       style={{
         width: '100%',
-        height: '100vh',
+        minHeight: '100vh',
         overflowY: 'auto',
-        position: 'relative',
+        overflowX: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
       }}
     >
-      {/* Image fills full width and keeps its aspect ratio */}
       <img
         src={landingBg}
         alt="Landing"
         style={{
           width: '100%',
           height: 'auto',
+          maxWidth: '100%',
           display: 'block',
         }}
       />
 
-      {/* Overlay text on top of image */}
       <div
         style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: '#fff',
-          padding: '2rem',
+          marginTop: '-8rem',
+          zIndex: 1,
           textAlign: 'center',
-          background: 'rgba(0, 0, 0, 0.4)', // Optional dark overlay
+          padding: '1rem 2rem',
+          background: 'rgba(255, 255, 255, 0.8)',
+          borderRadius: '12px',
         }}
       >
         <h1>Welcome to Thynkora-AI</h1>
@@ -98,11 +93,11 @@ const App: React.FC = () => {
             padding: '1rem 2rem',
             fontSize: '1.2rem',
             marginTop: '1rem',
-            backgroundColor: '#ffffffdd',
+            backgroundColor: '#000',
+            color: '#fff',
             border: 'none',
             borderRadius: '8px',
             cursor: 'pointer',
-            color: '#000',
           }}
         >
           Enter
