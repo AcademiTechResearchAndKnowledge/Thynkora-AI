@@ -117,7 +117,8 @@ const App: React.FC = () => {
 
 
         <button
-          onClick={() => setArticlesPage(true)} // Articles Page
+          onClick={() => setShowLanding(false)} // Articles Page
+          
           style={{
             position: 'absolute',
             bottom: '107.5rem',
@@ -136,7 +137,7 @@ const App: React.FC = () => {
         </button>
 
         <button
-          onClick={() => setPTSPage(true)} // Privacy Page
+          onClick={() => setShowLanding(false)} // Privacy Page
           style={{
             position: 'absolute',
             bottom: '107.5rem',
