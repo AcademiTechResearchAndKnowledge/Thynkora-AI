@@ -665,7 +665,7 @@ const App: React.FC = () => {
           }}
           style={{
             position: 'absolute',
-            bottom: '44.7rem',
+            bottom: '49.1rem',
             left: '50%',
             transform: 'translateX(197%)',
             padding: '1rem 2.5rem',
@@ -693,7 +693,7 @@ const App: React.FC = () => {
 
           style={{
             position: 'absolute',
-            bottom: '44.8rem',
+            bottom: '49.1rem',
             left: '50%',
             transform: 'translateX(-135%)',
             padding: '1rem 2.5rem',
@@ -712,7 +712,7 @@ const App: React.FC = () => {
           onClick={() => setShowLanding(true)} // Home Button
           style={{
             position: 'absolute',
-            bottom: '44.5rem',
+            bottom: '48.8rem',
             left: '50%',
             transform: 'translateX(-380%)',
             padding: '1.5rem 5rem',

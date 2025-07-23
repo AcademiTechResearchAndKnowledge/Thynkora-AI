@@ -160,12 +160,12 @@ const App = () => {
                         setArticlesPage(false);
                 }, style: {
                     position: 'absolute',
-                    bottom: '1rem',
+                    bottom: '10.5rem',
                     left: '50%',
-                    transform: 'translateX(197%)',
-                    padding: '1rem 2.5rem',
+                    transform: 'translateX(35%)',
+                    padding: '1rem 5rem',
                     fontSize: '1.2rem',
-                    backgroundColor: 'rgba(0, 0, 0, 100)',
+                    backgroundColor: 'rgba(0, 0, 0, 0)',
                     color: '#000',
                     border: 'none',
                     borderRadius: '8px',
@@ -428,6 +428,85 @@ const App = () => {
             React.createElement("button", { onClick: () => setShowLanding(true), style: {
                     position: 'absolute',
                     bottom: '87.4rem',
+                    left: '50%',
+                    transform: 'translateX(-380%)',
+                    padding: '1.5rem 5rem',
+                    fontSize: '1.2rem',
+                    backgroundColor: 'rgba(0, 0, 0, 0)',
+                    color: '#000',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    zIndex: 10,
+                } })));
+    }
+    // ----------------------------
+    // CUSTOMER SUPPORT
+    // ----------------------------
+    if (showCustomerSupportPage) {
+        return (React.createElement("div", { className: "CustomerSupportPage", style: {
+                position: 'relative', // Needed to anchor the button inside this container
+                width: '100%',
+                height: 'auto',
+                overflow: 'auto',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                padding: 0,
+                margin: 0,
+            } },
+            React.createElement("img", { src: CustomerSupportPage, alt: "CustomerSupportPage", style: {
+                    width: 'auto',
+                    height: 'auto',
+                    maxWidth: 'none',
+                    maxHeight: 'none',
+                    display: 'block',
+                } }),
+            React.createElement("button", { onClick: () => {
+                    setShowLanding(false),
+                        setAboutUsPage(true),
+                        setShowp1(false),
+                        setPTSPage(false),
+                        setCustomerSupportPage(false),
+                        setArticlesPage(false);
+                }, style: {
+                    position: 'absolute',
+                    bottom: '44.7rem',
+                    left: '50%',
+                    transform: 'translateX(197%)',
+                    padding: '1rem 2.5rem',
+                    fontSize: '1.2rem',
+                    backgroundColor: 'rgba(0, 0, 0, 0)',
+                    color: '#000',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    zIndex: 10,
+                } }),
+            React.createElement("button", { onClick: () => {
+                    setShowLanding(false),
+                        setAboutUsPage(false),
+                        setShowp1(false),
+                        setPTSPage(false),
+                        setCustomerSupportPage(false),
+                        setArticlesPage(true);
+                }, style: {
+                    position: 'absolute',
+                    bottom: '44.8rem',
+                    left: '50%',
+                    transform: 'translateX(-135%)',
+                    padding: '1rem 2.5rem',
+                    fontSize: '1.2rem',
+                    backgroundColor: 'rgba(0, 0, 0, 0)',
+                    color: '#000',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    zIndex: 10,
+                } }),
+            React.createElement("button", { onClick: () => setShowLanding(true), style: {
+                    position: 'absolute',
+                    bottom: '44.5rem',
                     left: '50%',
                     transform: 'translateX(-380%)',
                     padding: '1.5rem 5rem',
