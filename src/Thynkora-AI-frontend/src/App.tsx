@@ -199,7 +199,7 @@ const App: React.FC = () => {
       onClick={() => setActivePage('landing')}
       style={{
         position: 'absolute',
-        bottom: '48.8rem',
+        bottom: '44.5rem',
         left: '50%',
         transform: 'translateX(-380%)',
         padding: '1.5rem 5rem',
