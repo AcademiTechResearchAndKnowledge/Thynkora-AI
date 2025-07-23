@@ -67,7 +67,14 @@ const App = () => {
                     maxHeight: 'none',
                     display: 'block',
                 } }),
-            React.createElement("button", { onClick: () => setShowLanding(false), style: {
+            React.createElement("button", { onClick: () => {
+                    setShowLanding(false),
+                        setAboutUsPage(false),
+                        setShowp1(true),
+                        setPTSPage(false),
+                        setCustomerSupportPage(false),
+                        setArticlesPage(false);
+                }, style: {
                     position: 'absolute', // now relative to the wrapper
                     bottom: '75.5rem',
                     left: '50%',

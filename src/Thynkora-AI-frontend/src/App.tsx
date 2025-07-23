@@ -93,7 +93,7 @@ const App: React.FC = () => {
           }}
         />
 
-       {/*    PAGE 1    */}
+        {/*    PAGE 1    */}
         <button
           onClick={() => {
             setShowLanding(false),
@@ -177,7 +177,32 @@ const App: React.FC = () => {
         >
         </button>
 
-
+        {/*    ABOUT US    */}
+        <button
+          onClick={() => {
+            setShowLanding(false),
+              setAboutUsPage(true),
+              setShowp1(false),
+              setPTSPage(false),
+              setCustomerSupportPage(false),
+              setArticlesPage(false)
+          }}
+          style={{
+            position: 'absolute',
+            bottom: '1rem',
+            left: '50%',
+            transform: 'translateX(195%)',
+            padding: '1rem 2.5rem',
+            fontSize: '1.2rem',
+            backgroundColor: 'rgba(0, 0, 0, 100)',
+            color: '#000',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            zIndex: 10,
+          }}
+        >
+        </button>
 
 
 
