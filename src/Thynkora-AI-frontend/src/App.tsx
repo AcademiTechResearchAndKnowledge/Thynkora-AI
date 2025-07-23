@@ -59,7 +59,7 @@ const App: React.FC = () => {
           minHeight: '242vh',
           overflow: 'auto',
           backgroundImage: `url(${landingBg})`,
-          backgroundSize: 'contain',
+          backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'top center',
           display: 'flex',
