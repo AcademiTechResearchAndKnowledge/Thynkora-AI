@@ -39,34 +39,35 @@ const App = () => {
         setUserProfile(null);
     };
     if (showLanding) {
-        return (React.createElement("div", { className: "landing-page", style: {
-                backgroundImage: `url(${landingBg})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'top',
-                backgroundRepeat: 'no-repeat',
-                minHeight: '100%',
+        return (React.createElement("div", { className: "landing-wrapper", style: {
                 width: '100%',
-                overflow: 'visible',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'flex-start',
-                textAlign: 'center',
-                color: '#fff',
-                padding: '2rem',
+                height: '100%',
+                overflowY: 'auto',
             } },
-            React.createElement("h1", null, "Welcome to Thynkora-AI"),
-            React.createElement("p", null, "Your AI-powered mental wellness assistant"),
-            React.createElement("button", { onClick: () => setShowLanding(false), style: {
-                    padding: '1rem 2rem',
-                    fontSize: '1.2rem',
-                    marginTop: '2rem',
-                    backgroundColor: '#ffffffdd',
-                    border: 'none',
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                    color: '#000',
-                } }, "Enter")));
+            React.createElement("img", { src: landingBg, alt: "Landing", style: {
+                    display: 'block',
+                    width: '100%',
+                    height: 'auto',
+                } }),
+            React.createElement("div", { style: {
+                    position: 'absolute',
+                    top: '2rem',
+                    width: '100%',
+                    textAlign: 'center',
+                    color: '#fff',
+                } },
+                React.createElement("h1", null, "Welcome to Thynkora-AI"),
+                React.createElement("p", null, "Your AI-powered mental wellness assistant"),
+                React.createElement("button", { onClick: () => setShowLanding(false), style: {
+                        padding: '1rem 2rem',
+                        fontSize: '1.2rem',
+                        marginTop: '1rem',
+                        backgroundColor: '#ffffffdd',
+                        border: 'none',
+                        borderRadius: '8px',
+                        cursor: 'pointer',
+                        color: '#000',
+                    } }, "Enter"))));
     }
     if (!isAuthenticated) {
         return (React.createElement("div", { className: "app", style: { padding: '2rem', textAlign: 'center' } },
