@@ -51,64 +51,51 @@ const App: React.FC = () => {
   // LANDING PAGE
   // ----------------------------
   if (showLanding) {
-    return (
+  return (
+    <div
+      className="landing-wrapper"
+      style={{
+        position: 'relative',
+        width: '100%',
+        minHeight: '100vh',
+        overflowY: 'auto',
+        backgroundImage: `url(${landingBg})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center top',
+      }}
+    >
       <div
-        className="landing-wrapper"
         style={{
           position: 'relative',
-          width: '100%',
-          minHeight: '100vh',
-          overflowY: 'auto',
+          paddingTop: '20vh',
+          paddingBottom: '10vh',
+          textAlign: 'center',
+          color: '#fff',
         }}
       >
-        <img
-          src={landingBg}
-          alt="Landing"
+        <h1>Welcome to Thynkora-AI</h1>
+        <p>Your AI-powered mental wellness assistant</p>
+        <button
+          onClick={() => setShowLanding(false)}
           style={{
-            width: '100%',
-            height: 'auto',
-            display: 'block',
-          }}
-        />
-
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#fff',
-            textAlign: 'center',
-            padding: '2rem',
-            background: 'rgba(0, 0, 0, 0.3)',
+            padding: '1rem 2rem',
+            fontSize: '1.2rem',
+            marginTop: '2rem',
+            backgroundColor: '#ffffffdd',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            color: '#000',
           }}
         >
-          <h1>Welcome to Thynkora-AI</h1>
-          <p>Your AI-powered mental wellness assistant</p>
-          <button
-            onClick={() => setShowLanding(false)}
-            style={{
-              padding: '1rem 2rem',
-              fontSize: '1.2rem',
-              marginTop: '1rem',
-              backgroundColor: '#ffffffdd',
-              border: 'none',
-              borderRadius: '8px',
-              cursor: 'pointer',
-              color: '#000',
-            }}
-          >
-            Enter
-          </button>
-        </div>
+          Enter
+        </button>
       </div>
-    );
-  }
+    </div>
+  );
+}
+
 
   // ----------------------------
   // LOGIN

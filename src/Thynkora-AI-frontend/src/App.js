@@ -3,8 +3,9 @@ import TherapyChat from '@components/AITherapy/TherapyChat';
 import Journal from '@components/Journal/JournalComponent';
 import DAODashboard from '@components/DAO/DAODashboard';
 import EmergencySupport from '@components/Emergency/EmergencySupport';
-// Background images (Vite-compatible)
+// Landing page background image
 const landingBg = new URL('../pages/landing-bg.jpg', import.meta.url).href;
+//other pages
 //const therapyBg = new URL('../pages/therapy-bg.jpg', import.meta.url).href;
 //const journalBg = new URL('../pages/journal-bg.jpg', import.meta.url).href;
 //const daoBg = new URL('../pages/dao-bg.jpg', import.meta.url).href;
@@ -38,26 +39,35 @@ const App = () => {
         setAiActor(null);
         setUserProfile(null);
     };
+    // ----------------------------
+    // LANDING PAGE
+    // ----------------------------
     if (showLanding) {
         return (React.createElement("div", { className: "landing-wrapper", style: {
-                width: '100vw',
-                height: '100vh',
                 position: 'relative',
+                width: '100%',
+                minHeight: '100vh',
                 overflowY: 'auto',
             } },
             React.createElement("img", { src: landingBg, alt: "Landing", style: {
-                    display: 'block',
                     width: '100%',
-                    height: '100vh', // ensures it fills screen height
-                    objectFit: 'cover',
+                    height: 'auto',
+                    display: 'block',
                 } }),
             React.createElement("div", { style: {
                     position: 'absolute',
-                    top: '10%',
+                    top: 0,
+                    left: 0,
                     width: '100%',
-                    textAlign: 'center',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     color: '#fff',
-                    zIndex: 2,
+                    textAlign: 'center',
+                    padding: '2rem',
+                    background: 'rgba(0, 0, 0, 0.3)',
                 } },
                 React.createElement("h1", null, "Welcome to Thynkora-AI"),
                 React.createElement("p", null, "Your AI-powered mental wellness assistant"),
@@ -72,15 +82,20 @@ const App = () => {
                         color: '#000',
                     } }, "Enter"))));
     }
+    // ----------------------------
+    // LOGIN
+    // ----------------------------
     if (!isAuthenticated) {
         return (React.createElement("div", { className: "app", style: { padding: '2rem', textAlign: 'center' } },
             React.createElement("h1", null, "Thynkora-AI (Mock Mode)"),
             React.createElement("button", { onClick: mockLogin }, "Mock Login"),
             React.createElement("p", null,
-                "Open browser console \u2013 you should see:",
-                ' ',
+                "Open browser console \u2013 you should see: ",
                 React.createElement("code", null, " MOCK LOGIN ENABLED"))));
     }
+    // ----------------------------
+    // MAIN APP
+    // ----------------------------
     return (React.createElement("div", { className: "app", style: {
             backgroundImage: `url(${backgroundMap[activeTab]})`,
             backgroundSize: 'cover',
