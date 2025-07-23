@@ -45,23 +45,21 @@ const App = () => {
     if (showLanding) {
         return (React.createElement("div", { className: "landing-wrapper", style: {
                 width: '100%',
-                position: 'relative',
+                minHeight: '230vh',
+                overflow: 'auto',
+                backgroundImage: `url(${landingBg})`,
+                backgroundSize: '100% auto', // or '100% auto' if needed
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'top center',
             } },
-            React.createElement("img", { src: landingBg, alt: "Landing", style: {
-                    width: '100%',
-                    height: 'auto', // maintain full image height
-                    display: 'block',
-                } }),
             React.createElement("div", { style: {
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    paddingTop: '4rem',
+                    height: '150vh', // force vertical space so image can scroll
                     display: 'flex',
                     flexDirection: 'column',
+                    justifyContent: 'flex-start',
                     alignItems: 'center',
+                    paddingTop: '2rem',
+                    backgroundColor: 'rgba(0, 0, 0, 0.4)',
                     color: '#fff',
                 } },
                 React.createElement("h1", null, "Welcome to Thynkora-AI"),
