@@ -50,63 +50,56 @@ const App: React.FC = () => {
   // ----------------------------
   // LANDING PAGE
   // ----------------------------
-  if (showLanding) {
-  return (
-    <div
-      className="landing-wrapper"
-      style={{
-        width: '100%',
-        minHeight: '100vh',
-        overflowY: 'auto',
-        overflowX: 'hidden',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
-    >
-      <img
-        src={landingBg}
-        alt="Landing"
+   if (showLanding) {
+    return (
+      <div
+        className="landing-wrapper"
         style={{
           width: '100%',
-          height: 'auto',
-          maxWidth: '100%',
-          display: 'block',
-        }}
-      />
-
-      <div
-        style={{
-          marginTop: '-8rem',
-          zIndex: 1,
-          textAlign: 'center',
-          padding: '1rem 2rem',
-          background: 'rgba(255, 255, 255, 0.8)',
-          borderRadius: '12px',
+          minHeight: '252vh',
+          overflow: 'auto',
+          backgroundImage: `url(${landingBg})`,
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'top center',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          paddingTop: '5vh',
+          paddingBottom: '10vh',
         }}
       >
-        <h1>Welcome to Thynkora-AI</h1>
-        <p>Your AI-powered mental wellness assistant</p>
-        <button
-          onClick={() => setShowLanding(false)}
+        <div
           style={{
-            padding: '1rem 2rem',
-            fontSize: '1.2rem',
-            marginTop: '1rem',
-            backgroundColor: '#000',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            padding: '2rem',
+            borderRadius: '12px',
             color: '#fff',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
+            textAlign: 'center',
+            maxWidth: '90%',
           }}
         >
-          Enter
-        </button>
+          <h1>Welcome to Thynkora-AI</h1>
+          <p>Your AI-powered mental wellness assistant</p>
+          <button
+            onClick={() => setShowLanding(false)}
+            style={{
+              padding: '1rem 2rem',
+              fontSize: '1.2rem',
+              marginTop: '1rem',
+              backgroundColor: '#ffffffcc',
+              border: 'none',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              color: '#000',
+            }}
+          >
+            Enter
+          </button>
+        </div>
       </div>
-    </div>
-  );
-}
-
+    );
+  }
 
 
 
