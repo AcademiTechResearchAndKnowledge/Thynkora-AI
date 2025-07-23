@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./index.scss";
-import landingImg from "./pages/landing-bg.jpg";
-import p1Img from "./pages/p1.jpg";
-import aboutUsImg from "./pages/about-us.jpg";
-import articlesImg from "./pages/articles.jpg";
-import ptsImg from "./pages/pts.jpg";
-import customerSupportImg from "./pages/customer-support.jpg";
+import landingImg from "../pages/landing-bg.jpg";
+import p1Img from "../pages/p1.jpg";
+import aboutUsImg from "../pages/AboutUsPage.jpg";
+import articlesImg from "../pages/ArticlesPage.jpg";
+import ptsImg from "../pages/PTSPage.jpg";
+import customerSupportImg from "../pages/CustomerSupportPage.jpg";
 // Main app modules (shown after image navigation)
 //import TherapyChat from "./components/TherapyChat";
 //import Journal from "./components/Journal";
