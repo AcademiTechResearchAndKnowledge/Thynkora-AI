@@ -4,12 +4,12 @@ import Journal from '@components/Journal/JournalComponent';
 import DAODashboard from '@components/DAO/DAODashboard';
 import EmergencySupport from '@components/Emergency/EmergencySupport';
 
-// Background images (from pages folder)
-//import therapyBg from '../pages/therapy-bg.jpg';
-//import journalBg from '../pages/journal-bg.jpg';
-//import daoBg from '../pages/dao-bg.jpg';
-//import emergencyBg from '../pages/emergency-bg.jpg';
-import landingBg from '../pages/landing-bg.jpg'; // Home Page
+// Background images (Vite-compatible)
+const landingBg = new URL('../pages/landing-bg.jpg', import.meta.url).href;
+//const therapyBg = new URL('../pages/therapy-bg.jpg', import.meta.url).href;
+//const journalBg = new URL('../pages/journal-bg.jpg', import.meta.url).href;
+//const daoBg = new URL('../pages/dao-bg.jpg', import.meta.url).href;
+//const emergencyBg = new URL('../pages/emergency-bg.jpg', import.meta.url).href;
 
 const App: React.FC = () => {
   const [showLanding, setShowLanding] = useState(true);
@@ -20,21 +20,20 @@ const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState('therapy');
 
   const backgroundMap: Record<string, string> = {
-    //therapy: therapyBg,
+   // therapy: therapyBg,
     //journal: journalBg,
     //dao: daoBg,
-    //emergency: emergencyBg
+    //emergency: emergencyBg,
   };
 
   useEffect(() => {
-    console.log("App loaded");
+    console.log('App loaded');
   }, []);
 
-  // Mock login
   const mockLogin = async () => {
-    console.log(" MOCK LOGIN ENABLED");
+    console.log(' MOCK LOGIN ENABLED');
     setIsAuthenticated(true);
-    setUserProfile({ name: "Test User", email: "test@example.com" });
+    setUserProfile({ name: 'Test User', email: 'test@example.com' });
     setUserActor({});
     setAiActor({});
   };
@@ -46,7 +45,6 @@ const App: React.FC = () => {
     setUserProfile(null);
   };
 
-  // 1. Show Landing Page
   if (showLanding) {
     return (
       <div
@@ -54,15 +52,18 @@ const App: React.FC = () => {
         style={{
           backgroundImage: `url(${landingBg})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'top',
           backgroundRepeat: 'no-repeat',
-          height: '100vh',
+          minHeight: '100vh',
+          width: '100%',
+          overflow: 'auto',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          color: '#fff',
           textAlign: 'center',
+          color: '#fff',
+          padding: '2rem',
         }}
       >
         <h1>Welcome to Thynkora-AI</h1>
@@ -76,7 +77,8 @@ const App: React.FC = () => {
             backgroundColor: '#ffffffdd',
             border: 'none',
             borderRadius: '8px',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            color: '#000',
           }}
         >
           Enter
@@ -85,33 +87,45 @@ const App: React.FC = () => {
     );
   }
 
-  // 2. Show Login Page
   if (!isAuthenticated) {
     return (
-      <div className="app">
+      <div className="app" style={{ padding: '2rem', textAlign: 'center' }}>
         <h1>Thynkora-AI (Mock Mode)</h1>
         <button onClick={mockLogin}>Mock Login</button>
-        <p>Open browser console – you should see: <code> MOCK LOGIN ENABLED</code></p>
+        <p>
+          Open browser console – you should see:{' '}
+          <code> MOCK LOGIN ENABLED</code>
+        </p>
       </div>
     );
   }
 
-  // 3. Show Main App with background image per tab
   return (
     <div
       className="app"
       style={{
         backgroundImage: `url(${backgroundMap[activeTab]})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'top',
         backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
         width: '100%',
+        overflow: 'auto',
+        color: '#fff',
       }}
     >
-      <header className="app-header">
+      <header
+        className="app-header"
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.6)',
+          padding: '1rem',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
         <h1>Thynkora-AI</h1>
-        <nav>
+        <nav style={{ display: 'flex', gap: '1rem' }}>
           <button
             className={activeTab === 'therapy' ? 'active' : ''}
             onClick={() => setActiveTab('therapy')}
@@ -140,13 +154,23 @@ const App: React.FC = () => {
         <button onClick={handleLogout}>Logout</button>
       </header>
 
-      <main className="app-main">
-        {activeTab === 'therapy' && <TherapyChat aiActor={aiActor} userProfile={userProfile} />}
-        {activeTab === 'journal' && <Journal userActor={userActor} userProfile={userProfile} />}
-        {activeTab === 'dao' && (
-          <DAODashboard onLogin={mockLogin} userActor={userActor} userProfile={userProfile} />
+      <main className="app-main" style={{ padding: '2rem' }}>
+        {activeTab === 'therapy' && (
+          <TherapyChat aiActor={aiActor} userProfile={userProfile} />
         )}
-        {activeTab === 'emergency' && <EmergencySupport userProfile={userProfile} />}
+        {activeTab === 'journal' && (
+          <Journal userActor={userActor} userProfile={userProfile} />
+        )}
+        {activeTab === 'dao' && (
+          <DAODashboard
+            onLogin={mockLogin}
+            userActor={userActor}
+            userProfile={userProfile}
+          />
+        )}
+        {activeTab === 'emergency' && (
+          <EmergencySupport userProfile={userProfile} />
+        )}
       </main>
     </div>
   );
