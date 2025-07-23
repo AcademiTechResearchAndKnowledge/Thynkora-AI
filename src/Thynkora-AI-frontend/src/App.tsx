@@ -93,9 +93,16 @@ const App: React.FC = () => {
           }}
         />
 
-
+       {/*    PAGE 1    */}
         <button
-          onClick={() => setShowLanding(false)}
+          onClick={() => {
+            setShowLanding(false),
+              setAboutUsPage(false),
+              setShowp1(true),
+              setPTSPage(false),
+              setCustomerSupportPage(false),
+              setArticlesPage(false)
+          }}
           style={{
             position: 'absolute',     // now relative to the wrapper
             bottom: '75.5rem',
