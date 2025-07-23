@@ -12,6 +12,7 @@ const landingBg = new URL('../pages/landing-bg.jpg', import.meta.url).href;
 //const journalBg = new URL('../pages/journal-bg.jpg', import.meta.url).href;
 //const daoBg = new URL('../pages/dao-bg.jpg', import.meta.url).href;
 //const emergencyBg = new URL('../pages/emergency-bg.jpg', import.meta.url).href;
+const p1 = new URL('../pages/p1.jpg', import.meta.url).href;
 
 const App: React.FC = () => {
   const [showLanding, setShowLanding] = useState(true);
@@ -20,6 +21,10 @@ const App: React.FC = () => {
   const [userActor, setUserActor] = useState<any>(null);
   const [aiActor, setAiActor] = useState<any>(null);
   const [activeTab, setActiveTab] = useState('therapy');
+
+
+
+  const [showp1, setShowp1] = useState(true);
 
   const backgroundMap: Record<string, string> = {
     // therapy: therapyBg,
@@ -79,12 +84,12 @@ const App: React.FC = () => {
           }}
         />
 
-  
+
         <button
           onClick={() => setShowLanding(false)}
           style={{
             position: 'absolute',     // now relative to the wrapper
-            bottom: '75.5rem',          
+            bottom: '75.5rem',
             left: '50%',
             transform: 'translateX(-50%)',
             padding: '1.5rem 9rem',
@@ -102,10 +107,42 @@ const App: React.FC = () => {
       </div>
     );
   }
+  // ----------------------------
+  // Page 1 (log your thoughts)
+  // ----------------------------
+  if (showp1) {
+    return (
+      <div
+        className="page1"
+        style={{
+          position: 'relative', // Needed to anchor the button inside this container
+          width: '100%',
+          height: 'auto',
+          overflow: 'auto',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'flex-start',
+          padding: 0,
+          margin: 0,
+        }}
+      >
+
+        <img
+          src={p1}
+          alt="page 1"
+          style={{
+            width: 'auto',
+            height: 'auto',
+            maxWidth: 'none',
+            maxHeight: 'none',
+            display: 'block',
+          }}
+        />
 
 
-
-
+      </div>
+    );
+  }
 
   // ----------------------------
   // LOGIN
