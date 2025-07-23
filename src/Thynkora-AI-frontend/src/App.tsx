@@ -51,17 +51,22 @@ const App: React.FC = () => {
         className="landing-wrapper"
         style={{
           width: '100%',
-          height: '100%',
-          overflowY: 'auto',
+          height: '100vh',
+          position: 'relative',
+          overflow: 'hidden',
         }}
       >
         <img
           src={landingBg}
           alt="Landing"
           style={{
-            display: 'block',
+            position: 'absolute',
+            top: 0,
+            left: 0,
             width: '100%',
-            height: 'auto',
+            height: '100%',
+            objectFit: 'cover', // make sure image covers entire screen
+            zIndex: 0,
           }}
         />
         <div
@@ -71,6 +76,7 @@ const App: React.FC = () => {
             width: '100%',
             textAlign: 'center',
             color: '#fff',
+            zIndex: 1,
           }}
         >
           <h1>Welcome to Thynkora-AI</h1>
@@ -94,6 +100,7 @@ const App: React.FC = () => {
       </div>
     );
   }
+
 
 
   if (!isAuthenticated) {
