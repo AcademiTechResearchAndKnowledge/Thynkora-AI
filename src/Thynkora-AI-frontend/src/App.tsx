@@ -50,56 +50,59 @@ const App: React.FC = () => {
   // ----------------------------
   // LANDING PAGE
   // ----------------------------
-if (showLanding) {
-  return (
-    <div
-      className="landing-wrapper"
-      style={{
-        width: '100%',
-        height: '100vh',
-        overflow: 'auto',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'flex-start',
-        position: 'relative', // needed to position the button
-        padding: 0,
-        margin: 0,
-      }}
-    >
-      <img
-        src={landingBg}
-        alt="Landing Page"
+  if (showLanding) {
+    return (
+      <div
+        className="landing-wrapper"
         style={{
-          width: 'auto',
+          position: 'relative', // Needed to anchor the button inside this container
+          width: '100%',
           height: 'auto',
-          maxWidth: '100%',
-          maxHeight: 'none',
-          display: 'block',
-        }}
-      />
-
-      <button
-        onClick={() => setShowLanding(false)}
-        style={{
-          position: 'absolute',
-          bottom: '22rem',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          padding: '1.5rem 9rem',
-          fontSize: '1.2rem',
-          backgroundColor: '#ffffff',
-          color: '#000',
-          border: 'none',
-          borderRadius: '8px',
-          cursor: 'pointer',
-          zIndex: 10,
+          overflow: 'auto',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'flex-start',
+          padding: 0,
+          margin: 0,
         }}
       >
-       
-      </button>
-    </div>
-  );
-}
+
+        <img
+          src={landingBg}
+          alt="Landing Page"
+          style={{
+            width: 'auto',
+            height: 'auto',
+            maxWidth: '100%',
+            maxHeight: 'none',
+            display: 'block',
+          }}
+        />
+
+  
+        <button
+          onClick={() => setShowLanding(false)}
+          style={{
+            position: 'absolute',     // now relative to the wrapper
+            bottom: '2rem',           // 2rem from the bottom of the image container
+            left: '50%',
+            transform: 'translateX(-50%)',
+            padding: '1rem 2rem',
+            fontSize: '1.2rem',
+            backgroundColor: 'rgba(0, 0, 0, 0.76)',
+            color: '#000',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            zIndex: 10,
+          }}
+        >
+
+        </button>
+      </div>
+    );
+  }
+
 
 
 
