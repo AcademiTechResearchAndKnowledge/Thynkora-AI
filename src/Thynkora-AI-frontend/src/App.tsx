@@ -57,47 +57,46 @@ if (showLanding) {
       style={{
         width: '100%',
         height: '100vh',
-        overflow: 'hidden',
-        position: 'relative',
+        overflow: 'auto',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        position: 'relative', // needed to position the button
+        padding: 0,
+        margin: 0,
       }}
     >
       <img
         src={landingBg}
         alt="Landing Page"
         style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          zIndex: 0,
+          width: 'auto',
+          height: 'auto',
+          maxWidth: '100%',
+          maxHeight: 'none',
+          display: 'block',
         }}
       />
-      <div
+
+      <button
+        onClick={() => setShowLanding(false)}
         style={{
           position: 'absolute',
-          zIndex: 1,
-          bottom: '10%',
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'center',
+          bottom: '2rem',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          padding: '1rem 2rem',
+          fontSize: '1.2rem',
+          backgroundColor: '#ffffffcc',
+          color: '#000',
+          border: 'none',
+          borderRadius: '8px',
+          cursor: 'pointer',
+          zIndex: 10,
         }}
       >
-        <button
-          onClick={() => setShowLanding(false)}
-          style={{
-            padding: '1rem 2rem',
-            fontSize: '1.25rem',
-            backgroundColor: '#ffffffcc',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
-          }}
-        >
-        
-        </button>
-      </div>
+       
+      </button>
     </div>
   );
 }

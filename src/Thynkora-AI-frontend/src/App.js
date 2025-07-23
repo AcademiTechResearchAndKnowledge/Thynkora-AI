@@ -45,21 +45,35 @@ const App = () => {
     if (showLanding) {
         return (React.createElement("div", { className: "landing-wrapper", style: {
                 width: '100%',
-                height: 'auto',
-                overflow: 'auto',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'flex-start',
-                padding: 0,
-                margin: 0,
+                height: '100vh',
+                overflow: 'hidden',
+                position: 'relative',
             } },
             React.createElement("img", { src: landingBg, alt: "Landing Page", style: {
-                    width: 'auto', // Don't stretch to 100% of screen
-                    height: 'auto', // Natural height
-                    maxWidth: '100%', // Prevent overflow horizontally
-                    maxHeight: 'none', // Let the image go beyond screen height
-                    display: 'block',
-                } })));
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    zIndex: 0,
+                } }),
+            React.createElement("div", { style: {
+                    position: 'absolute',
+                    zIndex: 1,
+                    bottom: '10%',
+                    width: '100%',
+                    display: 'flex',
+                    justifyContent: 'center',
+                } },
+                React.createElement("button", { onClick: () => setShowLanding(false), style: {
+                        padding: '1rem 2rem',
+                        fontSize: '1.25rem',
+                        backgroundColor: '#ffffffcc',
+                        border: 'none',
+                        borderRadius: '8px',
+                        cursor: 'pointer',
+                    } }))));
     }
     // ----------------------------
     // LOGIN
