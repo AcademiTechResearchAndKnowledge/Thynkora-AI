@@ -1,13 +1,9 @@
-
 import Debug "mo:base/Debug";
 import Text "mo:base/Text";
 import List "mo:base/List";
 import Time "mo:base/Time";
-import _ "mo:base/Debug";
-import Int "mo:base/Int";
-import Char "mo:base/Char";
 
-actor WellMindAI {
+actor Thynkora_AI {
 
   type Mood = {
     #Happy;
@@ -46,7 +42,6 @@ actor WellMindAI {
     return List.toArray(entries);
   };
 
-  // Naive mood detection
   func detectMood(text : Text) : Mood {
     if (Text.contains(text, #text "sad") or Text.contains(text, #text "depressed")) {
       #Depressed
@@ -61,8 +56,9 @@ actor WellMindAI {
     }
   };
 
-  // Danger detection based on keywords
   func isAtRisk(text : Text) : Bool {
-    Text.contains(text, #text "end it all") or Text.contains(text, #text "suicide") or Text.contains(text, #text "kill myself")
+    Text.contains(text, #text "end it all") or
+    Text.contains(text, #text "suicide") or
+    Text.contains(text, #text "kill myself")
   };
 };
