@@ -45,7 +45,7 @@ const App = () => {
     if (showLanding) {
         return (React.createElement("div", { className: "landing-wrapper", style: {
                 width: '100%',
-                minHeight: '245vh',
+                minHeight: '242vh',
                 overflow: 'auto',
                 backgroundImage: `url(${landingBg})`,
                 backgroundSize: '100% auto', // or '100% auto' if needed
@@ -59,7 +59,7 @@ const App = () => {
                     justifyContent: 'flex-start',
                     alignItems: 'center',
                     paddingTop: '2rem',
-                    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                    backgroundColor: 'rgba(0, 0, 0, 0)',
                     color: '#fff',
                 } },
                 React.createElement("h1", null, "Welcome to Thynkora-AI"),

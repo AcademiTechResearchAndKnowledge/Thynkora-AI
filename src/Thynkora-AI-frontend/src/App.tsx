@@ -51,52 +51,56 @@ const App: React.FC = () => {
   // LANDING PAGE
   // ----------------------------
   if (showLanding) {
-    return (
-      <div
-        className="landing-wrapper"
+  return (
+    <div
+      className="landing-wrapper"
+      style={{
+        width: '100%',
+        overflowY: 'auto',
+      }}
+    >
+      {/* Image appears in document flow, scrollable if large */}
+      <img
+        src={landingBg}
+        alt="Landing"
         style={{
           width: '100%',
-          minHeight: '242vh',
-          overflow: 'auto',
-          backgroundImage: `url(${landingBg})`,
-          backgroundSize: '100% auto', // or '100% auto' if needed
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'top center',
+          height: 'auto',
+          display: 'block',
+        }}
+      />
+
+      {/* Content below the image */}
+      <div
+        style={{
+          padding: '2rem',
+          textAlign: 'center',
+          background: '#000000cc',
+          color: '#fff',
         }}
       >
-        <div
+        <h1>Welcome to Thynkora-AI</h1>
+        <p>Your AI-powered mental wellness assistant</p>
+        <button
+          onClick={() => setShowLanding(false)}
           style={{
-            height: '150vh', // force vertical space so image can scroll
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-start',
-            alignItems: 'center',
-            paddingTop: '2rem',
-            backgroundColor: 'rgba(0, 0, 0, 0)',
-            color: '#fff',
+            padding: '1rem 2rem',
+            fontSize: '1.2rem',
+            marginTop: '1rem',
+            backgroundColor: '#ffffffdd',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            color: '#000',
           }}
         >
-          <h1>Welcome to Thynkora-AI</h1>
-          <p>Your AI-powered mental wellness assistant</p>
-          <button
-            onClick={() => setShowLanding(false)}
-            style={{
-              padding: '1rem 2rem',
-              fontSize: '1.2rem',
-              marginTop: '1rem',
-              backgroundColor: '#ffffffdd',
-              border: 'none',
-              borderRadius: '8px',
-              cursor: 'pointer',
-              color: '#000',
-            }}
-          >
-            Enter
-          </button>
-        </div>
+          Enter
+        </button>
       </div>
-    );
-  }
+    </div>
+  );
+}
+
 
 
 
