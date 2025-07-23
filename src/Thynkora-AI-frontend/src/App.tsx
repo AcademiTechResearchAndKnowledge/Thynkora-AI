@@ -50,13 +50,13 @@ const App: React.FC = () => {
   // ----------------------------
   // LANDING PAGE
   // ----------------------------
- if (showLanding) {
+if (showLanding) {
   return (
     <div
       className="landing-wrapper"
       style={{
         width: '100%',
-        overflowY: 'auto',
+        overflow: 'auto',
         display: 'flex',
         justifyContent: 'center',
       }}
@@ -65,23 +65,14 @@ const App: React.FC = () => {
         src={landingBg}
         alt="Landing Page"
         style={{
-          width: 'auto',
-          height: 'auto',
           maxWidth: '100%',
-          maxHeight: 'none',
+          height: 'auto',
+          display: 'block',
         }}
-        onClick={() => setShowLanding(false)} // optional
       />
     </div>
   );
 }
-
-
-
-
-
-
-
 
 
 
