@@ -4,28 +4,31 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   transition: background-image 0.4s ease-in-out;
   margin: 0;
   padding: 0;
 }
 
-// chage URL for page bg
+// Backgrounds for other pages
+/*
 body.therapy-bg {
-  background-image: url('/images/therapy-bg.jpg');
+  background-image: url('../pages/therapy-bg.jpg');
 }
 
 body.journal-bg {
-  background-image: url('/images/journal-bg.jpg');
+  background-image: url('../pages/journal-bg.jpg');
 }
 
 body.dao-bg {
-  background-image: url('/images/dao-bg.jpg');
+  background-image: url('../pages/dao-bg.jpg');
 }
 
 body.emergency-bg {
-  background-image: url('/images/emergency-bg.jpg');
+  background-image: url('../pages/emergency-bg.jpg');
 }
-
+*/
+// Other styles
 img {
   max-width: 50vw;
   max-height: 25vw;
@@ -43,7 +46,7 @@ form {
   align-items: baseline;
 }
 
-button[type="submit"] {
+button[type='submit'] {
   padding: 5px 20px;
   margin: 10px auto;
   float: right;

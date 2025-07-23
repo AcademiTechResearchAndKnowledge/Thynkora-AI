@@ -4,7 +4,7 @@ import Journal from '@components/Journal/JournalComponent';
 import DAODashboard from '@components/DAO/DAODashboard';
 import EmergencySupport from '@components/Emergency/EmergencySupport';
 
-// Background images (Vite-compatible)
+// Load landing image via Vite (from src/pages)
 const landingBg = new URL('../pages/landing-bg.jpg', import.meta.url).href;
 //const therapyBg = new URL('../pages/therapy-bg.jpg', import.meta.url).href;
 //const journalBg = new URL('../pages/journal-bg.jpg', import.meta.url).href;
@@ -20,7 +20,8 @@ const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState('therapy');
 
   const backgroundMap: Record<string, string> = {
-   // therapy: therapyBg,
+
+    // therapy: therapyBg,
     //journal: journalBg,
     //dao: daoBg,
     //emergency: emergencyBg,

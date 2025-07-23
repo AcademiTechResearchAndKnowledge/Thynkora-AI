@@ -3,12 +3,12 @@ import TherapyChat from '@components/AITherapy/TherapyChat';
 import Journal from '@components/Journal/JournalComponent';
 import DAODashboard from '@components/DAO/DAODashboard';
 import EmergencySupport from '@components/Emergency/EmergencySupport';
-// Background images (from pages folder)
-//import therapyBg from '../pages/therapy-bg.jpg';
-//import journalBg from '../pages/journal-bg.jpg';
-//import daoBg from '../pages/dao-bg.jpg';
-//import emergencyBg from '../pages/emergency-bg.jpg';
-import landingBg from '../pages/landing-bg.jpg'; // Home Page
+// Background images (Vite-compatible)
+const landingBg = new URL('../pages/landing-bg.jpg', import.meta.url).href;
+//const therapyBg = new URL('../pages/therapy-bg.jpg', import.meta.url).href;
+//const journalBg = new URL('../pages/journal-bg.jpg', import.meta.url).href;
+//const daoBg = new URL('../pages/dao-bg.jpg', import.meta.url).href;
+//const emergencyBg = new URL('../pages/emergency-bg.jpg', import.meta.url).href;
 const App = () => {
     const [showLanding, setShowLanding] = useState(true);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -17,19 +17,18 @@ const App = () => {
     const [aiActor, setAiActor] = useState(null);
     const [activeTab, setActiveTab] = useState('therapy');
     const backgroundMap = {
-    //therapy: therapyBg,
+    // therapy: therapyBg,
     //journal: journalBg,
     //dao: daoBg,
-    //emergency: emergencyBg
+    //emergency: emergencyBg,
     };
     useEffect(() => {
-        console.log("App loaded");
+        console.log('App loaded');
     }, []);
-    // Mock login
     const mockLogin = async () => {
-        console.log(" MOCK LOGIN ENABLED");
+        console.log(' MOCK LOGIN ENABLED');
         setIsAuthenticated(true);
-        setUserProfile({ name: "Test User", email: "test@example.com" });
+        setUserProfile({ name: 'Test User', email: 'test@example.com' });
         setUserActor({});
         setAiActor({});
     };
@@ -39,20 +38,22 @@ const App = () => {
         setAiActor(null);
         setUserProfile(null);
     };
-    // 1. Show Landing Page
     if (showLanding) {
         return (React.createElement("div", { className: "landing-page", style: {
                 backgroundImage: `url(${landingBg})`,
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                backgroundPosition: 'top',
                 backgroundRepeat: 'no-repeat',
-                height: '100vh',
+                minHeight: '100vh',
+                width: '100%',
+                overflow: 'auto',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: '#fff',
                 textAlign: 'center',
+                color: '#fff',
+                padding: '2rem',
             } },
             React.createElement("h1", null, "Welcome to Thynkora-AI"),
             React.createElement("p", null, "Your AI-powered mental wellness assistant"),
@@ -63,39 +64,47 @@ const App = () => {
                     backgroundColor: '#ffffffdd',
                     border: 'none',
                     borderRadius: '8px',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    color: '#000',
                 } }, "Enter")));
     }
-    // 2. Show Login Page
     if (!isAuthenticated) {
-        return (React.createElement("div", { className: "app" },
+        return (React.createElement("div", { className: "app", style: { padding: '2rem', textAlign: 'center' } },
             React.createElement("h1", null, "Thynkora-AI (Mock Mode)"),
             React.createElement("button", { onClick: mockLogin }, "Mock Login"),
             React.createElement("p", null,
-                "Open browser console \u2013 you should see: ",
+                "Open browser console \u2013 you should see:",
+                ' ',
                 React.createElement("code", null, " MOCK LOGIN ENABLED"))));
     }
-    // 3. Show Main App with background image per tab
     return (React.createElement("div", { className: "app", style: {
             backgroundImage: `url(${backgroundMap[activeTab]})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'top',
             backgroundRepeat: 'no-repeat',
             minHeight: '100vh',
             width: '100%',
+            overflow: 'auto',
+            color: '#fff',
         } },
-        React.createElement("header", { className: "app-header" },
+        React.createElement("header", { className: "app-header", style: {
+                backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                padding: '1rem',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+            } },
             React.createElement("h1", null, "Thynkora-AI"),
-            React.createElement("nav", null,
+            React.createElement("nav", { style: { display: 'flex', gap: '1rem' } },
                 React.createElement("button", { className: activeTab === 'therapy' ? 'active' : '', onClick: () => setActiveTab('therapy') }, "AI Therapy"),
                 React.createElement("button", { className: activeTab === 'journal' ? 'active' : '', onClick: () => setActiveTab('journal') }, "Journal"),
                 React.createElement("button", { className: activeTab === 'dao' ? 'active' : '', onClick: () => setActiveTab('dao') }, "DAO"),
                 React.createElement("button", { className: activeTab === 'emergency' ? 'active' : '', onClick: () => setActiveTab('emergency') }, "Emergency")),
             React.createElement("button", { onClick: handleLogout }, "Logout")),
-        React.createElement("main", { className: "app-main" },
-            activeTab === 'therapy' && React.createElement(TherapyChat, { aiActor: aiActor, userProfile: userProfile }),
-            activeTab === 'journal' && React.createElement(Journal, { userActor: userActor, userProfile: userProfile }),
+        React.createElement("main", { className: "app-main", style: { padding: '2rem' } },
+            activeTab === 'therapy' && (React.createElement(TherapyChat, { aiActor: aiActor, userProfile: userProfile })),
+            activeTab === 'journal' && (React.createElement(Journal, { userActor: userActor, userProfile: userProfile })),
             activeTab === 'dao' && (React.createElement(DAODashboard, { onLogin: mockLogin, userActor: userActor, userProfile: userProfile })),
-            activeTab === 'emergency' && React.createElement(EmergencySupport, { userProfile: userProfile }))));
+            activeTab === 'emergency' && (React.createElement(EmergencySupport, { userProfile: userProfile })))));
 };
 export default App;
