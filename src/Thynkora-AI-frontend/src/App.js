@@ -57,6 +57,8 @@ const App = () => {
             React.createElement("img", { src: landingBg, alt: "Landing Page", style: {
                     width: '100%',
                     height: 'auto',
+                    maxWidth: '100%',
+                    maxHeight: 'none',
                     display: 'block',
                 } }),
             React.createElement("button", { onClick: () => setShowLanding(false), style: {
