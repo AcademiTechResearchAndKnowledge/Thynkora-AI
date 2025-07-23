@@ -56,7 +56,7 @@ const App: React.FC = () => {
         className="landing-wrapper"
         style={{
           width: '100%',
-          minHeight: '242vh',
+          minHeight: '232vh',
           overflow: 'auto',
           backgroundImage: `url(${landingBg})`,
           backgroundSize: 'contain',
@@ -94,7 +94,7 @@ const App: React.FC = () => {
               color: '#000',
             }}
           >
-            Enter
+            Explore now
           </button>
         </div>
       </div>
