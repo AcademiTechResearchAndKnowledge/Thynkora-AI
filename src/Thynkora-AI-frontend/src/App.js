@@ -130,26 +130,43 @@ const App = () => {
                 maxWidth: 'none',
                 maxHeight: 'none',
                 display: 'block',
-            } }),
-        "if (label == 'Articles')",
-        React.createElement("button", { onClick: () => setActivePage('landing'), style: {
-                position: 'absolute',
-                bottom: '44.5rem',
-                left: '50%',
-                transform: 'translateX(-380%)',
-                padding: '1.5rem 5rem',
-                fontSize: '1.2rem',
-                backgroundColor: 'rgba(0, 0, 0, 0)',
-                color: '#000',
-                border: 'none',
-                borderRadius: '8px',
-                cursor: 'pointer',
-                zIndex: 10,
             } })));
     if (activePage === 'p1')
         return renderStaticPage(p1, 'P1');
-    if (activePage === 'articles')
-        return renderStaticPage(ArticlesPage, 'Articles');
+    if (activePage === 'articles') {
+        React.createElement("div", { className: `ArticlesPage`, style: {
+                position: 'relative',
+                width: '100%',
+                height: 'auto',
+                overflow: 'auto',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                padding: 0,
+                margin: 0,
+            } },
+            React.createElement("img", { src: ArticlesPage, alt: ` ArticlesPage`, style: {
+                    width: 'auto',
+                    height: 'auto',
+                    maxWidth: 'none',
+                    maxHeight: 'none',
+                    display: 'block',
+                } }),
+            React.createElement("button", { onClick: () => setActivePage('pts'), style: {
+                    position: 'absolute',
+                    bottom: '107.5rem',
+                    left: '50%',
+                    transform: 'translateX(220%)',
+                    padding: '1rem 2.3rem',
+                    fontSize: '1.2rem',
+                    backgroundColor: 'rgba(0, 0, 0, 0)',
+                    color: '#000',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    zIndex: 10,
+                } }));
+    }
     if (activePage === 'pts')
         return renderStaticPage(PTSPage, 'PTS');
     if (activePage === 'about')
