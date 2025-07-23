@@ -55,60 +55,51 @@ if (showLanding) {
     <div
       className="landing-wrapper"
       style={{
-        position: 'relative',
         width: '100%',
         height: '100vh',
-        overflow: 'hidden',
+        overflow: 'auto',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'flex-start',
+        position: 'relative', // needed to position the button
+        padding: 0,
+        margin: 0,
       }}
     >
-      {/* Background image as an absolutely positioned layer */}
       <img
         src={landingBg}
         alt="Landing Page"
         style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          zIndex: 0,
+          width: 'auto',
+          height: 'auto',
+          maxWidth: '100%',
+          maxHeight: 'none',
+          display: 'block',
         }}
       />
 
-      {/* Button wrapper on top */}
-      <div
+      <button
+        onClick={() => setShowLanding(false)}
         style={{
-          position: 'relative',
-          zIndex: 1,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
+          position: 'absolute',
+          bottom: '2rem',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          padding: '1rem 2rem',
+          fontSize: '1.2rem',
+          backgroundColor: '#ffffffcc',
+          color: '#000',
+          border: 'none',
+          borderRadius: '8px',
+          cursor: 'pointer',
+          zIndex: 10,
         }}
       >
-        <button
-          onClick={() => setShowLanding(false)}
-          style={{
-            padding: '1rem 2rem',
-            fontSize: '1.2rem',
-            backgroundColor: '#ffffffcc',
-            color: '#000',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
-          }}
-        >
-          Get Started
-        </button>
-      </div>
+       
+      </button>
     </div>
   );
 }
-
 
 
 
