@@ -45,7 +45,7 @@ const App = () => {
     if (showLanding) {
         return (React.createElement("div", { className: "landing-wrapper", style: {
                 width: '100%',
-                minHeight: '230vh',
+                minHeight: '245vh',
                 overflow: 'auto',
                 backgroundImage: `url(${landingBg})`,
                 backgroundSize: '100% auto', // or '100% auto' if needed
