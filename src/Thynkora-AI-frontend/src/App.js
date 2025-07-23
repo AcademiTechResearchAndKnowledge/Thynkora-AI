@@ -234,10 +234,10 @@ const App = () => {
                         setArticlesPage(false);
                 }, style: {
                     position: 'absolute',
-                    bottom: '12.5rem',
+                    bottom: '44.7rem',
                     left: '50%',
-                    transform: 'translateX(-161%)',
-                    padding: '1rem 5rem',
+                    transform: 'translateX(197%)',
+                    padding: '1rem 2.5rem',
                     fontSize: '1.2rem',
                     backgroundColor: 'rgba(0, 0, 0, 0)',
                     color: '#000',
@@ -282,6 +282,27 @@ const App = () => {
                     maxWidth: 'none',
                     maxHeight: 'none',
                     display: 'block',
+                } }),
+            React.createElement("button", { onClick: () => {
+                    setShowLanding(false),
+                        setAboutUsPage(true),
+                        setShowp1(false),
+                        setPTSPage(false),
+                        setCustomerSupportPage(false),
+                        setArticlesPage(false);
+                }, style: {
+                    position: 'absolute',
+                    bottom: '44.7rem',
+                    left: '50%',
+                    transform: 'translateX(197%)',
+                    padding: '1rem 2.5rem',
+                    fontSize: '1.2rem',
+                    backgroundColor: 'rgba(0, 0, 0, 0)',
+                    color: '#000',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    zIndex: 10,
                 } }),
             React.createElement("button", { onClick: () => {
                     setShowLanding(false),
