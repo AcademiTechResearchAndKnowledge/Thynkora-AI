@@ -56,10 +56,12 @@ const App: React.FC = () => {
       className="landing-wrapper"
       style={{
         width: '100%',
+        height: '242vh',
         overflowY: 'auto',
+        position: 'relative',
       }}
     >
-      {/* Image appears in document flow, scrollable if large */}
+      {/* Image fills full width and keeps its aspect ratio */}
       <img
         src={landingBg}
         alt="Landing"
@@ -70,13 +72,22 @@ const App: React.FC = () => {
         }}
       />
 
-      {/* Content below the image */}
+      {/* Overlay text on top of image */}
       <div
         style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: '#fff',
           padding: '2rem',
           textAlign: 'center',
-          background: '#000000cc',
-          color: '#fff',
+          background: 'rgba(0, 0, 0, 0.4)', // Optional dark overlay
         }}
       >
         <h1>Welcome to Thynkora-AI</h1>
