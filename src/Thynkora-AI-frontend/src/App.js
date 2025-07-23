@@ -78,11 +78,11 @@ const App = () => {
                     zIndex: 10,
                 } }),
             React.createElement("button", { onClick: () => setShowLanding(true), style: {
-                    position: 'absolute', // now relative to the wrapper
-                    bottom: '75.5rem',
-                    left: '50%',
+                    position: 'absolute',
+                    bottom: '107.5rem',
+                    left: '20.5%',
                     transform: 'translateX(-50%)',
-                    padding: '1.5rem 15rem',
+                    padding: '1.5rem 5rem',
                     fontSize: '1.2rem',
                     backgroundColor: 'rgba(0, 0, 0, 100)',
                     color: '#000',

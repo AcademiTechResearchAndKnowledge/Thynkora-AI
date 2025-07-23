@@ -105,17 +105,17 @@ const App: React.FC = () => {
         </button>
 
 
-        
+
         <button
           onClick={() => setShowLanding(true)} // HOME BUTTON
           style={{
-            position: 'absolute',     
+            position: 'absolute',
             bottom: '107.5rem',
-            left: '20.5%',
-            transform: 'translateX(-50%)',
+            left: '50%',
+            transform: 'translateX(-395%)',
             padding: '1.5rem 5rem',
             fontSize: '1.2rem',
-            backgroundColor: 'rgba(0, 0, 0, 100)',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
             color: '#000',
             border: 'none',
             borderRadius: '8px',
@@ -161,6 +161,26 @@ const App: React.FC = () => {
             display: 'block',
           }}
         />
+
+
+        <button
+          onClick={() => setShowLanding(true)} // HOME BUTTON
+          style={{
+            position: 'absolute',
+            bottom: '107.5rem',
+            left: '50%',
+            transform: 'translateX(-395%)',
+            padding: '1.5rem 5rem',
+            fontSize: '1.2rem',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            color: '#000',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            zIndex: 10,
+          }}
+        >
+        </button>
 
 
       </div>
