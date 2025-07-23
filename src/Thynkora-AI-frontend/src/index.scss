@@ -1,6 +1,29 @@
 body {
   font-family: sans-serif;
   font-size: 1.5rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.4s ease-in-out;
+  margin: 0;
+  padding: 0;
+}
+
+// chage URL for page bg
+body.therapy-bg {
+  background-image: url('/images/therapy-bg.jpg');
+}
+
+body.journal-bg {
+  background-image: url('/images/journal-bg.jpg');
+}
+
+body.dao-bg {
+  background-image: url('/images/dao-bg.jpg');
+}
+
+body.emergency-bg {
+  background-image: url('/images/emergency-bg.jpg');
 }
 
 img {
