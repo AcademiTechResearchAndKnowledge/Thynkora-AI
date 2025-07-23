@@ -45,13 +45,15 @@ const App = () => {
     if (showLanding) {
         return (React.createElement("div", { className: "landing-wrapper", style: {
                 width: '100%',
-                minHeight: '100vh',
                 overflowY: 'auto',
+                display: 'flex',
+                justifyContent: 'center',
             } },
             React.createElement("img", { src: landingBg, alt: "Landing Page", style: {
-                    width: '100%',
-                    height: 'auto', // allow vertical scrolling
-                    display: 'block',
+                    width: 'auto',
+                    height: 'auto',
+                    maxWidth: '100%',
+                    maxHeight: 'none',
                 }, onClick: () => setShowLanding(false) })));
     }
     // ----------------------------
