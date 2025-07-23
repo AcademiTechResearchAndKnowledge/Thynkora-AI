@@ -50,33 +50,31 @@ const App: React.FC = () => {
       <div
         className="landing-wrapper"
         style={{
-          width: '100%',
+          width: '100vw',
           height: '100vh',
           position: 'relative',
-          overflow: 'hidden',
+          overflowY: 'auto',
         }}
       >
         <img
           src={landingBg}
           alt="Landing"
           style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
+            display: 'block',
             width: '100%',
-            height: '100%',
-            objectFit: 'cover', // make sure image covers entire screen
-            zIndex: 0,
+            height: '100vh', // ensures it fills screen height
+            objectFit: 'cover',
           }}
         />
+
         <div
           style={{
             position: 'absolute',
-            top: '2rem',
+            top: '10%',
             width: '100%',
             textAlign: 'center',
             color: '#fff',
-            zIndex: 1,
+            zIndex: 2,
           }}
         >
           <h1>Welcome to Thynkora-AI</h1>
@@ -100,6 +98,7 @@ const App: React.FC = () => {
       </div>
     );
   }
+
 
 
 
