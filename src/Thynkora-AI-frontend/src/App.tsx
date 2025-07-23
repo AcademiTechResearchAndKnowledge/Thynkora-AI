@@ -51,59 +51,52 @@ const App: React.FC = () => {
   // LANDING PAGE
   // ----------------------------
   if (showLanding) {
-  return (
-    <div
-      className="landing-wrapper"
-      style={{
-        width: '100%',
-        position: 'relative',
-      }}
-    >
-      <img
-        src={landingBg}
-        alt="Landing"
-        style={{
-          width: '100%',
-          height: 'auto', // maintain full image height
-          display: 'block',
-        }}
-      />
+    return (
       <div
+        className="landing-wrapper"
         style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
           width: '100%',
-          height: '100%',
-          paddingTop: '4rem',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          color: '#fff',
+          minHeight: '230vh',
+          overflow: 'auto',
+          backgroundImage: `url(${landingBg})`,
+          backgroundSize: '100% auto', // or '100% auto' if needed
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'top center',
         }}
       >
-        <h1>Welcome to Thynkora-AI</h1>
-        <p>Your AI-powered mental wellness assistant</p>
-        <button
-          onClick={() => setShowLanding(false)}
+        <div
           style={{
-            padding: '1rem 2rem',
-            fontSize: '1.2rem',
-            marginTop: '1rem',
-            backgroundColor: '#ffffffdd',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            color: '#000',
+            height: '150vh', // force vertical space so image can scroll
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+            paddingTop: '2rem',
+            backgroundColor: 'rgba(0, 0, 0, 0.4)',
+            color: '#fff',
           }}
         >
-          Enter
-        </button>
+          <h1>Welcome to Thynkora-AI</h1>
+          <p>Your AI-powered mental wellness assistant</p>
+          <button
+            onClick={() => setShowLanding(false)}
+            style={{
+              padding: '1rem 2rem',
+              fontSize: '1.2rem',
+              marginTop: '1rem',
+              backgroundColor: '#ffffffdd',
+              border: 'none',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              color: '#000',
+            }}
+          >
+            Enter
+          </button>
+        </div>
       </div>
-    </div>
-  );
-}
-
+    );
+  }
 
 
 
