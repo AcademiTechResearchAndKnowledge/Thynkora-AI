@@ -197,7 +197,7 @@ const App = () => {
                         setArticlesPage(false);
                 }, style: {
                     position: 'absolute',
-                    bottom: '44.7rem',
+                    bottom: '49rem',
                     left: '50%',
                     transform: 'translateX(197%)',
                     padding: '1rem 2.5rem',
