@@ -4,14 +4,14 @@ import Journal from '@components/Journal/JournalComponent';
 import DAODashboard from '@components/DAO/DAODashboard';
 import EmergencySupport from '@components/Emergency/EmergencySupport';
 
-// Landing page background image
-const landingBg = new URL('../pages/landing-bg.jpg', import.meta.url).href;
+// Background assets
 
-//other pages
 //const therapyBg = new URL('../pages/therapy-bg.jpg', import.meta.url).href;
 //const journalBg = new URL('../pages/journal-bg.jpg', import.meta.url).href;
 //const daoBg = new URL('../pages/dao-bg.jpg', import.meta.url).href;
 //const emergencyBg = new URL('../pages/emergency-bg.jpg', import.meta.url).href;
+
+const landingBg = new URL('../pages/landing-bg.jpg', import.meta.url).href;
 const p1 = new URL('../pages/p1.jpg', import.meta.url).href;
 const AboutUsPage = new URL('../pages/AboutUsPage.jpg', import.meta.url).href;
 const CustomerSupportPage = new URL('../pages/CustomerSupportPage.jpg', import.meta.url).href;
@@ -19,28 +19,15 @@ const PTSPage = new URL('../pages/PTSPage.jpg', import.meta.url).href;
 const ArticlesPage = new URL('../pages/ArticlesPage.jpg', import.meta.url).href;
 
 const App: React.FC = () => {
-  const [showLanding, setShowLanding] = useState(true);
+  const [activePage, setActivePage] = useState<
+    'landing' | 'p1' | 'about' | 'support' | 'pts' | 'articles' | 'main'
+  >('landing');
+
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userProfile, setUserProfile] = useState<any>(null);
   const [userActor, setUserActor] = useState<any>(null);
   const [aiActor, setAiActor] = useState<any>(null);
   const [activeTab, setActiveTab] = useState('therapy');
-
-
-  const [showp1, setShowp1] = useState(true);
-  const [showAboutUsPage, setAboutUsPage] = useState(true);
-  const [showCustomerSupportPage, setCustomerSupportPage] = useState(true);
-  const [showPTSPage, setPTSPage] = useState(true);
-  const [showArticlesPage, setArticlesPage] = useState(true);
-
-
-
-  const backgroundMap: Record<string, string> = {
-    // therapy: therapyBg,
-    // journal: journalBg,
-    // dao: daoBg,
-    // emergency: emergencyBg,
-  };
 
   useEffect(() => {
     console.log('App loaded');
@@ -52,6 +39,7 @@ const App: React.FC = () => {
     setUserProfile({ name: 'Test User', email: 'test@example.com' });
     setUserActor({});
     setAiActor({});
+    setActivePage('main');
   };
 
   const handleLogout = () => {
@@ -59,17 +47,25 @@ const App: React.FC = () => {
     setUserActor(null);
     setAiActor(null);
     setUserProfile(null);
+    setActivePage('landing');
+  };
+
+  const backgroundMap: Record<string, string> = {
+    // therapy: therapyBg,
+    // journal: journalBg,
+    // dao: daoBg,
+    // emergency: emergencyBg,
   };
 
   // ----------------------------
-  // LANDING PAGE
+  // Landing Page
   // ----------------------------
-  if (showLanding) {
+  if (activePage === 'landing') {
     return (
       <div
         className="landing-wrapper"
         style={{
-          position: 'relative', // Needed to anchor the button inside this container
+          position: 'relative',
           width: '100%',
           height: 'auto',
           overflow: 'auto',
@@ -80,7 +76,6 @@ const App: React.FC = () => {
           margin: 0,
         }}
       >
-
         <img
           src={landingBg}
           alt="Landing Page"
@@ -93,32 +88,11 @@ const App: React.FC = () => {
           }}
         />
 
+        {/* Buttons to go to other pages */}
 
+        {/* ARTICLES PAGE*/}
         <button
-          onClick={() => setShowLanding(false)}
-          style={{
-            position: 'absolute',     // now relative to the wrapper
-            bottom: '75.5rem',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            padding: '1.5rem 9rem',
-            fontSize: '1.2rem',
-            backgroundColor: 'rgba(0, 0, 0, 0)',
-            color: '#000',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            zIndex: 10,
-          }}
-        >
-        </button>
-
-
-
-
-        <button
-          onClick={() => setShowLanding(false)} // Articles Page
-          
+          onClick={() => setActivePage('articles')}
           style={{
             position: 'absolute',
             bottom: '107.5rem',
@@ -136,8 +110,10 @@ const App: React.FC = () => {
         >
         </button>
 
+
+        {/* PRIVACY AND TERMS PAGE*/}
         <button
-          onClick={() => setShowLanding(false)} // Privacy Page
+          onClick={() => setActivePage('pts')}
           style={{
             position: 'absolute',
             bottom: '107.5rem',
@@ -153,21 +129,19 @@ const App: React.FC = () => {
             zIndex: 10,
           }}
         >
+
         </button>
 
 
-
-
-
-
+        {/* PAGE 1*/}
         <button
-          onClick={() => setShowLanding(true)} // HOME BUTTON
+          onClick={() => setActivePage('p1')}
           style={{
             position: 'absolute',
-            bottom: '107.5rem',
+            bottom: '75.5rem',
             left: '50%',
-            transform: 'translateX(-395%)',
-            padding: '1.5rem 5rem',
+            transform: 'translateX(-50%)',
+            padding: '1.5rem 9rem',
             fontSize: '1.2rem',
             backgroundColor: 'rgba(0, 0, 0, 0)',
             color: '#000',
@@ -177,189 +151,72 @@ const App: React.FC = () => {
             zIndex: 10,
           }}
         >
+
         </button>
-
-
-
       </div>
     );
   }
+
   // ----------------------------
-  // Page 1 (log your thoughts)
+  // Static Pages
   // ----------------------------
-  if (showp1) {
-    return (
-      <div
-        className="page1"
+  const renderStaticPage = (imgSrc: string, label: string) => (
+    <div
+      className={`${label}Page`}
+      style={{
+        position: 'relative',
+        width: '100%',
+        height: 'auto',
+        overflow: 'auto',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        padding: 0,
+        margin: 0,
+      }}
+    >
+      <img
+        src={imgSrc}
+        alt={`${label} Page`}
         style={{
-          position: 'relative', // Needed to anchor the button inside this container
-          width: '100%',
+          width: 'auto',
           height: 'auto',
-          overflow: 'auto',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'flex-start',
-          padding: 0,
-          margin: 0,
+          maxWidth: 'none',
+          maxHeight: 'none',
+          display: 'block',
+        }}
+      />
+
+      <button
+        onClick={() => setActivePage('landing')}
+        style={{
+          position: 'absolute',
+          bottom: '48.8rem',
+          left: '50%',
+          transform: 'translateX(-380%)',
+          padding: '1.5rem 5rem',
+          fontSize: '1.2rem',
+          backgroundColor: 'rgba(0, 0, 0, 0)',
+          color: '#000',
+          border: 'none',
+          borderRadius: '8px',
+          cursor: 'pointer',
+          zIndex: 10,
         }}
       >
+        Home
+      </button>
+    </div>
+  );
 
-        <img
-          src={p1}
-          alt="page 1"
-          style={{
-            width: 'auto',
-            height: 'auto',
-            maxWidth: 'none',
-            maxHeight: 'none',
-            display: 'block',
-          }}
-        />
-
-
-        <button
-          onClick={() => setShowLanding(true)} // HOME BUTTON
-          style={{
-            position: 'absolute',
-            bottom: '48.8rem',
-            left: '50%',
-            transform: 'translateX(-380%)',
-            padding: '1.5rem 5rem',
-            fontSize: '1.2rem',
-            backgroundColor: 'rgba(0, 0, 0, 0)',
-            color: '#000',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            zIndex: 10,
-          }}
-        >
-        </button>
-
-      </div>
-
-    );
-  }
-  // ----------------------------
-  // Articles Page
-  // ----------------------------
-  if (showArticlesPage) {
-    return (
-      <div
-        className="ArticlesPage"
-        style={{
-          position: 'relative', // Needed to anchor the button inside this container
-          width: '100%',
-          height: 'auto',
-          overflow: 'auto',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'flex-start',
-          padding: 0,
-          margin: 0,
-        }}
-      >
-
-        <img
-          src={ArticlesPage}
-          alt="page 1"
-          style={{
-            width: 'auto',
-            height: 'auto',
-            maxWidth: 'none',
-            maxHeight: 'none',
-            display: 'block',
-          }}
-        />
-
-
-        <button
-          onClick={() => setShowLanding(true)} // Home Button
-          style={{
-            position: 'absolute',
-            bottom: '48.8rem',
-            left: '50%',
-            transform: 'translateX(-380%)',
-            padding: '1.5rem 5rem',
-            fontSize: '1.2rem',
-            backgroundColor: 'rgba(0, 0, 0, 0)',
-            color: '#000',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            zIndex: 10,
-          }}
-        >
-        </button>
-
-      </div>
-
-    );
-  }
-  // ----------------------------
-  // Privacy and Terms Page
-  // ----------------------------
-  if (showPTSPage) {
-    return (
-      <div
-        className="PTSPage"
-        style={{
-          position: 'relative', // Needed to anchor the button inside this container
-          width: '100%',
-          height: 'auto',
-          overflow: 'auto',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'flex-start',
-          padding: 0,
-          margin: 0,
-        }}
-      >
-
-        <img
-          src={PTSPage}
-          alt="page 1"
-          style={{
-            width: 'auto',
-            height: 'auto',
-            maxWidth: 'none',
-            maxHeight: 'none',
-            display: 'block',
-          }}
-        />
-
-
-        <button
-          onClick={() => setShowLanding(true)} // Home Button
-          style={{
-            position: 'absolute',
-            bottom: '48.8rem',
-            left: '50%',
-            transform: 'translateX(-380%)',
-            padding: '1.5rem 5rem',
-            fontSize: '1.2rem',
-            backgroundColor: 'rgba(0, 0, 0, 0)',
-            color: '#000',
-            border: 'none',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            zIndex: 10,
-          }}
-        >
-        </button>
-
-      </div>
-
-    );
-  }
-
-
-
-
-
+  if (activePage === 'p1') return renderStaticPage(p1, 'P1');
+  if (activePage === 'articles') return renderStaticPage(ArticlesPage, 'Articles');
+  if (activePage === 'pts') return renderStaticPage(PTSPage, 'PTS');
+  if (activePage === 'about') return renderStaticPage(AboutUsPage, 'AboutUs');
+  if (activePage === 'support') return renderStaticPage(CustomerSupportPage, 'Support');
 
   // ----------------------------
-  // LOGIN
+  // Login
   // ----------------------------
   if (!isAuthenticated) {
     return (
@@ -374,82 +231,86 @@ const App: React.FC = () => {
   }
 
   // ----------------------------
-  // MAIN APP
+  // Main Authenticated App
   // ----------------------------
-  return (
-    <div
-      className="app"
-      style={{
-        backgroundImage: `url(${backgroundMap[activeTab]})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'top',
-        backgroundRepeat: 'no-repeat',
-        minHeight: '100vh',
-        width: '100%',
-        overflow: 'auto',
-        color: '#fff',
-      }}
-    >
-      <header
-        className="app-header"
+  if (activePage === 'main') {
+    return (
+      <div
+        className="app"
         style={{
-          backgroundColor: 'rgba(0, 0, 0, 0.6)',
-          padding: '1rem',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
+          backgroundImage: `url(${backgroundMap[activeTab]})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'top',
+          backgroundRepeat: 'no-repeat',
+          minHeight: '100vh',
+          width: '100%',
+          overflow: 'auto',
+          color: '#fff',
         }}
       >
-        <h1>Thynkora-AI</h1>
-        <nav style={{ display: 'flex', gap: '1rem' }}>
-          <button
-            className={activeTab === 'therapy' ? 'active' : ''}
-            onClick={() => setActiveTab('therapy')}
-          >
-            AI Therapy
-          </button>
-          <button
-            className={activeTab === 'journal' ? 'active' : ''}
-            onClick={() => setActiveTab('journal')}
-          >
-            Journal
-          </button>
-          <button
-            className={activeTab === 'dao' ? 'active' : ''}
-            onClick={() => setActiveTab('dao')}
-          >
-            DAO
-          </button>
-          <button
-            className={activeTab === 'emergency' ? 'active' : ''}
-            onClick={() => setActiveTab('emergency')}
-          >
-            Emergency
-          </button>
-        </nav>
-        <button onClick={handleLogout}>Logout</button>
-      </header>
+        <header
+          className="app-header"
+          style={{
+            backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            padding: '1rem',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          <h1>Thynkora-AI</h1>
+          <nav style={{ display: 'flex', gap: '1rem' }}>
+            <button
+              className={activeTab === 'therapy' ? 'active' : ''}
+              onClick={() => setActiveTab('therapy')}
+            >
+              AI Therapy
+            </button>
+            <button
+              className={activeTab === 'journal' ? 'active' : ''}
+              onClick={() => setActiveTab('journal')}
+            >
+              Journal
+            </button>
+            <button
+              className={activeTab === 'dao' ? 'active' : ''}
+              onClick={() => setActiveTab('dao')}
+            >
+              DAO
+            </button>
+            <button
+              className={activeTab === 'emergency' ? 'active' : ''}
+              onClick={() => setActiveTab('emergency')}
+            >
+              Emergency
+            </button>
+          </nav>
+          <button onClick={handleLogout}>Logout</button>
+        </header>
 
-      <main className="app-main" style={{ padding: '2rem' }}>
-        {activeTab === 'therapy' && (
-          <TherapyChat aiActor={aiActor} userProfile={userProfile} />
-        )}
-        {activeTab === 'journal' && (
-          <Journal userActor={userActor} userProfile={userProfile} />
-        )}
-        {activeTab === 'dao' && (
-          <DAODashboard
-            onLogin={mockLogin}
-            userActor={userActor}
-            userProfile={userProfile}
-          />
-        )}
-        {activeTab === 'emergency' && (
-          <EmergencySupport userProfile={userProfile} />
-        )}
-      </main>
-    </div>
-  );
+        <main className="app-main" style={{ padding: '2rem' }}>
+          {activeTab === 'therapy' && (
+            <TherapyChat aiActor={aiActor} userProfile={userProfile} />
+          )}
+          {activeTab === 'journal' && (
+            <Journal userActor={userActor} userProfile={userProfile} />
+          )}
+          {activeTab === 'dao' && (
+            <DAODashboard
+              onLogin={mockLogin}
+              userActor={userActor}
+              userProfile={userProfile}
+            />
+          )}
+          {activeTab === 'emergency' && (
+            <EmergencySupport userProfile={userProfile} />
+          )}
+        </main>
+      </div>
+    );
+  }
+
+  return null;
 };
 
 export default App;

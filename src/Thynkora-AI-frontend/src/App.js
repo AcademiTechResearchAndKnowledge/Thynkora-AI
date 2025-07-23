@@ -85,7 +85,7 @@ const App = () => {
                     cursor: 'pointer',
                     zIndex: 10,
                 } }),
-            React.createElement("button", { onClick: () => setArticlesPage(true), style: {
+            React.createElement("button", { onClick: () => setShowLanding(false), style: {
                     position: 'absolute',
                     bottom: '107.5rem',
                     left: '50%',
@@ -99,7 +99,7 @@ const App = () => {
                     cursor: 'pointer',
                     zIndex: 10,
                 } }),
-            React.createElement("button", { onClick: () => setPTSPage(true), style: {
+            React.createElement("button", { onClick: () => setShowLanding(false), style: {
                     position: 'absolute',
                     bottom: '107.5rem',
                     left: '50%',
