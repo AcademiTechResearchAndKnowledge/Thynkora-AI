@@ -144,7 +144,7 @@ const App = () => {
                 borderRadius: '8px',
                 cursor: 'pointer',
                 zIndex: 10,
-            } }, "Home")));
+            } })));
     if (activePage === 'p1')
         return renderStaticPage(p1, 'P1');
     if (activePage === 'articles')
