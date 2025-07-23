@@ -5,11 +5,11 @@ import DAODashboard from '@components/DAO/DAODashboard';
 import EmergencySupport from '@components/Emergency/EmergencySupport';
 
 // Background images (from pages folder)
-//import therapyBg from './pages/therapy-bg.jpg';
-//import journalBg from './pages/journal-bg.jpg';
-//import daoBg from './pages/dao-bg.jpg';
-//import emergencyBg from './pages/emergency-bg.jpg';
-import landingBg from './pages/landing-bg.jpg'; // Home Page
+//import therapyBg from '../pages/therapy-bg.jpg';
+//import journalBg from '../pages/journal-bg.jpg';
+//import daoBg from '../pages/dao-bg.jpg';
+//import emergencyBg from '../pages/emergency-bg.jpg';
+import landingBg from '../pages/landing-bg.jpg'; // Home Page
 
 const App: React.FC = () => {
   const [showLanding, setShowLanding] = useState(true);
