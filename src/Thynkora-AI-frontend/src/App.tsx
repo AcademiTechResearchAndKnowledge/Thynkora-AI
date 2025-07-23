@@ -51,64 +51,29 @@ const App: React.FC = () => {
   // LANDING PAGE
   // ----------------------------
   if (showLanding) {
-    return (
-      <div
-        className="landing-wrapper"
+  return (
+    <div
+      className="landing-wrapper"
+      style={{
+        width: '100%',
+        minHeight: '100vh',
+        overflowY: 'auto',
+      }}
+    >
+      <img
+        src={landingBg}
+        alt="Landing Page"
         style={{
           width: '100%',
-          minHeight: '100vh',
-          overflowY: 'auto',
-          position: 'relative',
-          display: 'flex',
-          flexDirection: 'column',
+          height: 'auto', // allow vertical scrolling
+          display: 'block',
         }}
-      >
-        {/* Image as main page layout (not clipped) */}
-        <img
-          src={landingBg}
-          alt="Landing Visual"
-          style={{
-            width: '100%',
-            height: 'auto',
-            display: 'block',
-          }}
-        />
+        onClick={() => setShowLanding(false)} // Optional: click image to enter app
+      />
+    </div>
+  );
+}
 
-        {/* Optional: Overlayed Content or fixed content below */}
-        <div
-          style={{
-            position: 'absolute',
-            top: '20%',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            color: '#fff',
-            textAlign: 'center',
-            padding: '2rem',
-            backgroundColor: 'rgba(0, 0, 0, 0.4)',
-            borderRadius: '12px',
-          }}
-        >
-          <h1>Welcome to Thynkora-AI</h1>
-          <p>Your AI-powered mental wellness assistant</p>
-          <button
-            onClick={() => setShowLanding(false)}
-            style={{
-              padding: '1rem 3rem',
-              fontSize: '1.2rem',
-              marginTop: '2rem',
-              backgroundColor: '#fff',
-              color: '#000',
-              border: 'none',
-              borderRadius: '8px',
-              cursor: 'pointer',
-            }}
-          >
-            Enter
-          </button>
-        </div>
-      </div>
-    );
-  }
 
 
 
