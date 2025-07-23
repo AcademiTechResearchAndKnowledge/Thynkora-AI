@@ -55,50 +55,47 @@ const App: React.FC = () => {
       <div
         className="landing-wrapper"
         style={{
-          position: 'relative',
           width: '100%',
-          height: '100vh',
-          overflow: 'hidden',
+          minHeight: '100vh',
+          overflowY: 'auto',
+          position: 'relative',
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
-        {/* Full-page image */}
+        {/* Image as main page layout (not clipped) */}
         <img
           src={landingBg}
           alt="Landing Visual"
           style={{
             width: '100%',
-            height: '100%',
-            objectFit: 'cover',
+            height: 'auto',
+            display: 'block',
           }}
         />
 
-        {/* Overlayed Content */}
+        {/* Optional: Overlayed Content or fixed content below */}
         <div
           style={{
             position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: 'rgba(0, 0, 0, 0.4)', // optional dark overlay for contrast
+            top: '20%',
+            left: '50%',
+            transform: 'translateX(-50%)',
             color: '#fff',
-            padding: '2rem',
             textAlign: 'center',
+            padding: '2rem',
+            backgroundColor: 'rgba(0, 0, 0, 0.4)',
+            borderRadius: '12px',
           }}
         >
-          <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>Welcome to Thynkora-AI</h1>
-          <p style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>
-            Your AI-powered mental wellness assistant
-          </p>
+          <h1>Welcome to Thynkora-AI</h1>
+          <p>Your AI-powered mental wellness assistant</p>
           <button
             onClick={() => setShowLanding(false)}
             style={{
               padding: '1rem 3rem',
               fontSize: '1.2rem',
+              marginTop: '2rem',
               backgroundColor: '#fff',
               color: '#000',
               border: 'none',
@@ -112,6 +109,7 @@ const App: React.FC = () => {
       </div>
     );
   }
+
 
 
 
