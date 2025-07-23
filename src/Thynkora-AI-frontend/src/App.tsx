@@ -56,7 +56,7 @@ const App: React.FC = () => {
       className="landing-wrapper"
       style={{
         width: '100%',
-        height: '242vh',
+        height: '100vh',
         overflowY: 'auto',
         position: 'relative',
       }}

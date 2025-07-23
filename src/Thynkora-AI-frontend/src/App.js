@@ -45,7 +45,9 @@ const App = () => {
     if (showLanding) {
         return (React.createElement("div", { className: "landing-wrapper", style: {
                 width: '100%',
+                height: '242vh',
                 overflowY: 'auto',
+                position: 'relative',
             } },
             React.createElement("img", { src: landingBg, alt: "Landing", style: {
                     width: '100%',
@@ -53,10 +55,19 @@ const App = () => {
                     display: 'block',
                 } }),
             React.createElement("div", { style: {
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#fff',
                     padding: '2rem',
                     textAlign: 'center',
-                    background: '#000000cc',
-                    color: '#fff',
+                    background: 'rgba(0, 0, 0, 0.4)', // Optional dark overlay
                 } },
                 React.createElement("h1", null, "Welcome to Thynkora-AI"),
                 React.createElement("p", null, "Your AI-powered mental wellness assistant"),
