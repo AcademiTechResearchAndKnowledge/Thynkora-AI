@@ -84,10 +84,10 @@ const App: React.FC = () => {
           <button
             onClick={() => setShowLanding(false)}
             style={{
-              padding: '1.5rem 10.5rem',
+              padding: '2rem 12rem',
               fontSize: '1.2rem',
-              marginTop: '37.5rem',
-              backgroundColor: '#000000',
+              marginTop: '37.6rem',
+              backgroundColor: '#ffffff02',
               border: 'none',
               borderRadius: '8px',
               cursor: 'pointer',
