@@ -130,11 +130,8 @@ const App = () => {
                 maxWidth: 'none',
                 maxHeight: 'none',
                 display: 'block',
-            } })));
-    if (activePage === 'p1')
-        return renderStaticPage(p1, 'P1');
-    if (activePage === 'articles') {
-        // HOME BUTTON
+            } }),
+        "if (label == 'Articles')",
         React.createElement("button", { onClick: () => setActivePage('landing'), style: {
                 position: 'absolute',
                 bottom: '44.5rem',
@@ -148,9 +145,11 @@ const App = () => {
                 borderRadius: '8px',
                 cursor: 'pointer',
                 zIndex: 10,
-            } });
+            } })));
+    if (activePage === 'p1')
+        return renderStaticPage(p1, 'P1');
+    if (activePage === 'articles')
         return renderStaticPage(ArticlesPage, 'Articles');
-    }
     if (activePage === 'pts')
         return renderStaticPage(PTSPage, 'PTS');
     if (activePage === 'about')
