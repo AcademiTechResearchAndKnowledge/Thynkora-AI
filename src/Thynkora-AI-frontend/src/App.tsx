@@ -84,17 +84,17 @@ const App: React.FC = () => {
           <button
             onClick={() => setShowLanding(false)}
             style={{
-              padding: '1rem 2rem',
+              padding: '1.5rem 10.5rem',
               fontSize: '1.2rem',
-              marginTop: '1rem',
-              backgroundColor: '#000000cc',
+              marginTop: '37.5rem',
+              backgroundColor: '#000000',
               border: 'none',
               borderRadius: '8px',
               cursor: 'pointer',
               color: '#000',
             }}
           >
-            Enter
+            
           </button>
         </div>
       </div>
