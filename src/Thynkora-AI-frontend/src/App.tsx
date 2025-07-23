@@ -50,7 +50,7 @@ const App: React.FC = () => {
   // ----------------------------
   // LANDING PAGE
   // ----------------------------
-   if (showLanding) {
+  if (showLanding) {
     return (
       <div
         className="landing-wrapper"
@@ -84,18 +84,22 @@ const App: React.FC = () => {
           <button
             onClick={() => setShowLanding(false)}
             style={{
-              padding: '2rem 12rem',
+              position: 'fixed', // stick to viewport
+              bottom: '10%',     
+              left: '50%',       // center horizontally
+              transform: 'translateX(-50%)', // center it
+              padding: '1rem 3rem',
               fontSize: '1.2rem',
-              marginTop: '37.6rem',
-              backgroundColor: '#ffffff02',
+              backgroundColor: '#ffffffff',
               border: 'none',
               borderRadius: '8px',
               cursor: 'pointer',
               color: '#000',
+              zIndex: 1000, // make sure it stays above other elements
             }}
           >
-            
           </button>
+
         </div>
       </div>
     );

@@ -68,10 +68,10 @@ const App = () => {
                 React.createElement("h1", null, "Welcome to Thynkora-AI!!"),
                 React.createElement("p", null, "Your AI-powered mental wellness assistant"),
                 React.createElement("button", { onClick: () => setShowLanding(false), style: {
-                        padding: '1.5rem 10.5rem',
+                        padding: '2rem 12rem',
                         fontSize: '1.2rem',
-                        marginTop: '37.5rem',
-                        backgroundColor: '#000000',
+                        marginTop: '37.6rem',
+                        backgroundColor: '#ffffff02',
                         border: 'none',
                         borderRadius: '8px',
                         cursor: 'pointer',
