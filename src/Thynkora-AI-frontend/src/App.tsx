@@ -186,39 +186,33 @@ const App: React.FC = () => {
           display: 'block',
         }}
       />
-
-
+      if (label == 'Articles'){
+        <button
+          onClick={() => setActivePage('landing')}
+          style={{
+            position: 'absolute',
+            bottom: '44.5rem',
+            left: '50%',
+            transform: 'translateX(-380%)',
+            padding: '1.5rem 5rem',
+            fontSize: '1.2rem',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            color: '#000',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            zIndex: 10,
+          }}
+        >
+        </button>
+      }
     </div>
+
   );
 
   if (activePage === 'p1') return renderStaticPage(p1, 'P1');
 
-  if (activePage === 'articles') {
-    // HOME BUTTON
-    <button
-      onClick={() => setActivePage('landing')}
-      style={{
-        position: 'absolute',
-        bottom: '44.5rem',
-        left: '50%',
-        transform: 'translateX(-380%)',
-        padding: '1.5rem 5rem',
-        fontSize: '1.2rem',
-        backgroundColor: 'rgba(0, 0, 0, 0)',
-        color: '#000',
-        border: 'none',
-        borderRadius: '8px',
-        cursor: 'pointer',
-        zIndex: 10,
-      }}
-    >
-    </button>
-
-    return renderStaticPage(ArticlesPage, 'Articles');
-  }
-
-
-
+  if (activePage === 'articles') return renderStaticPage(ArticlesPage, 'Articles');
   if (activePage === 'pts') return renderStaticPage(PTSPage, 'PTS');
   if (activePage === 'about') return renderStaticPage(AboutUsPage, 'AboutUs');
   if (activePage === 'support') return renderStaticPage(CustomerSupportPage, 'Support');
