@@ -71,10 +71,8 @@ const App: React.FC = () => {
           src={landingBg}
           alt="Landing Page"
           style={{
-            width: 'auto',
+            width: '100%',
             height: 'auto',
-            maxWidth: '100%',
-            maxHeight: 'none',
             display: 'block',
           }}
         />

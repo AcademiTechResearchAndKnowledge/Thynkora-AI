@@ -63,12 +63,12 @@ const App = () => {
                 } }),
             React.createElement("button", { onClick: () => setShowLanding(false), style: {
                     position: 'absolute', // now relative to the wrapper
-                    bottom: '2rem', // 2rem from the bottom of the image container
+                    bottom: '75.5rem',
                     left: '50%',
                     transform: 'translateX(-50%)',
-                    padding: '1rem 2rem',
+                    padding: '1.5rem 9rem',
                     fontSize: '1.2rem',
-                    backgroundColor: 'rgba(0, 0, 0, 0.76)',
+                    backgroundColor: 'rgba(0, 0, 0, 0)',
                     color: '#000',
                     border: 'none',
                     borderRadius: '8px',
