@@ -204,7 +204,6 @@ const App: React.FC = () => {
           zIndex: 10,
         }}
       >
-        Home
       </button>
     </div>
   );
