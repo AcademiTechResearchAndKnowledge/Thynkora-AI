@@ -47,38 +47,12 @@ const App = () => {
                 width: '100%',
                 minHeight: '100vh',
                 overflowY: 'auto',
-                position: 'relative',
-                display: 'flex',
-                flexDirection: 'column',
             } },
-            React.createElement("img", { src: landingBg, alt: "Landing Visual", style: {
+            React.createElement("img", { src: landingBg, alt: "Landing Page", style: {
                     width: '100%',
-                    height: 'auto',
+                    height: 'auto', // allow vertical scrolling
                     display: 'block',
-                } }),
-            React.createElement("div", { style: {
-                    position: 'absolute',
-                    top: '20%',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    color: '#fff',
-                    textAlign: 'center',
-                    padding: '2rem',
-                    backgroundColor: 'rgba(0, 0, 0, 0.4)',
-                    borderRadius: '12px',
-                } },
-                React.createElement("h1", null, "Welcome to Thynkora-AI"),
-                React.createElement("p", null, "Your AI-powered mental wellness assistant"),
-                React.createElement("button", { onClick: () => setShowLanding(false), style: {
-                        padding: '1rem 3rem',
-                        fontSize: '1.2rem',
-                        marginTop: '2rem',
-                        backgroundColor: '#fff',
-                        color: '#000',
-                        border: 'none',
-                        borderRadius: '8px',
-                        cursor: 'pointer',
-                    } }, "Enter"))));
+                }, onClick: () => setShowLanding(false) })));
     }
     // ----------------------------
     // LOGIN

@@ -50,29 +50,32 @@ const App: React.FC = () => {
   // ----------------------------
   // LANDING PAGE
   // ----------------------------
-  if (showLanding) {
+ if (showLanding) {
   return (
     <div
       className="landing-wrapper"
       style={{
         width: '100%',
-        minHeight: '100vh',
         overflowY: 'auto',
+        display: 'flex',
+        justifyContent: 'center',
       }}
     >
       <img
         src={landingBg}
         alt="Landing Page"
         style={{
-          width: '100%',
-          height: 'auto', // allow vertical scrolling
-          display: 'block',
+          width: 'auto',
+          height: 'auto',
+          maxWidth: '100%',
+          maxHeight: 'none',
         }}
-        onClick={() => setShowLanding(false)} // Optional: click image to enter app
+        onClick={() => setShowLanding(false)} // optional
       />
     </div>
   );
 }
+
 
 
 
