@@ -3,6 +3,9 @@ import Debug "mo:base/Debug";
 import Text "mo:base/Text";
 import List "mo:base/List";
 import Time "mo:base/Time";
+import _ "mo:base/Debug";
+import Int "mo:base/Int";
+import Char "mo:base/Char";
 
 actor WellMindAI {
 
