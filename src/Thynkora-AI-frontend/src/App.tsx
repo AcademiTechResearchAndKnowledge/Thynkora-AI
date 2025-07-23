@@ -55,27 +55,25 @@ const App: React.FC = () => {
       <div
         className="landing-wrapper"
         style={{
-          position: 'relative',
           width: '100%',
-          minHeight: '200vh', // Make the section taller than the screen
-          overflowY: 'auto',
+          minHeight: '100vh',
+          overflow: 'auto',
           backgroundImage: `url(${landingBg})`,
-          backgroundSize: 'cover',
+          backgroundSize: 'contain', // or '100% auto' if needed
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'top center',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
         }}
       >
         <div
           style={{
-            padding: '4rem 1rem',
+            height: '150vh', // force vertical space so image can scroll
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+            paddingTop: '2rem',
             backgroundColor: 'rgba(0, 0, 0, 0.4)',
-            borderRadius: '8px',
             color: '#fff',
-            textAlign: 'center',
           }}
         >
           <h1>Welcome to Thynkora-AI</h1>
@@ -85,7 +83,7 @@ const App: React.FC = () => {
             style={{
               padding: '1rem 2rem',
               fontSize: '1.2rem',
-              marginTop: '2rem',
+              marginTop: '1rem',
               backgroundColor: '#ffffffdd',
               border: 'none',
               borderRadius: '8px',
@@ -99,6 +97,7 @@ const App: React.FC = () => {
       </div>
     );
   }
+
 
 
 
