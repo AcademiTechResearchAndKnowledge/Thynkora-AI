@@ -56,7 +56,7 @@ const App: React.FC = () => {
         className="landing-wrapper"
         style={{
           width: '100%',
-          minHeight: '232vh',
+          minHeight: '242vh',
           overflow: 'auto',
           backgroundImage: `url(${landingBg})`,
           backgroundSize: 'contain',
@@ -79,7 +79,7 @@ const App: React.FC = () => {
             maxWidth: '90%',
           }}
         >
-          <h1>Welcome to Thynkora-AI</h1>
+          <h1>Welcome to Thynkora-AI!!</h1>
           <p>Your AI-powered mental wellness assistant</p>
           <button
             onClick={() => setShowLanding(false)}
@@ -87,14 +87,14 @@ const App: React.FC = () => {
               padding: '1rem 2rem',
               fontSize: '1.2rem',
               marginTop: '1rem',
-              backgroundColor: '#ffffffcc',
+              backgroundColor: '#000000cc',
               border: 'none',
               borderRadius: '8px',
               cursor: 'pointer',
               color: '#000',
             }}
           >
-            Explore now
+            Enter
           </button>
         </div>
       </div>
