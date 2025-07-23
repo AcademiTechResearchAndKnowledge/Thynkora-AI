@@ -11,6 +11,10 @@ const landingBg = new URL('../pages/landing-bg.jpg', import.meta.url).href;
 //const daoBg = new URL('../pages/dao-bg.jpg', import.meta.url).href;
 //const emergencyBg = new URL('../pages/emergency-bg.jpg', import.meta.url).href;
 const p1 = new URL('../pages/p1.jpg', import.meta.url).href;
+const AboutUsPage = new URL('../pages/AboutUsPage.jpg', import.meta.url).href;
+const CustomerSupportPage = new URL('../pages/CustomerSupportPage.jpg', import.meta.url).href;
+const PTSPage = new URL('../pages/PTSPage.jpg', import.meta.url).href;
+const ArticlesPage = new URL('../pages/ArticlesPage.jpg', import.meta.url).href;
 const App = () => {
     const [showLanding, setShowLanding] = useState(true);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -19,6 +23,10 @@ const App = () => {
     const [aiActor, setAiActor] = useState(null);
     const [activeTab, setActiveTab] = useState('therapy');
     const [showp1, setShowp1] = useState(true);
+    const [showAboutUsPage, setAboutUsPage] = useState(true);
+    const [showCustomerSupportPage, setCustomerSupportPage] = useState(true);
+    const [PTSPage, setPTSPage] = useState(true);
+    const [ArticlesPage, setArticlesPage] = useState(true);
     const backgroundMap = {
     // therapy: therapyBg,
     // journal: journalBg,
@@ -71,6 +79,34 @@ const App = () => {
                     padding: '1.5rem 9rem',
                     fontSize: '1.2rem',
                     backgroundColor: 'rgba(0, 0, 0, 0)',
+                    color: '#000',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    zIndex: 10,
+                } }),
+            React.createElement("button", { onClick: () => setArticlesPage(true), style: {
+                    position: 'absolute',
+                    bottom: '107.5rem',
+                    left: '50%',
+                    transform: 'translateX(-300%)',
+                    padding: '1.5rem 5rem',
+                    fontSize: '1.2rem',
+                    backgroundColor: 'rgba(0, 0, 0, 100)',
+                    color: '#000',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    zIndex: 10,
+                } }),
+            React.createElement("button", { onClick: () => setArticlesPage(true), style: {
+                    position: 'absolute',
+                    bottom: '107.5rem',
+                    left: '50%',
+                    transform: 'translateX(-200%)',
+                    padding: '1.5rem 5rem',
+                    fontSize: '1.2rem',
+                    backgroundColor: 'rgba(0, 0, 0, 100)',
                     color: '#000',
                     border: 'none',
                     borderRadius: '8px',
