@@ -80,11 +80,11 @@ const App = () => {
             React.createElement("button", { onClick: () => setShowLanding(true), style: {
                     position: 'absolute',
                     bottom: '107.5rem',
-                    left: '20.5%',
-                    transform: 'translateX(-50%)',
+                    left: '50%',
+                    transform: 'translateX(-395%)',
                     padding: '1.5rem 5rem',
                     fontSize: '1.2rem',
-                    backgroundColor: 'rgba(0, 0, 0, 100)',
+                    backgroundColor: 'rgba(0, 0, 0, 0)',
                     color: '#000',
                     border: 'none',
                     borderRadius: '8px',
@@ -113,6 +113,20 @@ const App = () => {
                     maxWidth: 'none',
                     maxHeight: 'none',
                     display: 'block',
+                } }),
+            React.createElement("button", { onClick: () => setShowLanding(true), style: {
+                    position: 'absolute',
+                    bottom: '107.5rem',
+                    left: '50%',
+                    transform: 'translateX(-395%)',
+                    padding: '1.5rem 5rem',
+                    fontSize: '1.2rem',
+                    backgroundColor: 'rgba(0, 0, 0, 0)',
+                    color: '#000',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    zIndex: 10,
                 } })));
     }
     // ----------------------------

@@ -167,9 +167,9 @@ const App: React.FC = () => {
           onClick={() => setShowLanding(true)} // HOME BUTTON
           style={{
             position: 'absolute',
-            bottom: '107.5rem',
+            bottom: '48.8rem',
             left: '50%',
-            transform: 'translateX(-395%)',
+            transform: 'translateX(-380%)',
             padding: '1.5rem 5rem',
             fontSize: '1.2rem',
             backgroundColor: 'rgba(0, 0, 0, 0)',
