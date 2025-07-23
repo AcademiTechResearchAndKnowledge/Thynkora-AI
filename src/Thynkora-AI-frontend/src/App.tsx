@@ -73,6 +73,8 @@ const App: React.FC = () => {
           style={{
             width: '100%',
             height: 'auto',
+            maxWidth: '100%',
+            maxHeight: 'none',
             display: 'block',
           }}
         />
