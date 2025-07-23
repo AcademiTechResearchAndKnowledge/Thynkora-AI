@@ -102,8 +102,31 @@ const App: React.FC = () => {
             zIndex: 10,
           }}
         >
-
         </button>
+
+
+        
+        <button
+          onClick={() => setShowLanding(true)} // HOME BUTTON
+          style={{
+            position: 'absolute',     // now relative to the wrapper
+            bottom: '75.5rem',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            padding: '1.5rem 15rem',
+            fontSize: '1.2rem',
+            backgroundColor: 'rgba(0, 0, 0, 100)',
+            color: '#000',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            zIndex: 10,
+          }}
+        >
+        </button>
+
+
+
       </div>
     );
   }
