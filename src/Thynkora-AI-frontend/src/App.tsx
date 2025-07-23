@@ -55,61 +55,64 @@ const App: React.FC = () => {
       <div
         className="landing-wrapper"
         style={{
-          display: 'flex',
-          flexDirection: 'row',
+          position: 'relative',
           width: '100%',
           height: '100vh',
           overflow: 'hidden',
-          backgroundColor: '#fff',
         }}
       >
-        {/* Left side image */}
-        <div style={{ flex: 1 }}>
-          <img
-            src={landingBg}
-            alt="Landing Visual"
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          />
-        </div>
+        {/* Full-page image */}
+        <img
+          src={landingBg}
+          alt="Landing Visual"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+          }}
+        />
 
-        {/* Right side content */}
+        {/* Overlayed Content */}
         <div
           style={{
-            flex: 1,
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            padding: '4rem',
+            backgroundColor: 'rgba(0, 0, 0, 0.4)', // optional dark overlay for contrast
+            color: '#fff',
+            padding: '2rem',
             textAlign: 'center',
           }}
         >
-          <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Welcome to Thynkora-AI</h1>
-          <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
+          <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>Welcome to Thynkora-AI</h1>
+          <p style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>
             Your AI-powered mental wellness assistant
           </p>
           <button
             onClick={() => setShowLanding(false)}
             style={{
               padding: '1rem 3rem',
-              fontSize: '1.1rem',
-              backgroundColor: '#111',
-              color: '#fff',
+              fontSize: '1.2rem',
+              backgroundColor: '#fff',
+              color: '#000',
               border: 'none',
               borderRadius: '8px',
               cursor: 'pointer',
             }}
           >
-            Get Started
+            Enter
           </button>
         </div>
       </div>
     );
   }
+
 
 
 
