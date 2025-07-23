@@ -44,13 +44,13 @@ const App = () => {
     // ----------------------------
     if (showLanding) {
         return (React.createElement("div", { className: "landing-wrapper", style: {
+                position: 'relative', // Needed to anchor the button inside this container
                 width: '100%',
-                height: '100vh',
+                height: 'auto',
                 overflow: 'auto',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'flex-start',
-                position: 'relative', // needed to position the button
                 padding: 0,
                 margin: 0,
             } },
@@ -62,13 +62,13 @@ const App = () => {
                     display: 'block',
                 } }),
             React.createElement("button", { onClick: () => setShowLanding(false), style: {
-                    position: 'absolute',
-                    bottom: '22rem',
+                    position: 'absolute', // now relative to the wrapper
+                    bottom: '2rem', // 2rem from the bottom of the image container
                     left: '50%',
                     transform: 'translateX(-50%)',
-                    padding: '1.5rem 9rem',
+                    padding: '1rem 2rem',
                     fontSize: '1.2rem',
-                    backgroundColor: '#ffffff',
+                    backgroundColor: 'rgba(0, 0, 0, 0.76)',
                     color: '#000',
                     border: 'none',
                     borderRadius: '8px',
