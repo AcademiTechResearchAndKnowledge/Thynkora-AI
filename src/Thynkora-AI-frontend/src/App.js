@@ -47,21 +47,18 @@ const App = () => {
                 width: '100%',
                 minHeight: '230vh',
                 overflow: 'auto',
-                backgroundImage: `url(${landingBg})`,
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'top center',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 paddingTop: '5vh',
                 paddingBottom: '10vh',
+                backgroundColor: '#f0f0f0', // optional: set a light background if you like
             } },
             React.createElement("div", { style: {
                     backgroundColor: 'rgba(0, 0, 0, 0)',
                     padding: '2rem',
                     borderRadius: '12px',
-                    color: '#fff',
+                    color: '#000',
                     textAlign: 'center',
                     maxWidth: '90%',
                 } },
@@ -76,7 +73,7 @@ const App = () => {
                         borderRadius: '8px',
                         cursor: 'pointer',
                         color: '#000',
-                    } }))));
+                    } }, "Enter"))));
     }
     // ----------------------------
     // LOGIN
