@@ -932,6 +932,20 @@ const App: React.FC = () => {
           type="text"
           placeholder="Type here..."
           className="text-input"
+          style={{
+            position: 'absolute',
+            bottom: '1rem',
+            left: '50%',
+            transform: 'translateX(-380%)',
+            padding: '1.5rem 5rem',
+            fontSize: '1.2rem',
+            backgroundColor: 'rgba(0, 0, 0, 0.53)',
+            color: '#000',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            zIndex: 10,
+          }}
         />
 
 

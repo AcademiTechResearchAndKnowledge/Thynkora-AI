@@ -673,7 +673,8 @@ const App = () => {
                     borderRadius: '8px',
                     cursor: 'pointer',
                     zIndex: 10,
-                } })));
+                } }),
+            React.createElement("input", { type: "text", placeholder: "Type here...", className: "text-input" })));
     }
     /*
     // ----------------------------
