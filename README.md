@@ -24,9 +24,7 @@ Thynkora-AI empowers users to document their thoughts, feelings, and life journe
 - [🎥 Recording](#-recording)
 - [🧠 Architecture Diagram](#-architecture-diagram)
 - [📦 Installation & Setup](#-installation--setup)
-- [🖌️ UI/UX Design](#-uiux-design)
-- [📈 Business Model](#-business-model)
-- [💬 Team Roles](#-team-roles)
+- [🖌️ UI/UX Design](#-ui/ux-design)
 - [🌐 ICP Deployment Details](#-icp-deployment-details)
 - [🚀 Future Plans (Post-Hackathon)](#-future-plans-(post-hackathon))
 
