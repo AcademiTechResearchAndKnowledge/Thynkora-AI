@@ -366,7 +366,7 @@ const App: React.FC = () => {
           }}
           style={{
             position: 'absolute',
-            bottom: '44.8rem',
+            bottom: '49rem',
             left: '50%',
             transform: 'translateX(60%)',
             padding: '1rem 2rem',

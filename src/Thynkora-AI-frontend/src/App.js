@@ -255,6 +255,27 @@ const App = () => {
                 } }),
             React.createElement("button", { onClick: () => {
                     setShowLanding(false),
+                        setAboutUsPage(false),
+                        setShowp1(false),
+                        setPTSPage(false),
+                        setCustomerSupportPage(false),
+                        setArticlesPage(false),
+                        setShowSimpleChatbot(true);
+                }, style: {
+                    position: 'absolute',
+                    bottom: '44.8rem',
+                    left: '50%',
+                    transform: 'translateX(60%)',
+                    padding: '1rem 2rem',
+                    backgroundColor: 'rgba(0, 0, 0, 0)',
+                    color: '#000',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    zIndex: 10,
+                } }),
+            React.createElement("button", { onClick: () => {
+                    setShowLanding(false),
                         setAboutUsPage(true),
                         setShowp1(false),
                         setPTSPage(false),
@@ -322,7 +343,7 @@ const App = () => {
                         setShowSimpleChatbot(true);
                 }, style: {
                     position: 'absolute',
-                    bottom: '1rem',
+                    bottom: '44.8rem',
                     left: '50%',
                     transform: 'translateX(60%)',
                     padding: '1rem 2rem',
@@ -402,7 +423,7 @@ const App = () => {
                         setShowSimpleChatbot(true);
                 }, style: {
                     position: 'absolute',
-                    bottom: '1rem',
+                    bottom: '44.8rem',
                     left: '50%',
                     transform: 'translateX(60%)',
                     padding: '1rem 2rem',
@@ -423,7 +444,7 @@ const App = () => {
                         setShowSimpleChatbot(false);
                 }, style: {
                     position: 'absolute',
-                    bottom: '44.7rem',
+                    bottom: '49rem',
                     left: '50%',
                     transform: 'translateX(197%)',
                     padding: '1rem 2.5rem',
@@ -504,7 +525,7 @@ const App = () => {
                         setShowSimpleChatbot(true);
                 }, style: {
                     position: 'absolute',
-                    bottom: '1rem',
+                    bottom: '87.8rem',
                     left: '50%',
                     transform: 'translateX(60%)',
                     padding: '1rem 2rem',
