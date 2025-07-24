@@ -293,12 +293,7 @@ const App: React.FC = () => {
     return (
       <div className="simple-chat-wrapper">
         <TherapyChat aiActor={aiActor} userProfile={userProfile} />
-        <button
-          onClick={() => setShowLanding(true)}
-          className="absolute top-10 left-10 px-4 py-2 bg-gray-300 rounded"
-        >
-          ← Back
-        </button>
+        
       </div>
     );
   }
