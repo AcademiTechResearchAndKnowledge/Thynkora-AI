@@ -32,5 +32,5 @@ Install the following tools:
 ### 📁 Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Thynkora-AI.git
+git clone https://github.com/AcademiTechResearchAndKnowledge/Thynkora-AI.git
 cd Thynkora-AI
