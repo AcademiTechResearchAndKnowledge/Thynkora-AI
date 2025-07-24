@@ -5,8 +5,8 @@ interface Message {
   text: string;
 }
 interface TherapyChatProps {
-  aiActor: any;
-  userProfile: any;
+  aiActor?: any;
+  userProfile?: any;
 }
 
 
