@@ -44,6 +44,11 @@ dfx start --background --clean
 
 dfx deploy
 
+Frontend canister via browser:
+    Thynkora-AI-frontend:
+      - your canister (Recommended)
+      - your canister (Legacy)
+
 ```
 ### 📁 Project Structure
 ```
