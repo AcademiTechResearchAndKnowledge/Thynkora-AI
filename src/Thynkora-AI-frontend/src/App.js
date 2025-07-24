@@ -210,8 +210,7 @@ const App = () => {
     // ----------------------------
     if (showSimpleChatbot) {
         return (React.createElement("div", { className: "simple-chat-wrapper" },
-            React.createElement(TherapyChat, { aiActor: aiActor, userProfile: userProfile }),
-            React.createElement("button", { onClick: () => setShowLanding(true), className: "absolute top-10 left-10 px-4 py-2 bg-gray-300 rounded" }, "\u2190 Back")));
+            React.createElement(TherapyChat, { aiActor: aiActor, userProfile: userProfile })));
     }
     // ----------------------------
     // Page 1 (log your thoughts)
