@@ -211,3 +211,6 @@ Thynkora-AI/
 ├── tsconfig.json                       # TypeScript configuration
 ├── vite.config.ts                      # Vite build/configuration file
 ```
+
+### Demo video link:  
+https://drive.google.com/file/d/1GYeR2iFpXIqB1djNGFNBhgXygCw6mzT_/view?usp=sharing
