@@ -107,7 +107,7 @@
 
 /* Input section */
 .chat-input {
-  padding: 1rem;
+  padding: 10rem;
   border-top: 1px solid #e0e0e0;
   background-color: white;
 }
