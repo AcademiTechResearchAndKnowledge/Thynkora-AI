@@ -42,7 +42,7 @@ Thynkora-AI/
 
 ├── src/                                 # Main source code directory
 │
-│   ├── Thynkora-AI-backend/             # 👇 BACKEND CANISTERS (Motoko)
+│   ├── Thynkora-AI-backend/             #   BACKEND CANISTERS (Motoko)
 │   │   ├── ai_therapy/                  # Handles therapy chatbot logic and message processing
 │   │   ├── dao_governance/              # DAO logic: proposals, voting, decision-making
 │   │   ├── emergency_response/          # Handles emergency support requests and responses
@@ -50,7 +50,7 @@ Thynkora-AI/
 │   │   ├── user_management/             # User accounts, identity handling, authentication
 │   │   └── mail_moa/                    # Email notifications and alerts (MOA = Mail Outgoing Actor?)
 │
-│   ├── Thynkora-AI-frontend/            # 👇 FRONTEND (React + Vite)
+│   ├── Thynkora-AI-frontend/            #   FRONTEND (React + Vite)
 │   │   ├── components/                  # Reusable UI components for different modules
 │   │   │   ├── AITherapy/               # Chat UI for interacting with the therapy AI
 │   │   │   ├── Auth/                    # Login, signup, and auth-related components
