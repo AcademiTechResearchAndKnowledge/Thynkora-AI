@@ -34,3 +34,5 @@ Install the following tools:
 ```bash
 git clone https://github.com/AcademiTechResearchAndKnowledge/Thynkora-AI.git
 cd Thynkora-AI
+
+### 📁 Project Structure
