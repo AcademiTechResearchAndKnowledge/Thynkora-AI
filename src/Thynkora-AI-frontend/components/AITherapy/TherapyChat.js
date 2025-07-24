@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-const SimpleChatbot = () => {
+const TherapyChat = ({ aiActor, userProfile }) => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
     const getBotResponse = (text) => {
@@ -38,4 +38,4 @@ const SimpleChatbot = () => {
             React.createElement("input", { className: "flex-1 px-4 py-2 border rounded-md", value: input, onChange: (e) => setInput(e.target.value), onKeyDown: (e) => e.key === 'Enter' && handleSend(), placeholder: "Type your message..." }),
             React.createElement("button", { className: "px-4 py-2 bg-blue-500 text-white rounded-md", onClick: handleSend }, "Send"))));
 };
-export default SimpleChatbot;
+export default TherapyChat;
