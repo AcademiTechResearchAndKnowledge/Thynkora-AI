@@ -119,7 +119,7 @@ Install the following tools:
 
 ---
 
-### 🚀 Getting Started
+### 📦 Installation & Setup
 1. **Clone the Repository**
 First, clone the project from GitHub and navigate into the directory:
 ```bash
