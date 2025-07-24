@@ -34,5 +34,64 @@ Install the following tools:
 ```bash
 git clone https://github.com/AcademiTechResearchAndKnowledge/Thynkora-AI.git
 cd Thynkora-AI
-
+```
 ### 📁 Project Structure
+```
+Thynkora-AI/
+├── node_modules/                        # Dependency packages installed via npm/yarn
+
+├── src/                                 # Main source code directory
+│
+│   ├── Thynkora-AI-backend/             # 👇 BACKEND CANISTERS (Motoko)
+│   │   ├── ai_therapy/                  # Handles therapy chatbot logic and message processing
+│   │   ├── dao_governance/              # DAO logic: proposals, voting, decision-making
+│   │   ├── emergency_response/          # Handles emergency support requests and responses
+│   │   ├── journal_storage/             # Manages secure journal entries and retrieval
+│   │   ├── user_management/             # User accounts, identity handling, authentication
+│   │   └── mail_moa/                    # Email notifications and alerts (MOA = Mail Outgoing Actor?)
+│
+│   ├── Thynkora-AI-frontend/            # 👇 FRONTEND (React + Vite)
+│   │   ├── components/                  # Reusable UI components for different modules
+│   │   │   ├── AITherapy/               # Chat UI for interacting with the therapy AI
+│   │   │   ├── Auth/                    # Login, signup, and auth-related components
+│   │   │   ├── DAO/                     # DAO dashboard UI: proposals, voting, etc.
+│   │   │   ├── Emergency/               # Emergency UI components (e.g., SOS or quick contact)
+│   │   │   └── Journal/                 # UI for writing and viewing journal entries
+│   │
+│   │   ├── hooks/                       # Custom React hooks (e.g., useJournal, useAuth)
+│   │
+│   │   ├── pages/                       # Landing and navigation images for page transitions
+│   │   │   ├── AboutUsPage.jpg
+│   │   │   ├── ArticlesPage.jpg
+│   │   │   ├── CustomerSupportPage.jpg
+│   │   │   ├── PTSPage.jpg
+│   │   │   ├── landing-bg.jpg
+│   │   │   ├── p1.jpg
+│   │   │   └── temp/                   # (Optional) Temporary files or drafts
+│   │
+│   │   ├── public/                      # Static public assets (favicons, logo, etc.)
+│   │   │   ├── .ic-assets.json5         # Internet Computer asset metadata
+│   │   │   ├── favicon.ico              # Website favicon
+│   │   │   └── logo.svg                 # App logo
+│   │
+│   │   ├── src/                         # App logic and entry point
+│   │   │   ├── declarations/           # Types and interface declarations
+│   │   │   ├── App.tsx                 # Main React component entry
+│   │   │   ├── App.scss                # Main global styles
+│   │   │   ├── index.scss              # App root styles
+│   │   │   ├── main.tsx                # React + Vite root mount script
+│   │   │   ├── vite-env.d.ts           # TypeScript env support for Vite
+│   │   │   └── utils/                  # Utility functions and helpers
+│   │
+│   │   └── assets/                     # (Optional) Custom folder for images, fonts, icons
+│
+├── index.html                          # HTML template used by Vite
+├── .env                                # Environment variables (e.g., canister IDs, secrets)
+├── .gitignore                          # Git ignore list
+├── README.md                           # Project overview and setup instructions
+├── dfx.json                            # DFINITY config file (defines canisters, network)
+├── package.json                        # Project metadata and dependencies
+├── package-lock.json                   # Exact versions of installed npm packages
+├── tsconfig.json                       # TypeScript configuration
+├── vite.config.ts                      # Vite build/configuration file
+```
