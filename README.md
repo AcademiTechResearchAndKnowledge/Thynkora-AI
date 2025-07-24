@@ -104,7 +104,7 @@ Thynkora AI is designed as a decentralized journaling platform that merges AI-dr
 ```
 ### 📌 Architecture Image
 
-![Architecture Diagram](./assets/architecture.png)
+![Architecture Diagram](src/assets/architecture.png)
 ---
 ## 🛠️ Local Development Setup
 
