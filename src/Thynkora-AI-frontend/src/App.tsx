@@ -107,7 +107,8 @@ const App: React.FC = () => {
               setShowp1(true),
               setPTSPage(false),
               setCustomerSupportPage(false),
-              setArticlesPage(false)
+              setArticlesPage(false),
+              setShowSimpleChatbot(false)
           }}
           style={{
             position: 'absolute',     // now relative to the wrapper
@@ -136,7 +137,8 @@ const App: React.FC = () => {
               setShowp1(false),
               setPTSPage(false),
               setCustomerSupportPage(false),
-              setArticlesPage(true)
+              setArticlesPage(true),
+              setShowSimpleChatbot(false)
           }}
 
           style={{
@@ -164,7 +166,8 @@ const App: React.FC = () => {
               setShowp1(false),
               setPTSPage(true),
               setCustomerSupportPage(false),
-              setArticlesPage(false)
+              setArticlesPage(false),
+              setShowSimpleChatbot(false)
           }}
           style={{
             position: 'absolute',
@@ -191,7 +194,8 @@ const App: React.FC = () => {
               setShowp1(false),
               setPTSPage(false),
               setCustomerSupportPage(false),
-              setArticlesPage(false)
+              setArticlesPage(false),
+              setShowSimpleChatbot(false)
           }}
           style={{
             position: 'absolute',
@@ -217,7 +221,8 @@ const App: React.FC = () => {
               setShowp1(false),
               setPTSPage(false),
               setCustomerSupportPage(true),
-              setArticlesPage(false)
+              setArticlesPage(false),
+              setShowSimpleChatbot(false)
           }}
           style={{
             position: 'absolute',
@@ -240,8 +245,13 @@ const App: React.FC = () => {
         {/* CHAT BOT */}
         <button
           onClick={() => {
-            setShowLanding(false);
-            setShowSimpleChatbot(true);
+             setShowLanding(false),
+              setAboutUsPage(false),
+              setShowp1(false),
+              setPTSPage(false),
+              setCustomerSupportPage(false),
+              setArticlesPage(false),
+              setShowSimpleChatbot(true)
           }}
           style={{
             position: 'absolute',
@@ -293,7 +303,15 @@ const App: React.FC = () => {
     <div className="simple-chat-wrapper">
       <TherapyChat aiActor={aiActor} userProfile={userProfile} />
       <button
-        onClick={() => setShowLanding(true)}
+        onClick={() => {
+             setShowLanding(true),
+              setAboutUsPage(false),
+              setShowp1(false),
+              setPTSPage(false),
+              setCustomerSupportPage(false),
+              setArticlesPage(false),
+              setShowSimpleChatbot(false)
+          }}
         className="back-button"
       >
         ← Back
@@ -344,7 +362,8 @@ const App: React.FC = () => {
               setShowp1(false),
               setPTSPage(false),
               setCustomerSupportPage(false),
-              setArticlesPage(false)
+              setArticlesPage(false),
+              setShowSimpleChatbot(false)
           }}
           style={{
             position: 'absolute',
@@ -430,7 +449,8 @@ const App: React.FC = () => {
               setShowp1(false),
               setPTSPage(false),
               setCustomerSupportPage(false),
-              setArticlesPage(false)
+              setArticlesPage(false),
+              setShowSimpleChatbot(false)
           }}
           style={{
             position: 'absolute',
@@ -513,7 +533,8 @@ const App: React.FC = () => {
               setShowp1(false),
               setPTSPage(false),
               setCustomerSupportPage(false),
-              setArticlesPage(false)
+              setArticlesPage(false),
+              setShowSimpleChatbot(false)
           }}
           style={{
             position: 'absolute',
@@ -540,7 +561,8 @@ const App: React.FC = () => {
               setShowp1(false),
               setPTSPage(false),
               setCustomerSupportPage(false),
-              setArticlesPage(true)
+              setArticlesPage(true),
+              setShowSimpleChatbot(false)
           }}
 
           style={{
@@ -625,7 +647,8 @@ const App: React.FC = () => {
               setShowp1(false),
               setPTSPage(false),
               setCustomerSupportPage(false),
-              setArticlesPage(true)
+              setArticlesPage(true),
+              setShowSimpleChatbot(false)
           }}
 
           style={{
@@ -709,7 +732,8 @@ const App: React.FC = () => {
               setShowp1(false),
               setPTSPage(false),
               setCustomerSupportPage(false),
-              setArticlesPage(false)
+              setArticlesPage(false),
+              setShowSimpleChatbot(false)
           }}
           style={{
             position: 'absolute',
@@ -736,7 +760,8 @@ const App: React.FC = () => {
               setShowp1(false),
               setPTSPage(false),
               setCustomerSupportPage(false),
-              setArticlesPage(true)
+              setArticlesPage(true),
+              setShowSimpleChatbot(false)
           }}
 
           style={{
