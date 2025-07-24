@@ -915,7 +915,7 @@ const App: React.FC = () => {
             position: 'absolute',
             bottom: '48.8rem',
             left: '50%',
-            transform: 'translateX(-380%)',
+            transform: 'translateX(-129%)',
             padding: '1.5rem 5rem',
             fontSize: '1.2rem',
             backgroundColor: 'rgba(0, 0, 0, 0)',
