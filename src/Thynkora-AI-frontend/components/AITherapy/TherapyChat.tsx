@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 interface Message {
   sender: 'user' | 'bot';
@@ -13,6 +13,12 @@ interface TherapyChatProps {
 const TherapyChat: React.FC<TherapyChatProps> = ({ aiActor, userProfile }) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Scroll to bottom on new messages
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
 
   const getBotResponse = (text: string): string => {
     const lower = text.toLowerCase();
@@ -38,42 +44,54 @@ const TherapyChat: React.FC<TherapyChatProps> = ({ aiActor, userProfile }) => {
     const userMessage: Message = { sender: 'user', text: input };
     const botMessage: Message = { sender: 'bot', text: getBotResponse(input) };
 
-    setMessages([...messages, userMessage, botMessage]);
+    setMessages((prev) => [...prev, userMessage, botMessage]);
     setInput('');
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4 flex flex-col">
-      <div className="flex-1 overflow-auto bg-white rounded-lg p-4 shadow-inner mb-4">
+    <div className="flex flex-col h-screen bg-white">
+      <div className="flex items-center justify-between px-6 py-4 shadow-sm border-b bg-gray-50">
+        <h1 className="text-xl font-semibold text-gray-800">Thynkora Therapy Bot</h1>
+        <span className="text-sm text-gray-500">User: {userProfile?.name || 'Guest'}</span>
+      </div>
+
+      <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4 bg-gray-100">
         {messages.map((msg, index) => (
           <div
             key={index}
-            className={`mb-2 text-${msg.sender === 'user' ? 'right' : 'left'}`}
+            className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
           >
-            <span
-              className={`inline-block px-4 py-2 rounded-lg ${
-                msg.sender === 'user' ? 'bg-blue-200' : 'bg-gray-200'
+            <div
+              className={`max-w-xs md:max-w-md lg:max-w-2xl px-4 py-2 rounded-lg shadow ${
+                msg.sender === 'user'
+                  ? 'bg-blue-600 text-white rounded-br-none'
+                  : 'bg-gray-200 text-gray-900 rounded-bl-none'
               }`}
             >
               {msg.text}
-            </span>
+            </div>
           </div>
         ))}
+        <div ref={messagesEndRef} />
       </div>
-      <div className="flex gap-2">
-        <input
-          className="flex-1 px-4 py-2 border rounded-md"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-          placeholder="Type your message..."
-        />
-        <button
-          className="px-4 py-2 bg-blue-500 text-white rounded-md"
-          onClick={handleSend}
-        >
-          Send
-        </button>
+
+      <div className="p-4 border-t bg-white">
+        <div className="flex gap-2">
+          <input
+            type="text"
+            className="flex-1 px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+            placeholder="Type your message..."
+          />
+          <button
+            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md shadow"
+            onClick={handleSend}
+          >
+            Send
+          </button>
+        </div>
       </div>
     </div>
   );
