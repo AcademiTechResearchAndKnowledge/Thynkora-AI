@@ -245,7 +245,7 @@ const App: React.FC = () => {
         {/* CHAT BOT */}
         <button
           onClick={() => {
-             setShowLanding(false),
+            setShowLanding(false),
               setAboutUsPage(false),
               setShowp1(false),
               setPTSPage(false),
@@ -299,12 +299,12 @@ const App: React.FC = () => {
   // AI THERAPY CHAT BOT
   // ----------------------------
   if (showSimpleChatbot) {
-  return (
-    <div className="simple-chat-wrapper">
-      <TherapyChat aiActor={aiActor} userProfile={userProfile} />
-      <button
-        onClick={() => {
-             setShowLanding(true),
+    return (
+      <div className="simple-chat-wrapper">
+        <TherapyChat aiActor={aiActor} userProfile={userProfile} />
+        <button
+          onClick={() => {
+            setShowLanding(true),
               setAboutUsPage(false),
               setShowp1(false),
               setPTSPage(false),
@@ -312,13 +312,13 @@ const App: React.FC = () => {
               setArticlesPage(false),
               setShowSimpleChatbot(false)
           }}
-        className="back-button"
-      >
-        ← Back
-      </button>
-    </div>
-  );
-}
+          className="back-button"
+        >
+          ← Back
+        </button>
+      </div>
+    );
+  }
 
 
 
@@ -439,7 +439,32 @@ const App: React.FC = () => {
             display: 'block',
           }}
         />
-
+        {/* CHAT BOT */}
+        <button
+          onClick={() => {
+            setShowLanding(false),
+              setAboutUsPage(false),
+              setShowp1(false),
+              setPTSPage(false),
+              setCustomerSupportPage(false),
+              setArticlesPage(false),
+              setShowSimpleChatbot(true)
+          }}
+          style={{
+            position: 'absolute',
+            bottom: '1rem',
+            left: '50%',
+            transform: 'translateX(60%)',
+            padding: '1rem 2rem',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            color: '#000',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            zIndex: 10,
+          }}
+        >
+        </button>
 
         {/*    ABOUT US    */}
         <button
@@ -524,6 +549,32 @@ const App: React.FC = () => {
             display: 'block',
           }}
         />
+        {/* CHAT BOT */}
+        <button
+          onClick={() => {
+            setShowLanding(false),
+              setAboutUsPage(false),
+              setShowp1(false),
+              setPTSPage(false),
+              setCustomerSupportPage(false),
+              setArticlesPage(false),
+              setShowSimpleChatbot(true)
+          }}
+          style={{
+            position: 'absolute',
+            bottom: '1rem',
+            left: '50%',
+            transform: 'translateX(60%)',
+            padding: '1rem 2rem',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            color: '#000',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            zIndex: 10,
+          }}
+        >
+        </button>
 
         {/*    ABOUT US    */}
         <button
@@ -637,7 +688,32 @@ const App: React.FC = () => {
             display: 'block',
           }}
         />
-
+        {/* CHAT BOT */}
+        <button
+          onClick={() => {
+            setShowLanding(false),
+              setAboutUsPage(false),
+              setShowp1(false),
+              setPTSPage(false),
+              setCustomerSupportPage(false),
+              setArticlesPage(false),
+              setShowSimpleChatbot(true)
+          }}
+          style={{
+            position: 'absolute',
+            bottom: '1rem',
+            left: '50%',
+            transform: 'translateX(60%)',
+            padding: '1rem 2rem',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            color: '#000',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            zIndex: 10,
+          }}
+        >
+        </button>
 
         {/*    ARTICLES BUTTON     */}
         <button
@@ -723,6 +799,32 @@ const App: React.FC = () => {
             display: 'block',
           }}
         />
+        {/* CHAT BOT */}
+        <button
+          onClick={() => {
+            setShowLanding(false),
+              setAboutUsPage(false),
+              setShowp1(false),
+              setPTSPage(false),
+              setCustomerSupportPage(false),
+              setArticlesPage(false),
+              setShowSimpleChatbot(true)
+          }}
+          style={{
+            position: 'absolute',
+            bottom: '1rem',
+            left: '50%',
+            transform: 'translateX(60%)',
+            padding: '1rem 2rem',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            color: '#000',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            zIndex: 10,
+          }}
+        >
+        </button>
 
         {/*    ABOUT US    */}
         <button

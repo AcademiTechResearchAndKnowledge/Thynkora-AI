@@ -75,7 +75,8 @@ const App = () => {
                         setShowp1(true),
                         setPTSPage(false),
                         setCustomerSupportPage(false),
-                        setArticlesPage(false);
+                        setArticlesPage(false),
+                        setShowSimpleChatbot(false);
                 }, style: {
                     position: 'absolute', // now relative to the wrapper
                     bottom: '75.5rem',
@@ -96,7 +97,8 @@ const App = () => {
                         setShowp1(false),
                         setPTSPage(false),
                         setCustomerSupportPage(false),
-                        setArticlesPage(true);
+                        setArticlesPage(true),
+                        setShowSimpleChatbot(false);
                 }, style: {
                     position: 'absolute',
                     bottom: '107.5rem',
@@ -117,7 +119,8 @@ const App = () => {
                         setShowp1(false),
                         setPTSPage(true),
                         setCustomerSupportPage(false),
-                        setArticlesPage(false);
+                        setArticlesPage(false),
+                        setShowSimpleChatbot(false);
                 }, style: {
                     position: 'absolute',
                     bottom: '107.5rem',
@@ -138,7 +141,8 @@ const App = () => {
                         setShowp1(false),
                         setPTSPage(false),
                         setCustomerSupportPage(false),
-                        setArticlesPage(false);
+                        setArticlesPage(false),
+                        setShowSimpleChatbot(false);
                 }, style: {
                     position: 'absolute',
                     bottom: '12.5rem',
@@ -159,7 +163,8 @@ const App = () => {
                         setShowp1(false),
                         setPTSPage(false),
                         setCustomerSupportPage(true),
-                        setArticlesPage(false);
+                        setArticlesPage(false),
+                        setShowSimpleChatbot(false);
                 }, style: {
                     position: 'absolute',
                     bottom: '10.5rem',
@@ -175,8 +180,13 @@ const App = () => {
                     zIndex: 10,
                 } }),
             React.createElement("button", { onClick: () => {
-                    setShowLanding(false);
-                    setShowSimpleChatbot(true);
+                    setShowLanding(false),
+                        setAboutUsPage(false),
+                        setShowp1(false),
+                        setPTSPage(false),
+                        setCustomerSupportPage(false),
+                        setArticlesPage(false),
+                        setShowSimpleChatbot(true);
                 }, style: {
                     position: 'absolute',
                     bottom: '107.5rem',
@@ -211,7 +221,15 @@ const App = () => {
     if (showSimpleChatbot) {
         return (React.createElement("div", { className: "simple-chat-wrapper" },
             React.createElement(TherapyChat, { aiActor: aiActor, userProfile: userProfile }),
-            React.createElement("button", { onClick: () => setShowLanding(true), className: "back-button" }, "\u2190 Back")));
+            React.createElement("button", { onClick: () => {
+                    setShowLanding(true),
+                        setAboutUsPage(false),
+                        setShowp1(false),
+                        setPTSPage(false),
+                        setCustomerSupportPage(false),
+                        setArticlesPage(false),
+                        setShowSimpleChatbot(false);
+                }, className: "back-button" }, "\u2190 Back")));
     }
     // ----------------------------
     // Page 1 (log your thoughts)
@@ -241,7 +259,8 @@ const App = () => {
                         setShowp1(false),
                         setPTSPage(false),
                         setCustomerSupportPage(false),
-                        setArticlesPage(false);
+                        setArticlesPage(false),
+                        setShowSimpleChatbot(false);
                 }, style: {
                     position: 'absolute',
                     bottom: '49rem',
@@ -299,7 +318,8 @@ const App = () => {
                         setShowp1(false),
                         setPTSPage(false),
                         setCustomerSupportPage(false),
-                        setArticlesPage(false);
+                        setArticlesPage(false),
+                        setShowSimpleChatbot(false);
                 }, style: {
                     position: 'absolute',
                     bottom: '44.7rem',
@@ -357,7 +377,8 @@ const App = () => {
                         setShowp1(false),
                         setPTSPage(false),
                         setCustomerSupportPage(false),
-                        setArticlesPage(false);
+                        setArticlesPage(false),
+                        setShowSimpleChatbot(false);
                 }, style: {
                     position: 'absolute',
                     bottom: '44.7rem',
@@ -378,7 +399,8 @@ const App = () => {
                         setShowp1(false),
                         setPTSPage(false),
                         setCustomerSupportPage(false),
-                        setArticlesPage(true);
+                        setArticlesPage(true),
+                        setShowSimpleChatbot(false);
                 }, style: {
                     position: 'absolute',
                     bottom: '44.8rem',
@@ -436,7 +458,8 @@ const App = () => {
                         setShowp1(false),
                         setPTSPage(false),
                         setCustomerSupportPage(false),
-                        setArticlesPage(true);
+                        setArticlesPage(true),
+                        setShowSimpleChatbot(false);
                 }, style: {
                     position: 'absolute',
                     bottom: '87.7rem',
@@ -494,7 +517,8 @@ const App = () => {
                         setShowp1(false),
                         setPTSPage(false),
                         setCustomerSupportPage(false),
-                        setArticlesPage(false);
+                        setArticlesPage(false),
+                        setShowSimpleChatbot(false);
                 }, style: {
                     position: 'absolute',
                     bottom: '49.1rem',
@@ -515,7 +539,8 @@ const App = () => {
                         setShowp1(false),
                         setPTSPage(false),
                         setCustomerSupportPage(false),
-                        setArticlesPage(true);
+                        setArticlesPage(true),
+                        setShowSimpleChatbot(false);
                 }, style: {
                     position: 'absolute',
                     bottom: '49.1rem',
