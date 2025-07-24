@@ -218,6 +218,7 @@ const App = () => {
                 alignItems: 'flex-start',
                 padding: 0,
                 margin: 0,
+                zIndex: -100
             } },
             React.createElement("button", { onClick: () => setShowLanding(true), style: {
                     position: 'absolute',
