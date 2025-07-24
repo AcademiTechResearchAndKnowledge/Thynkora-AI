@@ -50,10 +50,7 @@ const TherapyChat = ({ aiActor, userProfile }) => {
     };
     return (React.createElement("div", { className: "chat-container" },
         React.createElement("div", { className: "chat-header" },
-            React.createElement("h1", { className: "chat-title" }, "Thynkora Therapy Bot"),
-            React.createElement("span", { className: "chat-user" },
-                "User: ",
-                userProfile?.name || 'Guest')),
+            React.createElement("h1", { className: "chat-title" }, "Thynkora Therapy Bot")),
         React.createElement("div", { className: "chat-messages" },
             messages.map((msg, index) => (React.createElement("div", { key: index, className: `message-row ${msg.sender === 'user' ? 'message-user' : 'message-bot'}` },
                 React.createElement("div", { className: `message-bubble ${msg.sender === 'user' ? 'user-bubble' : 'bot-bubble'}` },
