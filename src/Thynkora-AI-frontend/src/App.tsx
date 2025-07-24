@@ -615,7 +615,7 @@ const App: React.FC = () => {
           }}
           style={{
             position: 'absolute',
-            bottom: '49rem',
+            bottom: '44.8rem',
             left: '50%',
             transform: 'translateX(197%)',
             padding: '1rem 2.5rem',
