@@ -296,6 +296,20 @@ const App: React.FC = () => {
         <button
           onClick={() => setShowLanding(true)}
           className="absolute top-4 left-4 px-4 py-2 bg-gray-300 rounded"
+          style={{
+            position: 'absolute',
+            bottom: '1em',
+            left: '50%',
+            transform: 'translateX(-395%)',
+            padding: '1.5rem 5rem',
+            fontSize: '1.2rem',
+            backgroundColor: 'rgba(0, 0, 0, 100)',
+            color: '#000',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            zIndex: 10,
+          }}
         >
           ← Back
         </button>
