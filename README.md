@@ -48,7 +48,7 @@ Thynkora-AI/
 │   │   ├── emergency_response/          # Handles emergency support requests and responses
 │   │   ├── journal_storage/             # Manages secure journal entries and retrieval
 │   │   ├── user_management/             # User accounts, identity handling, authentication
-│   │   └── mail_moa/                    # Email notifications and alerts (MOA = Mail Outgoing Actor?)
+│   │   └── mail_moa/                    # Email notifications and alerts 
 │
 │   ├── Thynkora-AI-frontend/            #   FRONTEND (React + Vite)
 │   │   ├── components/                  # Reusable UI components for different modules
@@ -69,10 +69,10 @@ Thynkora-AI/
 │   │   │   ├── p1.jpg
 │   │   │   └── temp/                   # (Optional) Temporary files or drafts
 │   │
-│   │   ├── public/                      # Static public assets (favicons, logo, etc.)
-│   │   │   ├── .ic-assets.json5         # Internet Computer asset metadata
-│   │   │   ├── favicon.ico              # Website favicon
-│   │   │   └── logo.svg                 # App logo
+│   │   ├── public/                      # (Optional)Static public assets (favicons, logo, etc.)
+│   │   │   ├── .ic-assets.json5         # (Optional)Internet Computer asset metadata
+│   │   │   ├── favicon.ico              # (Optional)Website favicon
+│   │   │   └── logo.svg                 # (Optional)App logo
 │   │
 │   │   ├── src/                         # App logic and entry point
 │   │   │   ├── declarations/           # Types and interface declarations
