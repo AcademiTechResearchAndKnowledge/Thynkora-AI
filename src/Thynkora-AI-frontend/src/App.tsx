@@ -289,17 +289,21 @@ const App: React.FC = () => {
   // ----------------------------
   // AI THERAPY CHAT BOT
   // ----------------------------
-  
-  /*
   if (showSimpleChatbot) {
     return (
       <div className="simple-chat-wrapper">
-
         <TherapyChat aiActor={aiActor} userProfile={userProfile} />
+        <button
+          onClick={() => setShowLanding(true)}
+          className="absolute top-4 left-4 px-4 py-2 bg-gray-300 rounded"
+          
+        >
+          ← Back
+        </button>
       </div>
     );
   }
-*/
+
 
   // ----------------------------
   // Page 1 (log your thoughts)
