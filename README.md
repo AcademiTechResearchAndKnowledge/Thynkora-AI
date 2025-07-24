@@ -23,14 +23,12 @@ Thynkora-AI empowers users to document their thoughts, feelings, and life journe
 
 - [🎥 Recording](#-recording)
 - [🧠 Architecture Diagram](#-architecture-diagram)
-- [📲 Tech Stack](#-tech-stack)
 - [📦 Installation & Setup](#-installation--setup)
-- [🧪 Demo & Code Walkthrough](#-demo--code-walkthrough)
 - [🖌️ UI/UX Design](#-uiux-design)
 - [📈 Business Model](#-business-model)
 - [💬 Team Roles](#-team-roles)
-- [📄 License](#-license)
-- [📞 Contact](#-contact)
+- [🌐 ICP Deployment Details](#-icp-deployment-details)
+- [🚀 Future Plans (Post-Hackathon)](#-future-plans-(post-hackathon))
 
 ---
 ## 🎥 Recording
@@ -44,8 +42,13 @@ To demonstrate the full potential of WellMind AI, we’ve prepared two key video
 🎞️ Pitch Deck Presentation
 📍 Watch here
 
+### Brief Architecture Overview:
+- Users write entries → stored via backend canister
+- AI summarizes thoughts, suggests patterns
+- DAO governs user decisions (features, AI training goals)
+
 💻 Product Demo + Code Walkthrough
-📍 Watch here
+📍 [Watch here](https://drive.google.com/file/d/1GYeR2iFpXIqB1djNGFNBhgXygCw6mzT_/view?usp=sharing)
 
 ---
 ## 🧠 Architecture Diagram
@@ -211,6 +214,113 @@ Thynkora-AI/
 ├── tsconfig.json                       # TypeScript configuration
 ├── vite.config.ts                      # Vite build/configuration file
 ```
+---
+## 🖌️ UI/UX Design
 
-### Demo video link:  
-https://drive.google.com/file/d/1GYeR2iFpXIqB1djNGFNBhgXygCw6mzT_/view?usp=sharing
+The UI/UX of **WellMind AI** is crafted with clarity, calmness, and ease-of-use at its core—aligning with our mission to provide a safe space for mental wellness.
+
+- 🧘 **Minimalist and Emotionally Soothing Design**  
+  A calming color palette and clean layout reduce cognitive load and promote emotional comfort.
+
+- ✍️ **Intuitive Journaling Interface**  
+  The journal page is designed to mimic a natural writing flow, focusing on simplicity and accessibility across devices.
+
+- 🧠 **Conversational AI Integration**  
+  Users interact with an AI journaling assistant through a chat-style interface, blending familiarity with functionality.
+
+- 🗂️ **Private Entry Dashboard**  
+  All entries are organized and accessible with filters, enabling users to review their thoughts while maintaining privacy.
+
+- 📱 **Responsive Design**  
+  Fully responsive UI for both desktop and mobile, ensuring accessibility regardless of platform.
+
+- 🔐 **Privacy-First Experience**  
+  No login required—users authenticate via Internet Identity and all personal data remains decentralized.
+
+Our UI was designed with mental health and simplicity in mind.  
+Explore our [UI/UX folder](Thynkora-AI-frontend/pages) or view the full Figma prototype:
+
+➡️ [Figma Prototype](https://www.figma.com/design/s709Dz7BrvAxK0WSE2FJYe/THYNKORA-AI?node-id=13-25&p=f&t=nOYKzo2GfRuTugID-0)
+
+---
+
+## 🌐 ICP Deployment Details
+
+### 🆔 Mainnet Canister ID(s)
+
+| Canister Name         | Description                     | Mainnet Canister ID                    |
+|-----------------------|----------------------------------|----------------------------------------|
+| `ai_prompt_canister`  | Handles communication with AI    | `yyyy-yyyy-yyyy-yyyy-yyyy-yyy`         |
+| `journal_backend`     | Stores and manages user journals | `xxxx-xxxx-xxxx-xxxx-xxxx-xxx`         |
+| `governance_canister` | DAO proposal and voting logic    | `zzzz-zzzz-zzzz-zzzz-zzzz-zzz`         |
+
+> 📌 *Currently not deployed, does not have cycles*
+
+---
+
+### 🧪 ICP Features Used
+
+- **Canisters** – Smart contracts used for backend services such as journaling, AI interaction, and governance logic.
+- **Internet Identity** – Seamless and privacy-preserving user authentication using WebAuthn.
+- **Cycles** – Resource-based metering to run canisters on-chain.
+- **Asset Canisters** – Hosting frontend files like React UI directly on-chain.
+- **DAO (Decentralized Autonomous Organization)** – Enables users to participate in decision-making via proposals and voting.
+- **IC Management Canister** – Used for controlling and monitoring deployments.
+- **Certified Assets** – Ensures tamper-proof frontend delivery via certification.
+
+---
+
+### ⚠️ Challenges Faced During the Hackathon
+
+- 🧩 **Integrating AI Services**  
+  Adapting LLM communication securely inside a canister environment required async handling and resource optimization.
+
+- 🔐 **Identity & Auth Complexity**  
+  Internet Identity was powerful but integrating it smoothly into custom workflows and storing user-specific journals posed difficulties.
+
+- 🗳️ **DAO Logic in Short Timeframe**  
+  Designing and implementing governance from scratch with proposals, votes, and result evaluation in a few days was a major challenge.
+
+- 🕒 **Time Constraint**  
+  Completing full-stack features (UX + canister logic + frontend + governance + AI + deployment) within a few days was intense and required tight coordination.
+
+- 🐞 **Frontend ↔ Canister Communication**  
+  Debugging candid interface mismatches and cross-canister calls was time-consuming.
+
+---
+
+## 🚀 Future Plans (Post-Hackathon)
+
+While WellMind AI began as a hackathon prototype, we envision taking the project far beyond its MVP. Our next steps include:
+
+- 🔄 **Refactor and Optimize Codebase**  
+  Clean up and modularize the canister logic, improve AI prompt handling, and streamline frontend-backend communication.
+
+- 🛠️ **Enhance AI Journaling Features**  
+  - Sentiment analysis of journal entries  
+  - Personalized wellness prompts  
+  - AI-generated mental wellness suggestions  
+  - Mood tracking and insights dashboard
+
+- 🧑‍⚖️ **DAO Governance Expansion**  
+  Improve proposal mechanics and voting logic, introduce on-chain reputation scoring and reward systems.
+
+- 🌐 **Multi-Device Accessibility**  
+  Optimize the UI/UX for both desktop and mobile users. Add offline journaling that syncs when back online.
+
+- 🔒 **Data Privacy and Encryption**  
+  Implement user-specific encryption of journal entries and secure backup solutions while maintaining decentralization.
+
+- 📈 **Sustainable Monetization Models**  
+  Explore freemium plans, wellness insights subscriptions, DAO-based donations, and community-driven sponsorships.
+
+- 🤝 **Collaborations & Community Building**  
+  Partner with mental health professionals, student organizations, and open-source contributors to expand impact.
+
+- 🧪 **Beta Launch and User Feedback Loop**  
+  Release a closed beta to gather real user feedback and validate feature direction before full-scale launch.
+
+---
+
+> 📅 *We're actively exploring grants, open-source contributors, and early user testers. If you're interested in contributing or partnering, reach out via academitech.researchknowledge@gmail.com.*
+
