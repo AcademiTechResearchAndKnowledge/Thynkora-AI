@@ -928,6 +928,13 @@ const App: React.FC = () => {
         >
         </button>
 
+        <input
+          type="text"
+          placeholder="Type here..."
+          className="text-input"
+        />
+
+
 
       </div>
 
