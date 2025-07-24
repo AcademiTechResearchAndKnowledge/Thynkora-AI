@@ -238,7 +238,7 @@ The UI/UX of **WellMind AI** is crafted with clarity, calmness, and ease-of-use 
   No login required—users authenticate via Internet Identity and all personal data remains decentralized.
 
 Our UI was designed with mental health and simplicity in mind.  
-Explore our [UI/UX folder](Thynkora-AI-frontend/pages) or view the full Figma prototype:
+Explore our [UI/UX folder](tree/main/src/Thynkora-AI-frontend/pages) or view the full Figma prototype:
 
 ➡️ [Figma Prototype](https://www.figma.com/design/s709Dz7BrvAxK0WSE2FJYe/THYNKORA-AI?node-id=13-25&p=f&t=nOYKzo2GfRuTugID-0)
 
