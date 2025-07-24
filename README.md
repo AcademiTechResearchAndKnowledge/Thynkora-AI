@@ -33,7 +33,17 @@ Install the following tools:
 
 ```bash
 git clone https://github.com/AcademiTechResearchAndKnowledge/Thynkora-AI.git
+
 cd Thynkora-AI
+
+dfx stop
+
+dfx killall
+
+dfx start --background --clean
+
+dfx deploy
+
 ```
 ### 📁 Project Structure
 ```
