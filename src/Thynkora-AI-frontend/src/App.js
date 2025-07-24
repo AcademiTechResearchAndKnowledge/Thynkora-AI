@@ -179,17 +179,17 @@ const App = () => {
                     setShowSimpleChatbot(true);
                 }, style: {
                     position: 'absolute',
-                    bottom: '20rem',
+                    bottom: '107.5rem',
                     left: '50%',
-                    transform: 'translateX(-50%)',
-                    padding: '1rem 3rem',
-                    backgroundColor: '#007BFF',
+                    transform: 'translateX(35%)',
+                    padding: '0.5rem 0rem',
+                    backgroundColor: '#ffffff',
                     color: '#fff',
                     border: 'none',
                     borderRadius: '8px',
                     cursor: 'pointer',
                     zIndex: 10,
-                } }, "Open Chatbot"),
+                } }),
             React.createElement("button", { onClick: () => setShowLanding(true), style: {
                     position: 'absolute',
                     bottom: '107.5rem',
