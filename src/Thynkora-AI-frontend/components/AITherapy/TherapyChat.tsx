@@ -4,13 +4,13 @@ interface Message {
   sender: 'user' | 'bot';
   text: string;
 }
+
 interface TherapyChatProps {
   aiActor?: any;
   userProfile?: any;
 }
 
-
-const SimpleChatbot: React.FC = () => {
+const TherapyChat: React.FC<TherapyChatProps> = ({ aiActor, userProfile }) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
 
@@ -79,4 +79,4 @@ const SimpleChatbot: React.FC = () => {
   );
 };
 
-export default SimpleChatbot;
+export default TherapyChat;
