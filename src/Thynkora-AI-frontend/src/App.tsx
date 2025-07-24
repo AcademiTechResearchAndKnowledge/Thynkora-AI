@@ -296,7 +296,6 @@ const App: React.FC = () => {
         <button
           onClick={() => setShowLanding(true)}
           className="absolute top-4 left-4 px-4 py-2 bg-gray-300 rounded"
-          
         >
           ← Back
         </button>
