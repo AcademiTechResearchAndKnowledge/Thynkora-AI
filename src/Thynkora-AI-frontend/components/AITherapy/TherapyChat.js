@@ -53,7 +53,9 @@ const TherapyChat = ({ aiActor, userProfile }) => {
     return (React.createElement("div", { className: "chat-container" },
         React.createElement("div", { className: "chat-header" },
             React.createElement("h1", { className: "chat-title" }, "Thynkora Therapy Bot"),
-            React.createElement("button", { onClick: () => setShowLanding(true), className: "absolute top-4 left-4 px-4 py-2 bg-gray-300 rounded", style: {
+            React.createElement("button", { onClick: () => setShowLanding(true), 
+                //className="absolute top-4 left-4 px-4 py-2 bg-gray-300 rounded"
+                style: {
                     position: 'absolute',
                     bottom: '1em',
                     left: '50%',

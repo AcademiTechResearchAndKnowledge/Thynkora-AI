@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import TherapyChat from '../components/AITherapy/TherapyChat';
 // Landing page background image
 const landingBg = new URL('../pages/landing-bg.jpg', import.meta.url).href;
 //other pages
@@ -207,16 +208,11 @@ const App = () => {
     // ----------------------------
     // AI THERAPY CHAT BOT
     // ----------------------------
-    /*
     if (showSimpleChatbot) {
-      return (
-        <div className="simple-chat-wrapper">
-  
-          <TherapyChat aiActor={aiActor} userProfile={userProfile} />
-        </div>
-      );
+        return (React.createElement("div", { className: "simple-chat-wrapper" },
+            React.createElement(TherapyChat, { aiActor: aiActor, userProfile: userProfile }),
+            React.createElement("button", { onClick: () => setShowLanding(true), className: "absolute top-4 left-4 px-4 py-2 bg-gray-300 rounded" }, "\u2190 Back")));
     }
-  */
     // ----------------------------
     // Page 1 (log your thoughts)
     // ----------------------------
