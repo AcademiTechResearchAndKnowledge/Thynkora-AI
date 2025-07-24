@@ -4,6 +4,10 @@
 
 Designed with a strong emphasis on **privacy**, **cultural relevance**, and **scalability**, Thynkora-AI offers a mindful alternative to centralized mental health tools that often compromise user data and user agency.
 
+## 📌 Summary
+
+Thynkora-AI empowers users to document their thoughts, feelings, and life journeys through secure, private journaling—while using AI to provide intelligent feedback, reflections, and personal insights. Built with Internet Identity and deployed on ICP canisters, your data remains fully encrypted and owned by you.
+
 ---
 
 ## 🚀 Features
@@ -13,6 +17,19 @@ Designed with a strong emphasis on **privacy**, **cultural relevance**, and **sc
 - 🔐 **Decentralized Privacy** – All data is stored securely on ICP canisters  
 - 🌍 **Cultural Sensitivity** – AI understands emotional nuances from diverse cultures  
 - 🗳️ **Governance Ready** – Community-led roadmap through decentralized voting
+
+---
+## 📜 Table of Contents
+
+- [🧠 Architecture Diagram](#-architecture-diagram)
+- [📲 Tech Stack](#-tech-stack)
+- [📦 Installation & Setup](#-installation--setup)
+- [🧪 Demo & Code Walkthrough](#-demo--code-walkthrough)
+- [🖌️ UI/UX Design](#-uiux-design)
+- [📈 Business Model](#-business-model)
+- [💬 Team Roles](#-team-roles)
+- [📄 License](#-license)
+- [📞 Contact](#-contact)
 
 ---
 
