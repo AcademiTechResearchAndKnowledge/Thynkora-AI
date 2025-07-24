@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import TherapyChat from '@components/AITherapy/TherapyChat';
+import TherapyChat from '../components/AITherapy/TherapyChat';
 import Journal from '@components/Journal/JournalComponent';
 import DAODashboard from '@components/DAO/DAODashboard';
 import EmergencySupport from '@components/Emergency/EmergencySupport';
 
+
 // Landing page background image
 const landingBg = new URL('../pages/landing-bg.jpg', import.meta.url).href;
+
 
 //other pages
 //const therapyBg = new URL('../pages/therapy-bg.jpg', import.meta.url).href;
@@ -18,6 +20,8 @@ const CustomerSupportPage = new URL('../pages/CustomerSupportPage.jpg', import.m
 const PTSPage = new URL('../pages/PTSPage.jpg', import.meta.url).href;
 const ArticlesPage = new URL('../pages/ArticlesPage.jpg', import.meta.url).href;
 
+
+
 const App: React.FC = () => {
   const [showLanding, setShowLanding] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -25,6 +29,8 @@ const App: React.FC = () => {
   const [userActor, setUserActor] = useState<any>(null);
   const [aiActor, setAiActor] = useState<any>(null);
   const [activeTab, setActiveTab] = useState('therapy');
+  const [showSimpleChatbot, setShowSimpleChatbot] = useState(false);
+
 
 
   const [showp1, setShowp1] = useState(false);
@@ -231,6 +237,30 @@ const App: React.FC = () => {
         </button>
 
 
+        {/* CHAT BOT */}
+        <button
+          onClick={() => {
+            setShowLanding(false);
+            setShowSimpleChatbot(true);
+          }}
+          style={{
+            position: 'absolute',
+            bottom: '20rem',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            padding: '1rem 3rem',
+            backgroundColor: '#007BFF',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            zIndex: 10,
+          }}
+        >
+          Open Chatbot
+        </button>
+
+
 
         <button
           onClick={() => setShowLanding(true)} // HOME BUTTON
@@ -256,6 +286,24 @@ const App: React.FC = () => {
       </div>
     );
   }
+  // ----------------------------
+  // AI THERAPY CHAT BOT
+  // ----------------------------
+  if (showSimpleChatbot) {
+    return (
+      <div className="simple-chat-wrapper">
+        <TherapyChat aiActor={aiActor} userProfile={userProfile} />
+        <button
+          onClick={() => setShowLanding(true)}
+          className="absolute top-4 left-4 px-4 py-2 bg-gray-300 rounded"
+        >
+          ← Back
+        </button>
+      </div>
+    );
+  }
+
+
   // ----------------------------
   // Page 1 (log your thoughts)
   // ----------------------------
