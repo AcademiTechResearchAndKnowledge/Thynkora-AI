@@ -69,5 +69,5 @@ const TherapyChat = ({ aiActor, userProfile }) => {
             React.createElement("div", { className: "input-wrapper" },
                 React.createElement("input", { className: "input-field", value: input, onChange: (e) => setInput(e.target.value), onKeyDown: (e) => e.key === 'Enter' && handleSend(), placeholder: "Type your message..." }),
                 React.createElement("button", { className: "send-button", onClick: handleSend }, "Send")))));
-    export default TherapyChat;
 };
+export default TherapyChat;
