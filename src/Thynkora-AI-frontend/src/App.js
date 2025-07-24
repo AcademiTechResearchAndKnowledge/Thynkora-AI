@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import TherapyChat from '../components/AITherapy/TherapyChat';
 // Landing page background image
 const landingBg = new URL('../pages/landing-bg.jpg', import.meta.url).href;
 //other pages
@@ -18,6 +19,7 @@ const App = () => {
     const [userActor, setUserActor] = useState(null);
     const [aiActor, setAiActor] = useState(null);
     const [activeTab, setActiveTab] = useState('therapy');
+    const [showSimpleChatbot, setShowSimpleChatbot] = useState(false);
     const [showp1, setShowp1] = useState(false);
     const [showAboutUsPage, setAboutUsPage] = useState(false);
     const [showCustomerSupportPage, setCustomerSupportPage] = useState(false);
@@ -172,6 +174,22 @@ const App = () => {
                     cursor: 'pointer',
                     zIndex: 10,
                 } }),
+            React.createElement("button", { onClick: () => {
+                    setShowLanding(false);
+                    setShowSimpleChatbot(true);
+                }, style: {
+                    position: 'absolute',
+                    bottom: '20rem',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    padding: '1rem 3rem',
+                    backgroundColor: '#007BFF',
+                    color: '#fff',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    zIndex: 10,
+                } }, "Open Chatbot"),
             React.createElement("button", { onClick: () => setShowLanding(true), style: {
                     position: 'absolute',
                     bottom: '107.5rem',
@@ -186,6 +204,14 @@ const App = () => {
                     cursor: 'pointer',
                     zIndex: 10,
                 } })));
+    }
+    // ----------------------------
+    // AI THERAPY CHAT BOT
+    // ----------------------------
+    if (showSimpleChatbot) {
+        return (React.createElement("div", { className: "simple-chat-wrapper" },
+            React.createElement(TherapyChat, { aiActor: aiActor, userProfile: userProfile }),
+            React.createElement("button", { onClick: () => setShowLanding(true), className: "absolute top-4 left-4 px-4 py-2 bg-gray-300 rounded" }, "\u2190 Back")));
     }
     // ----------------------------
     // Page 1 (log your thoughts)
