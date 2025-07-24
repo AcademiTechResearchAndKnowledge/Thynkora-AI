@@ -49,6 +49,62 @@ To demonstrate the full potential of WellMind AI, we’ve prepared two key video
 
 ---
 ## 🧠 Architecture Diagram
+
+Thynkora AI is designed as a decentralized journaling platform that merges AI-driven reflection with secure identity and governance. Built on the Internet Computer Protocol (ICP), it prioritizes user privacy, data ownership, and community-led development.
+
+---
+
+### 🔧 System Components
+
+| Component             | Description                                                                 |
+|-----------------------|-----------------------------------------------------------------------------|
+| **Frontend (React)**  | A responsive journaling interface hosted as an ICP asset canister.         |
+| **Canisters (Backend)** | Smart contracts handle journal logic, DAO governance, and AI request routing. |
+| **Internet Identity** | Enables secure, anonymous, and user-owned authentication.                  |
+| **AI Assistant (LLM)**| Processes journaling prompts and returns reflective guidance.              |
+| **DAO Governance**    | Users propose, vote, and influence platform evolution.                     |
+| **Decentralized Storage** | All journal entries and actions are stored securely in ICP canisters.       |
+
+---
+
+### 🔄 System Workflow
+
+1. **User Authentication**  
+   - User logs in using Internet Identity (WebAuthn-based, privacy-first).
+2. **Journal Interaction**  
+   - User writes or speaks a journal entry on the frontend.
+3. **AI Prompting**  
+   - The journal is sent to an AI canister, which responds with insights or questions.
+4. **Entry Storage**  
+   - The final journal entry and AI output are stored in a personal on-chain canister.
+5. **DAO Participation**  
+   - User can submit/vote on DAO proposals for platform improvements or features.
+  
+   ### 🧩 Architecture Overview
+
+```plaintext
++------------------------+
+|   User (Frontend UI)  |
++-----------+------------+
+            |
+            v
++------------------------+      +----------------------+
+|   Journal Canister     | <--> |  AI Prompt Canister  |
++-----------+------------+      +----------------------+
+            |
+            v
++------------------------+      +----------------------+
+|  DAO Governance Canister| <--> |  Voting Interface    |
++------------------------+      +----------------------+
+            |
+            v
++------------------------+
+| Internet Identity Auth |
++------------------------+
+```
+### 📌 Architecture Image
+
+![Architecture Diagram](./assets/architecture.png)
 ---
 ## 🛠️ Local Development Setup
 
