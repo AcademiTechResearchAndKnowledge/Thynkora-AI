@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import TherapyChat from '../components/AITherapy/TherapyChat';
 // Landing page background image
 const landingBg = new URL('../pages/landing-bg.jpg', import.meta.url).href;
 //other pages
@@ -209,8 +208,31 @@ const App = () => {
     // AI THERAPY CHAT BOT
     // ----------------------------
     if (showSimpleChatbot) {
-        return (React.createElement("div", { className: "simple-chat-wrapper" },
-            React.createElement(TherapyChat, { aiActor: aiActor, userProfile: userProfile })));
+        return (React.createElement("div", { className: "AI-Therapy", style: {
+                position: 'relative', // Needed to anchor the button inside this container
+                width: '100%',
+                height: 'auto',
+                overflow: 'auto',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                padding: 0,
+                margin: 0,
+            } },
+            React.createElement("button", { onClick: () => setShowLanding(true), style: {
+                    position: 'absolute',
+                    bottom: '1rem',
+                    left: '50%',
+                    transform: 'translateX(-380%)',
+                    padding: '1.5rem 5rem',
+                    fontSize: '1.2rem',
+                    backgroundColor: 'rgba(0, 0, 0, 100)',
+                    color: '#000',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    zIndex: 10,
+                } })));
     }
     // ----------------------------
     // Page 1 (log your thoughts)
