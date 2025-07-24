@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './TherapyChat.css';
+const landingBg = new URL('../pages/landing-bg.jpg', import.meta.url).href;
+const [showLanding, setShowLanding] = useState(true);
 const TherapyChat = ({ aiActor, userProfile }) => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
@@ -50,7 +52,21 @@ const TherapyChat = ({ aiActor, userProfile }) => {
     };
     return (React.createElement("div", { className: "chat-container" },
         React.createElement("div", { className: "chat-header" },
-            React.createElement("h1", { className: "chat-title" }, "Thynkora Therapy Bot")),
+            React.createElement("h1", { className: "chat-title" }, "Thynkora Therapy Bot"),
+            React.createElement("button", { onClick: () => setShowLanding(true), className: "absolute top-4 left-4 px-4 py-2 bg-gray-300 rounded", style: {
+                    position: 'absolute',
+                    bottom: '1em',
+                    left: '50%',
+                    transform: 'translateX(-395%)',
+                    padding: '1.5rem 5rem',
+                    fontSize: '1.2rem',
+                    backgroundColor: 'rgba(0, 0, 0, 100)',
+                    color: '#000',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    zIndex: 10,
+                } }, "\u2190 Back")),
         React.createElement("div", { className: "chat-messages" },
             messages.map((msg, index) => (React.createElement("div", { key: index, className: `message-row ${msg.sender === 'user' ? 'message-user' : 'message-bot'}` },
                 React.createElement("div", { className: `message-bubble ${msg.sender === 'user' ? 'user-bubble' : 'bot-bubble'}` },
