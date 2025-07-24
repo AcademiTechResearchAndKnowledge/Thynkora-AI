@@ -525,7 +525,7 @@ const App = () => {
                         setShowSimpleChatbot(true);
                 }, style: {
                     position: 'absolute',
-                    bottom: '48.8rem',
+                    bottom: '87.8rem',
                     left: '50%',
                     transform: 'translateX(60%)',
                     padding: '1rem 2rem',
@@ -605,7 +605,7 @@ const App = () => {
                         setShowSimpleChatbot(true);
                 }, style: {
                     position: 'absolute',
-                    bottom: '1rem',
+                    bottom: '48.8rem',
                     left: '50%',
                     transform: 'translateX(60%)',
                     padding: '1rem 2rem',
