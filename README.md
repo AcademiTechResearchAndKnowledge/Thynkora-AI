@@ -21,6 +21,7 @@ Thynkora-AI empowers users to document their thoughts, feelings, and life journe
 ---
 ## 📜 Table of Contents
 
+- [🎥 Recording](#-recording)
 - [🧠 Architecture Diagram](#-architecture-diagram)
 - [📲 Tech Stack](#-tech-stack)
 - [📦 Installation & Setup](#-installation--setup)
@@ -32,7 +33,23 @@ Thynkora-AI empowers users to document their thoughts, feelings, and life journe
 - [📞 Contact](#-contact)
 
 ---
+## 🎥 Recording
 
+To demonstrate the full potential of WellMind AI, we’ve prepared two key video recordings:
+
+- **The Pitch Deck Presentation** provides a strategic overview of the problem we’re solving, our unique decentralized solution, business model, market fit, and our vision for scalability and impact.
+
+- **The Product Demo + Code Walkthrough** showcases the actual working prototype — including how users interact with the platform, how the AI and blockchain components work together, and a look into our development process and architecture.
+
+🎞️ Pitch Deck Presentation
+📍 Watch here
+
+💻 Product Demo + Code Walkthrough
+📍 Watch here
+
+---
+## 🧠 Architecture Diagram
+---
 ## 🛠️ Local Development Setup
 
 ### ✅ Prerequisites
@@ -46,20 +63,36 @@ Install the following tools:
 
 ---
 
-### 📁 Clone the Repository
-
+### 🚀 Getting Started
+1. **Clone the Repository**
+First, clone the project from GitHub and navigate into the directory:
 ```bash
 git clone https://github.com/AcademiTechResearchAndKnowledge/Thynkora-AI.git
-
 cd Thynkora-AI
+```
+2. **Stop Any Running DFX Processes**
+Make sure no conflicting DFX instances are running:
 
+```bash
 dfx stop
-
 dfx killall
+```
+3. **Start the Internet Computer Replica**
+Launch a clean local ICP replica in the background:
 
+```bash
 dfx start --background --clean
+```
+4. **Deploy the Canisters**
+Deploy the backend canisters and frontend assets:
 
+```bash
 dfx deploy
+```
+5. **Access the App**
+Once deployment is successful, open your browser and go to the local URL printed in the terminal (usually something like):
+```bash
+http://localhost:4943/?canisterId=<frontend_canister_id>
 ```
 
 ### 📁 Project Structure
