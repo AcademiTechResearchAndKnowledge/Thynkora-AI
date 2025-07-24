@@ -66,7 +66,6 @@ const TherapyChat: React.FC<TherapyChatProps> = ({ aiActor, userProfile }) => {
       {/* Header */}
       <div className="chat-header">
         <h1 className="chat-title">Thynkora Therapy Bot</h1>
-        <span className="chat-user">User: {userProfile?.name || 'Guest'}</span>
       </div>
 
       {/* Chat area */}
