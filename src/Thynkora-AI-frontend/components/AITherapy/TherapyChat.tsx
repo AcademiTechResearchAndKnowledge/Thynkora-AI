@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './TherapyChat.css';
 
-
 interface Message {
   sender: 'user' | 'bot';
   text: string;
@@ -62,55 +61,55 @@ const TherapyChat: React.FC<TherapyChatProps> = ({ aiActor, userProfile }) => {
     }, 1000);
   };
 
- return (
-  <div className="chat-container">
-    {/* Header */}
-    <div className="chat-header">
-      <h1 className="chat-title">Thynkora Therapy Bot</h1>
-      <span className="chat-user">User: {userProfile?.name || 'Guest'}</span>
-    </div>
+  return (
+    <div className="chat-container">
+      {/* Header */}
+      <div className="chat-header">
+        <h1 className="chat-title">Thynkora Therapy Bot</h1>
+        <span className="chat-user">User: {userProfile?.name || 'Guest'}</span>
+      </div>
 
-    {/* Chat area */}
-    <div className="chat-messages">
-      {messages.map((msg, index) => (
-        <div key={index} className={`message-row ${msg.sender === 'user' ? 'message-user' : 'message-bot'}`}>
-          <div className={`message-bubble ${msg.sender === 'user' ? 'user-bubble' : 'bot-bubble'}`}>
-            {msg.text}
-            <div className="message-timestamp">{msg.timestamp}</div>
+      {/* Chat area */}
+      <div className="chat-messages">
+        {messages.map((msg, index) => (
+          <div key={index} className={`message-row ${msg.sender === 'user' ? 'message-user' : 'message-bot'}`}>
+            <div className={`message-bubble ${msg.sender === 'user' ? 'user-bubble' : 'bot-bubble'}`}>
+              {msg.text}
+              <div className="message-timestamp">{msg.timestamp}</div>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
 
-      {/* Bot typing indicator */}
-      {isBotTyping && (
-        <div className="message-row message-bot">
-          <div className="typing-indicator">
-            <div className="dot">•</div>
-            <div className="dot">•</div>
-            <div className="dot">•</div>
+        {/* Bot typing indicator */}
+        {isBotTyping && (
+          <div className="message-row message-bot">
+            <div className="typing-indicator">
+              <div className="dot">•</div>
+              <div className="dot">•</div>
+              <div className="dot">•</div>
+            </div>
           </div>
-        </div>
-      )}
-      <div ref={messagesEndRef} />
-    </div>
+        )}
+        <div ref={messagesEndRef} />
+      </div>
 
-    {/* Input */}
-    <div className="chat-input">
-      <div className="input-wrapper">
-        <input
-          className="input-field"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-          placeholder="Type your message..."
-        />
-        <button className="send-button" onClick={handleSend}>
-          Send
-        </button>
+      {/* Input */}
+      <div className="chat-input">
+        <div className="input-wrapper">
+          <input
+            className="input-field"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+            placeholder="Type your message..."
+          />
+          <button className="send-button" onClick={handleSend}>
+            Send
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-);
-
+  );
+};
 
 export default TherapyChat;
