@@ -1,4 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
+import './TherapyChat.css';
+
 
 interface Message {
   sender: 'user' | 'bot';
