@@ -8,8 +8,8 @@ Designed with a strong emphasis on **privacy**, **cultural relevance**, and **sc
 
 ## 🚀 Features
 
-- 📝 **Emotional Journaling** – Write and track your moods in a private journal  
 - 🤖 **Therapy Chat** – Chat with a culturally aware, supportive AI  
+- 📝 **Emotional Journaling** – Write and track your moods in a private journal  
 - 🔐 **Decentralized Privacy** – All data is stored securely on ICP canisters  
 - 🌍 **Cultural Sensitivity** – AI understands emotional nuances from diverse cultures  
 - 🗳️ **Governance Ready** – Community-led roadmap through decentralized voting
