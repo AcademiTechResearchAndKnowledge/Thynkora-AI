@@ -38,7 +38,7 @@ To demonstrate the full potential of WellMind AI, we’ve prepared two key video
 - **The Product Demo + Code Walkthrough** showcases the actual working prototype — including how users interact with the platform, how the AI and blockchain components work together, and a look into our development process and architecture.
 
 🎞️ Pitch Deck Presentation
-📍 [Watch here]
+📍 [Watch here] (https://drive.google.com/file/d/1yEQuLJzWSUaBtQlnpYRfhS6WGpR4hjou/view?usp=sharing)
 [Pitch Deck](https://www.canva.com/design/DAGuG4ZDliA/hxY6RfLXKMF4eDfgXmgi-Q/edit?utm_content=DAGuG4ZDliA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ### Brief Architecture Overview:
