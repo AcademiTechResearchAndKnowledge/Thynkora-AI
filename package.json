@@ -23,16 +23,7 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11"
   },
-  {
-  "name": "ai-therapy-proxy",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "node server.js",
-    "start": "node server.js"
-  },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11"
-    "express": "^4.19.2"
   }
 }
