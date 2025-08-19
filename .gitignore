@@ -17,4 +17,3 @@ target/
 dist/
 .svelte-kit/
 
-.env
